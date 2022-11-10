@@ -394,6 +394,8 @@ select option {
   display: flex;
   justify-content: space-evenly;
   position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .Join .Step ul::after {
   display: block;
@@ -414,6 +416,9 @@ select option {
   line-height: 70px;
   text-align: center;
   color: #8f8f8f;
+}
+.Join .Step.fixed ul {
+  position: fixed;
 }
 .Join .CodeCheck {
   display: flex;
@@ -519,6 +524,13 @@ select option {
   background-image: url("public/images/on-check.svg");
 }
 .checkBox .inputCheck li label {
+  color: #8f8f8f;
+  font-size: 14px;
+}
+.checkBox .inputCheck input[type=checkbox]:checked {
+  background-image: url("public/images/on-check.svg");
+}
+.checkBox .inputCheck label {
   color: #8f8f8f;
   font-size: 14px;
 }
@@ -788,7 +800,7 @@ select option {
 }
 
 .fixBtn.fixed {
-  position: fixed;
+  position: relative;
 }
 
 .date {
@@ -1028,7 +1040,7 @@ select option {
   top: 20px;
   text-align: center;
   display: block;
-  width: 50px;
+  width: 40px;
   color: #8f8f8f;
 }
 
@@ -1202,7 +1214,9 @@ select option {
   margin: 40px 20px;
 }
 .painBox .Step {
-  height: 100px;
+  height: 50px;
+  margin-bottom: 20px;
+  z-index: 100;
 }
 .painBox .Step ul {
   width: -webkit-fit-content;
@@ -1211,26 +1225,61 @@ select option {
   display: flex;
   padding: 0;
   align-items: center;
+  width: 100%;
+  justify-content: space-between;
   position: relative;
+}
+.painBox .Step ul li {
+  position: relative;
+}
+.painBox .Step ul li span {
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-color: #41b946;
+  border-radius: 50%;
+}
+.painBox .Step ul li:last-of-type::after {
+  display: none;
 }
 .painBox .Step ul::after {
   content: "";
   display: block;
-  width: 80%;
+  width: 100%;
   height: 1px;
   background-color: #41b946;
   position: absolute;
-}
-.painBox .Step ul li {
-  width: 35px;
-  height: 35px;
-  background-color: #41b946;
-  border-radius: 50%;
-  margin-right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .painBox .Step ul li.active {
+  background-color: transparent !important;
+}
+.painBox .Step ul li.active span {
   width: 45px;
   height: 45px;
+  border-radius: 50%;
+}
+.painBox .Step.fixed {
+  width: 100%;
+  position: fixed;
+  top: 65px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.painBox .Step.fixed ul {
+  background-color: #fff;
+  padding: 15px 23px;
+  z-index: 20;
+  width: 100%;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+.painBox .Step.fixed ul::after {
+  width: calc(100% - 46px);
+}
+.painBox .Step li span {
+  display: block;
+  background-color: #41b946;
 }
 .painBox .rc-slider {
   width: calc(100% - 30px);
@@ -1969,9 +2018,11 @@ select option {
 .surveyList ul {
   margin-left: 0;
   padding-left: 0;
+  padding-bottom: 50px;
 }
 .surveyList .surveyContent {
-  margin-bottom: 110px;
+  height: 190px;
+  margin-bottom: 20px;
 }
 .surveyList .surveyContent ul {
   display: flex;
@@ -2007,6 +2058,9 @@ select option {
   border: 1px solid #41b946;
 }
 .surveyList .surveyContent ul li input[type=radio]:checked::after {
+  color: #41b946;
+}
+.surveyList .surveyContent ul li input[type=radio]:checked + label {
   color: #41b946;
 }
 .surveyList .surveyContent ul label {
@@ -2130,7 +2184,7 @@ select option {
 }
 .programInfo h2 {
   font-weight: 700;
-  font-size: 20px;
+  font-size: 24px;
   padding: 15px 0 25px 0;
 }
 .programInfo .programName {
@@ -2459,4 +2513,206 @@ select option {
   font-weight: 700;
   text-align: right;
   padding: 0 20px 20px 0;
+}
+
+.dropBox {
+  margin: 23px;
+}
+.dropBox h2 {
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.dropDown {
+  position: relative;
+  margin-bottom: 20px;
+}
+.dropDown .selected a {
+  background: #fff no-repeat scroll right center;
+  display: block;
+  padding: 0 20px;
+  border: 0.5px solid #8f8f8f;
+  border-radius: 5px;
+  text-decoration: none;
+  width: 100%;
+  height: 55px;
+  font-size: 14px;
+  box-sizing: border-box;
+  line-height: 55px;
+  color: #000;
+}
+.dropDown .selected a span {
+  cursor: pointer;
+  display: block;
+  position: relative;
+  font-weight: 400;
+  font-size: 16px;
+}
+.dropDown .selected a span::after {
+  content: "";
+  display: block;
+  background: url("public/images/arrow.svg") no-repeat;
+  width: 12px;
+  height: 12px;
+  background-size: contain;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+}
+.dropDown .selected a span {
+  cursor: pointer;
+  display: block;
+  position: relative;
+  font-weight: 400;
+  font-size: 16px;
+}
+.dropDown .selected a span .value {
+  display: none;
+}
+.dropDown .options ul {
+  background: #fff;
+  display: none;
+  position: relative;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  padding-top: 25px;
+  padding-left: 0;
+}
+.dropDown .options a {
+  padding: 5px;
+  display: block;
+  text-decoration: none;
+  box-sizing: border-box;
+  padding: 0 20px 15px 20px;
+  font-weight: 400;
+  font-size: 16px;
+}
+.dropDown .options a span {
+  display: none;
+}
+
+#checkBox .inputCheckType01 {
+  display: flex;
+  align-items: center;
+  margin-left: 0;
+}
+#checkBox .inputCheckType01 input {
+  width: 20px;
+  height: 20px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 1px solid #8f8f8f;
+}
+#checkBox .inputCheckType01 input[type=checkbox]:checked {
+  background: url("public/images/check-bx.svg") no-repeat;
+  width: 20px;
+  height: 20px;
+  border: none;
+  background-size: contain;
+}
+#checkBox .inputCheckType01 label {
+  font-weight: 400;
+  font-size: 16px;
+  margin-left: 20px;
+}
+#checkBox .standbyNot {
+  display: none;
+  margin-top: 20px;
+  margin-bottom: 90px;
+}
+#checkBox .standbyNot span {
+  display: block;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 27px;
+  text-align: center;
+}
+
+.tired {
+  margin: 40px 23px;
+}
+
+.forest ul {
+  margin-left: 0;
+  padding-left: 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  row-gap: 18px;
+}
+.forest ul .roundNumber {
+  margin-right: 10px;
+}
+
+.forestCard {
+  margin: 30px 0;
+  padding: 33px;
+  background-color: #f3f3f3;
+  border-radius: 8px;
+}
+.forestCard a {
+  color: #000;
+  text-decoration: none;
+}
+.forestCard a p {
+  font-weight: 700;
+  font-size: 20px;
+}
+.forestCard a span {
+  display: block;
+}
+.forestCard a span:first-of-type {
+  margin: 30px 0;
+}
+
+.forestContent .forestTitle {
+  font-weight: 700;
+  font-size: 20px;
+  border-bottom: 0.5px solid #000000;
+}
+.forestContent ul {
+  padding: 0;
+}
+.forestContent ul li {
+  display: flex;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.forestContent ul li span {
+  font-weight: 400;
+  font-size: 14px;
+  display: block;
+}
+.forestContent ul li span:first-of-type {
+  width: 20%;
+  color: #8f8f8f;
+}
+.forestContent ul li span:last-of-type {
+  width: 74%;
+}
+.forestContent ul li .explainBox {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.forestContent .forestImages span {
+  display: block;
+  margin-bottom: 30px;
+}
+.forestContent .forestImages span img {
+  border-radius: 5px;
+}
+.forestContent .listButton {
+  display: block;
+  text-decoration: none;
+  width: 100%;
+  line-height: 50px;
+  text-align: center;
+  color: #8f8f8f;
+  border: 1px solid #8f8f8f;
+  border-radius: 5px;
 }/*# sourceMappingURL=style.css.map */

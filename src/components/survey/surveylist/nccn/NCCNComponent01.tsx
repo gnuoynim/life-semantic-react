@@ -3,18 +3,10 @@ import InputElement from "@/components/elements/InputElement";
 import useUserHttp from "@hooks/queries/useUserQuery";
 import $ from "jquery";
 
-const TiredSurveyComponent01 = () => {
+const NCCNComponent01 = () => {
   return (
     <React.Fragment>
-      <h2>시작전 설문 - 피로</h2>
-      <p>
-        <strong>현재상태</strong>를 가장 적절하게 설명하고 있는 번호 하나
-        선택해주세요.
-      </p>
-      <p>
-        각 질문에 대해 깊이 생각하기 보다는 <strong>첫 느낌을 기준으로</strong>{" "}
-        대답하여 주십시오.
-      </p>
+
       <div className="surveyList">
         <ul>
           <li className="surveyContent">
@@ -228,4 +220,4 @@ const TiredSurveyComponent01 = () => {
   );
 };
 
-export default TiredSurveyComponent01;
+export default NCCNComponent01;

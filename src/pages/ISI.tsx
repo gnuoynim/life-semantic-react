@@ -15,7 +15,7 @@ import TiredSurveyComponent02 from "@/components/survey/surveylist/tired/TiredSu
 import TiredSurveyComponent03 from "@/components/survey/surveylist/tired/TiredSurveyComponent03"; 
 
 
-const Tired = () => {
+const ISI = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [sample, setSample] = useRecoilState(sampleState);
@@ -62,7 +62,7 @@ const Tired = () => {
 
   return (
     <div>
-      <TitleHeadComponent name="피로" />
+      <TitleHeadComponent name="수면(ISI)" />
       {/* <button type='button' onClick={() => setModal({...modal, show:true, title:'기본2'})}>버튼</button> */}
       <div className="tired painBox">
         
@@ -92,4 +92,4 @@ const Tired = () => {
   );
 };
 
-export default Tired;
+export default ISI;

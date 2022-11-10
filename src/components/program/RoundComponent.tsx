@@ -12,15 +12,18 @@ const RoundComponent = () => {
   const setDetail = (
     event: React.MouseEvent<HTMLElement>,
     roundNmber: number,
-    color: string
+    color: string,
+    font: string
   ) => {
     event.preventDefault();
 
     const target = event.target as HTMLDivElement;
     target.parentElement
       ?.querySelectorAll<HTMLDivElement>(".swiper-slide")
-      .forEach((item) => (item.style.backgroundColor = "transparent"));
+      .forEach((item) => (item.style.backgroundColor = "#f3f3f3")),
+
     target.style.backgroundColor = color;
+    target.style.color = font;
 
     setRoundDetail(roundNmber);
   };
@@ -35,37 +38,37 @@ const RoundComponent = () => {
       >
         <SwiperSlide
           className="roundNumber"
-          onClick={(event) => setDetail(event, 1, "red")}
+          onClick={(event) => setDetail(event, 1, "#41b946", "#fff")}
         >
           1회기
         </SwiperSlide>
         <SwiperSlide
           className="roundNumber"
-          onClick={(event) => setDetail(event, 2, "red")}
+          onClick={(event) => setDetail(event, 2, "#41b946", "#fff")}
         >
           2회기
         </SwiperSlide>
         <SwiperSlide
           className="roundNumber"
-          onClick={(event) => setDetail(event, 3, "red")}
+          onClick={(event) => setDetail(event, 3, "#41b946", "#fff")}
         >
           3회기
         </SwiperSlide>
         <SwiperSlide
           className="roundNumber"
-          onClick={(event) => setDetail(event, 4, "red")}
+          onClick={(event) => setDetail(event, 4, "#41b946", "#fff")}
         >
           4회기
         </SwiperSlide>
         <SwiperSlide
           className="roundNumber"
-          onClick={(event) => setDetail(event, 5, "red")}
+          onClick={(event) => setDetail(event, 5, "#41b946", "#fff")}
         >
           5회기
         </SwiperSlide>
         <SwiperSlide
           className="roundNumber"
-          onClick={(event) => setDetail(event, 6, "red")}
+          onClick={(event) => setDetail(event, 6, "#41b946", "#fff")}
         >
           6회기
         </SwiperSlide>

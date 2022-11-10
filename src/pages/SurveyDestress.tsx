@@ -10,6 +10,7 @@ import ReligionStressComponent from "@/components/survey/surveylist/destress/Rel
 import WebLayout from "@layouts/web/WebLayout";
 import InputElement from "@components/elements/InputElement";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import $ from "jquery";
 
 const SurveyDestress = () => {
   const location = useLocation();
@@ -45,6 +46,21 @@ const SurveyDestress = () => {
       setStep(step - 1);
     }
   };
+  useEffect(() => {
+    const scHeight = $(".Step").prop("scrollHeight");
+    console.log(scHeight);
+
+    $(window).on("scroll", function () {
+      var height = $(document).scrollTop();
+      console.log(height);
+      if (this.scrollY > 300) {
+        $(".Step").addClass("fixed");
+      } else {
+        $(".Step").removeClass("fixed");
+      }
+      
+    });
+  }, []);
 
   return (
     <WebLayout>
@@ -64,7 +80,7 @@ const SurveyDestress = () => {
         </div>
         <p className="text">
           아래는 디스트레스의 정도를 측정하는 설문입니다. 해당 설문에 답을
-          해주세요.{" "}
+          해주세요.
         </p>
         <div className="Step">
           <ul>
@@ -73,9 +89,9 @@ const SurveyDestress = () => {
             <ProgressComponent active={step === 3} />
           </ul>
         </div>
-        {step === 1 && <PhysicalStressComponent/>}
+        {step === 1 && <PhysicalStressComponent />}
         {step === 2 && <SocialStressComponent />}
-        {step === 3 && <ReligionStressComponent/>}
+        {step === 3 && <ReligionStressComponent />}
         <div className="fixBtn">
           <button type="button" className="prev" onClick={handlePrevStep}>
             이전

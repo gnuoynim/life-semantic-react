@@ -14,6 +14,10 @@ import Tired from "./pages/Tired"
 import Survey from "./pages/Survey";
 import Join from "@pages/Join";
 import LostId from "@pages/LostId";
+import ISI from "./pages/ISI";
+import NCCN from "./pages/NCCN";
+import ForestList from "./pages/ForestList";
+import ForestContent from "./pages/ForestContent";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "../node_modules/scss-reset/_reset.scss";
 import "@assets/sass/style.scss";
@@ -25,14 +29,18 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path="schedule" element={< Schedule/>} />
-        <Route path="programList" element={< ProgramList/>} />
+        <Route path="programlist" element={< ProgramList/>} />
         <Route path="programInfo" element={<PrgramInfo />} />
-        <Route path="tired" element={<Tired />} />
+        <Route path="forestlist" element={<ForestList />} />
+        <Route path="" element={<ForestContent />} />
+        <Route path="Tired" element={<Tired />} />
+        <Route path="ISI" element={<ISI />} />
+        <Route path="NCCN" element={<NCCN />} />
         <Route path="pain" element={<Pain />} />
         <Route path="program" element={<Program />} />
         <Route path="bookProgram" element={<BookProgram />} />
         <Route path="surveyToday" element={<SurveyToday />} />
-        <Route path="" element={<SurveyDestress />} />
+        <Route path="destress" element={<SurveyDestress />} />
         <Route path="survey" element={<Survey />} />
         <Route path="surveybefore" element={<SurveyBefore />} />
         <Route path="join" element={<Join />} />

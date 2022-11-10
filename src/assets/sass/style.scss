@@ -425,6 +425,9 @@ select {
       display: flex;
       justify-content: space-evenly;
       position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+
       &::after {
         display: block;
         content: "";
@@ -445,6 +448,11 @@ select {
         text-align: center;
         color: $font-color;
       }
+    }
+  }
+  .Step.fixed {
+    ul {
+      position: fixed;
     }
   }
   .CodeCheck {
@@ -547,6 +555,13 @@ select {
         color: $font-color;
         font-size: 14px;
       }
+    }
+    input[type="checkbox"]:checked {
+      background-image: url($url-images + "on-check.svg");
+    }
+    label {
+      color: $font-color;
+      font-size: 14px;
     }
   }
 }
@@ -804,8 +819,10 @@ select {
     color: #fff;
   }
 }
+.buttonSpace {
+}
 .fixBtn.fixed {
-  position: fixed;
+  position: relative;
 }
 .date {
   display: flex;
@@ -1048,7 +1065,7 @@ select {
       top: 20px;
       text-align: center;
       display: block;
-      width: 50px;
+      width: 40px;
       color: $font-color;
     }
   }
@@ -1227,31 +1244,78 @@ select {
 .painBox {
   margin: 40px 20px;
   .Step {
-    height: 100px;
+    height: 50px;
+    margin-bottom: 20px;
+    z-index: 100;
     ul {
       width: fit-content;
       display: flex;
       padding: 0;
       align-items: center;
+      width: 100%;
+      justify-content: space-between;
       position: relative;
+      li {
+        // width: 100%;
+        // margin-right: 0px;
+        position: relative;
+        span {
+          display: block;
+          width: 30px;
+          height: 30px;
+          background-color: $main-color;
+          border-radius: 50%;
+        }
+
+        &:last-of-type {
+          &::after {
+            display: none;
+          }
+        }
+      }
       &::after {
         content: "";
         display: block;
-        width: calc(100% - 20%);
+        width: 100%;
         height: 1px;
         background-color: $main-color;
         position: absolute;
-      }
-      li {
-        width: 35px;
-        height: 35px;
-        background-color: $main-color;
-        border-radius: 50%;
-        margin-right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
       }
       li.active {
-        width: 45px;
-        height: 45px;
+        background-color: transparent !important;
+        span {
+          width: 45px;
+          height: 45px;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+  .Step.fixed {
+    width: 100%;
+    position: fixed;
+    top: 65px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    ul {
+      background-color: #fff;
+      padding: 15px 23px;
+      z-index: 20;
+      width: 100%;
+      box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 10%);
+      &::after {
+        width: calc(100% - 46px);
+      }
+    }
+  }
+  .Step {
+    li {
+      span {
+        display: block;
+        background-color: $main-color;
       }
     }
   }
@@ -1594,9 +1658,11 @@ select {
   ul {
     margin-left: 0;
     padding-left: 0;
+    padding-bottom: 50px;
   }
   .surveyContent {
-    margin-bottom: 110px;
+    height: 190px;
+    margin-bottom: 20px;
     ul {
       display: flex;
       width: 100%;
@@ -1647,6 +1713,9 @@ select {
           &::after {
             color: $main-color;
           }
+        }
+        input[type="radio"]:checked + label {
+          color: $main-color;
         }
       }
       label {
@@ -1765,8 +1834,7 @@ select {
         height: 285px;
         border: 0.5px solid #777777;
         border-radius: 5px;
-        &::placeholder{
-          
+        &::placeholder {
         }
       }
     }
@@ -1776,7 +1844,7 @@ select {
   margin: 23px;
   h2 {
     font-weight: 700;
-    font-size: 20px;
+    font-size: 24px;
     padding: 15px 0 25px 0;
   }
   .programName {
@@ -2108,4 +2176,230 @@ select {
   font-weight: 700;
   text-align: right;
   padding: 0 20px 20px 0;
+}
+.dropBox {
+  margin: 23px;
+  h2 {
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+}
+.dropDown {
+  position: relative;
+  margin-bottom: 20px;
+  .selected {
+    a {
+      background: #fff no-repeat scroll right center;
+      display: block;
+      padding: 0 20px;
+      border: 0.5px solid #8f8f8f;
+      border-radius: 5px;
+      text-decoration: none;
+      width: 100%;
+      height: 55px;
+      font-size: 14px;
+      box-sizing: border-box;
+      line-height: 55px;
+      color: #000;
+      span {
+        cursor: pointer;
+        display: block;
+        position: relative;
+        font-weight: 400;
+        font-size: 16px;
+        &::after {
+          content: "";
+          display: block;
+          background: url($url-images + "arrow.svg") no-repeat;
+          width: 12px;
+          height: 12px;
+          background-size: contain;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          right: 0;
+        }
+      }
+
+      span {
+        cursor: pointer;
+        display: block;
+        position: relative;
+        font-weight: 400;
+        font-size: 16px;
+        .value {
+          display: none;
+        }
+      }
+    }
+  }
+  .options {
+    ul {
+      background: #fff;
+      display: none;
+      position: relative;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      padding-top: 25px;
+      padding-left: 0;
+    }
+    a {
+      padding: 5px;
+      display: block;
+      text-decoration: none;
+      box-sizing: border-box;
+      padding: 0 20px 15px 20px;
+      font-weight: 400;
+      font-size: 16px;
+      span {
+        display: none;
+      }
+    }
+  }
+}
+#checkBox {
+  .inputCheckType01 {
+    display: flex;
+    align-items: center;
+    margin-left: 0;
+    input {
+      width: 20px;
+      height: 20px;
+      appearance: none;
+      border: 1px solid $font-color;
+    }
+    input[type="checkbox"]:checked {
+      background: url($url-images + "check-bx.svg") no-repeat;
+      width: 20px;
+      height: 20px;
+      border: none;
+      background-size: contain;
+    }
+    label {
+      font-weight: 400;
+      font-size: 16px;
+      margin-left: 20px;
+    }
+  }
+  .standbyNot {
+    display: none;
+    margin-top: 20px;
+    margin-bottom: 90px;
+    span {
+      display: block;
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 27px;
+      text-align: center;
+    }
+  }
+}
+.tired {
+  margin: 40px 23px;
+}
+
+.forest {
+  ul {
+    margin-left: 0;
+    padding-left: 0;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    row-gap: 18px;
+    .roundNumber {
+      margin-right: 10px;
+    }
+  }
+}
+.forestCard {
+  margin: 30px 0;
+  padding: 33px;
+  background-color: #f3f3f3;
+  border-radius: 8px;
+  a {
+    color: #000;
+    text-decoration: none;
+    p {
+      font-weight: 700;
+      font-size: 20px;
+    }
+    span {
+      display: block;
+      &:first-of-type {
+        margin: 30px 0;
+      }
+    }
+  }
+}
+.forestContent {
+  .forestTitle {
+    font-weight: 700;
+    font-size: 20px;
+    border-bottom: 0.5px solid #000000;
+  }
+  ul {
+    padding: 0;
+    li {
+      display: flex;
+      width: 100%;
+      margin-bottom: 20px;
+      span {
+        font-weight: 400;
+        font-size: 14px;
+        display: block;
+        &:first-of-type {
+          width: 20%;
+          color: #8f8f8f;
+        }
+        &:last-of-type {
+          width: 74%;
+        }
+      }
+      .explainBox {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+    }
+  }
+  .forestImages {
+    span {
+      display: block;
+      margin-bottom: 30px;
+      img {
+        border-radius: 5px;
+      }
+    }
+  }
+}
+.listButton {
+  display: block;
+  text-decoration: none;
+  width: 100%;
+  line-height: 50px;
+  text-align: center;
+  color: $font-color;
+  border: 1px solid $font-color;
+  border-radius: 5px;
+}
+
+.information {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  margin-bottom: 70px;
+  .infoTitle {
+    font-weight: 700;
+    font-size: 20px;
+    padding-bottom: 20px;
+    border-bottom: 0.5px solid #000000;
+  }
+  p {
+    margin: 30px 0 20px 0;
+  }
+  span {
+    display: block;
+  }
 }

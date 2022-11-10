@@ -10,12 +10,11 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { modalState } from "@/states/modalState";
 import TitleHeadComponent from "@/components/head/TitleHeadComponent";
 import $ from "jquery";
-import TiredSurveyComponent01 from "@/components/survey/surveylist/tired/TiredSurveyComponent01";
-import TiredSurveyComponent02 from "@/components/survey/surveylist/tired/TiredSurveyComponent02";
-import TiredSurveyComponent03 from "@/components/survey/surveylist/tired/TiredSurveyComponent03"; 
+import NCCNComponent01 from "@/components/survey/surveylist/nccn/NCCNComponent01";
+import NCCNComponent02 from "@/components/survey/surveylist/nccn/NCCNComponent02";
+import NCCNComponent03 from "@/components/survey/surveylist/nccn/NCCNComponent03";
 
-
-const Tired = () => {
+const NCCN = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [sample, setSample] = useRecoilState(sampleState);
@@ -23,26 +22,42 @@ const Tired = () => {
   const [modal, setModal] = useRecoilState(modalState);
   const [userListError, setUserListError] = useState(true);
   const increase = () => setCount(count + 1);
+  const [step, setStep] = useState(1);
   const setTitle = () =>
     setSample({
       ...sample,
       title: String(document.querySelector("input")?.value),
     });
-  const [step, setStep] = useState(1);
-  if(step ===3){
-    const inner = document.querySelector('.next');
-   
-  }
+
+  useEffect(() => {
+    const inner = document.querySelector(".next") as HTMLButtonElement;
+    const text = document.querySelector(".explainText") as HTMLBodyElement;
+    
+    console.log(text);
+    if (step === 3) {
+      inner.innerText = "작성완료";
+    } else if (step !== 3) {
+      inner.innerText = "다음";
+    }
+    if (step === 1) {
+      text.style.display = "block";
+    } else if (step !== 1) {
+      text.style.display = "none";
+    }
+  }, [step]);
+
   const handleNextStep = () => {
     if (step !== 3) {
       setStep(step + 1);
     }
   };
+
   const handlePrevStep = () => {
     if (step !== 4) {
       setStep(step - 1);
     }
   };
+
   useEffect(() => {
     const scrollHeight = $(".Step").prop("scrollHeight");
     console.log(scrollHeight);
@@ -55,17 +70,15 @@ const Tired = () => {
       } else {
         $(".Step").removeClass("fixed");
       }
-
     });
   }, []);
 
-
   return (
     <div>
-      <TitleHeadComponent name="피로" />
+      <TitleHeadComponent name="수면위생(NCCN)" />
       {/* <button type='button' onClick={() => setModal({...modal, show:true, title:'기본2'})}>버튼</button> */}
       <div className="tired painBox">
-        
+        <h2>시작전 설문 - 수면위생(NCCN)</h2>
         <div className="Step">
           <ul>
             <ProgressComponent active={step === 1} />
@@ -73,11 +86,13 @@ const Tired = () => {
             <ProgressComponent active={step === 3} />
           </ul>
         </div>
-
-        {step === 1 && <TiredSurveyComponent01 />}
-        {step === 2 && <TiredSurveyComponent02 />}
-        {step === 3 && <TiredSurveyComponent03 />}
-
+        <p className="explainText">
+          다음은 수면위생에 대한 질문입니다. <br />
+          최근 1주일간의 수면위생에 해당되는 선지를 선택해주세요.
+        </p>
+        {step === 1 && <NCCNComponent01 />}
+        {step === 2 && <NCCNComponent02 />}
+        {step === 3 && <NCCNComponent03 />}
       </div>
       <div className="fixBtn">
         <button type="button" className="prev" onClick={handlePrevStep}>
@@ -92,4 +107,4 @@ const Tired = () => {
   );
 };
 
-export default Tired;
+export default NCCN;

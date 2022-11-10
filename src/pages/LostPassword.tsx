@@ -7,6 +7,8 @@ import WebLayout from '@layouts/web/WebLayout';
 import InputElement from '@components/elements/InputElement';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import TitleHeadComponent from '@/components/head/TitleHeadComponent';
+
+
 const LostPassword = () => {
   const location = useLocation()
   const navigate = useNavigate()

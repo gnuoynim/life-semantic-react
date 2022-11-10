@@ -9,7 +9,9 @@ const ProgressComponent = ({active}:{active:boolean}) => {
   console.log(active)
   return (
     <React.Fragment>
-      <li className={active ? 'active' : ''}></li>
+      <li className={active ? 'active' : ''}>
+        <span></span>
+      </li>
     </React.Fragment>
   );
 };
