@@ -12,6 +12,9 @@ import $ from "jquery";
 const MostPainComponent = () => {
   const dots = ["foreHead", ""];
   const [painColor, setPainColor] = useState<number[]>([]);
+    {/*TODO: 에러 회피용 수정부탁드립니다.*/}
+  let isCritical = true;
+    {/*TODO: 에러 회피용 수정부탁드립니다.*/}
 
   useEffect(() => {
     setPainColor(Array.from(Array($(".dot").length)).map((i) => 0));
@@ -38,7 +41,9 @@ const MostPainComponent = () => {
         <br />(<b>한 곳만 선택</b>)
       </p>
       <div className="pain">
-        <FrontPainComponent isCritical={true} />
+          {/*TODO: 에러 회피용 수정부탁드립니다.*/}
+            {/*<FrontPainComponent isCritical={true} />*/}
+          {/*TODO: 에러 회피용 수정부탁드립니다.*/}
         <BackPainComponent />
       </div>
     </React.Fragment>
