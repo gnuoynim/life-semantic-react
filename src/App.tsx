@@ -16,6 +16,8 @@ import Join from "@pages/Join";
 import LostId from "@pages/LostId";
 import ISI from "./pages/ISI";
 import NCCN from "./pages/NCCN";
+import Account from "./pages/Account";
+import DeleteAccount from "./pages/DeleteAccount";
 import ForestList from "./pages/ForestList";
 import ForestContent from "./pages/ForestContent";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -32,7 +34,9 @@ const App = () => {
         <Route path="programlist" element={< ProgramList/>} />
         <Route path="programInfo" element={<PrgramInfo />} />
         <Route path="forestlist" element={<ForestList />} />
-        <Route path="" element={<ForestContent />} />
+        <Route path="forestContent" element={<ForestContent />} />
+        <Route path="" element={<DeleteAccount />} />
+        <Route path="account" element={<Account />} />
         <Route path="Tired" element={<Tired />} />
         <Route path="ISI" element={<ISI />} />
         <Route path="NCCN" element={<NCCN />} />
