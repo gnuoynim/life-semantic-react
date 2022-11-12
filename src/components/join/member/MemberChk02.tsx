@@ -119,7 +119,6 @@ const  MemberChk02= ({ nextStep }: { nextStep: Function }) => {
             <InputElement type='radio' value='비섭취' name='chk_caffeine'/>
             <span>비섭취</span>
           </span>
-        
         </div>
       </div>
       <div className="fixBtn ">

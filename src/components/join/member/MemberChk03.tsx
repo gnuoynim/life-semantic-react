@@ -41,6 +41,7 @@ const MemberChk03 = ({ nextStep }: { nextStep: Function }) => {
 
   return (
     <React.Fragment>
+      
       <p className="title">암 건강정보 입력</p>
       <div className="MemberChk MemberChk02">
         <label>
