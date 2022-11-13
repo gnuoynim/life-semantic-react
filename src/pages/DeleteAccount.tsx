@@ -10,6 +10,8 @@ import InputElement from "@/components/elements/InputElement";
 
 
 const DeleteAccount = () => {
+
+  
   return (
     <WebLayout>
       <HeaderComponent />

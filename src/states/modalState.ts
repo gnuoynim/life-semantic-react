@@ -10,8 +10,11 @@ const modalState = atom<ModalInterface>({
     saveShow: false,
     closeShow: false,
     confirmShow: false,
+    confirmText:'확인',
     cancelShow: false,
+    cancelText: "취소",
   },
+
 });
 
 export { modalState };

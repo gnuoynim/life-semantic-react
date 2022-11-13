@@ -2746,71 +2746,78 @@ table {
     display: none;
   }
 }
-
+.reservationList {
+  margin: 40px;
+  h2{
+    margin-bottom: 50px;
+  }
+  .cancelButton{
+    border: 1px solid;
+    padding:5px 10px;
+    border-radius: 8px;
+  }
+  .reservationTable {
+    .order{
+      display: block;
+      text-align: right;
+    }
+    table{
+      border-radius: 0;
+      tr{
+        border-bottom: 0.5px solid #8f8f8f;
+        td{
+          text-align: center;
+          &:nth-of-type(1){
+            width: 20%;
+            input[type="checkbox"] {
+              margin: 0 auto;
+              display: block;
+              border: $border-gray;
+              appearance: none;
+              width: 18px;
+              height: 18px;
+              padding: 0;
+              &:checked {
+                background:url($url-images + "check-bx.svg") no-repeat;
+                width: 18px;
+                height: 18px;
+                border: none;
+                background-size: contain;
+              }
+            }
+          }
+          &:nth-of-type(2){
+            border-right: 0.5px solid #8f8f8f;
+          }
+        }
+        &:nth-child(n+2){
+          td{
+            padding: 20px;
+          }
+        }
+      }
+    }
+   
+  }
+}
 #ISI {
   .surveyList {
     ul {
       padding-bottom: 0;
     }
-    &:last-of-type{
+    &:last-of-type {
       padding-bottom: 50px;
     }
   }
   .Arrow {
     top: 0;
     margin-bottom: 150px;
-    span{
+    span {
       white-space: nowrap;
     }
   }
   .rc-slider .rc-slider-handle {
     background-color: #0037f8;
-  }
-}
-
-/*modal*/
-
-.modal-dialog {
-  top: 50%;
-  transform: translateY(-50%);
-
-  .modal-header {
-    display: flex;
-    flex-shrink: 0;
-    align-items: center;
-    justify-content: center;
-    border-bottom: none;
-
-    .h4 {
-      font-size: 16px !important;
-      color: $font-color;
-    }
-    .btn-close {
-      display: none;
-    }
-  }
-  .modal-body {
-    border: none !important;
-    text-align: center;
-    border-bottom: none;
-    padding: 40px 55px;
-    font-size: 26px;
-    font-weight: 500;
-    line-height: 35px;
-  }
-  .modal-footer {
-    border-top: none;
-    display: block;
-    text-align: center;
-    width: 100%;
-    .btn {
-      width: 100%;
-      background-color: $main-color;
-      color: #fff;
-      line-height: 50px;
-      font-size: 24px;
-      font-weight: 600;
-    }
   }
 }
 
@@ -2866,6 +2873,10 @@ table {
   color: gray;
   border-radius: 5px;
 }
+.loginBtn.active {
+  background-color: #41b946 !important;
+  color: #fff !important;
+}
 .BtnActive {
   width: calc(100% - 90px);
   color: #fff;
@@ -2889,4 +2900,75 @@ table {
   bottom: 10%;
   left: 50%;
   transform: translateX(-50%);
+}
+
+/*modal*/
+
+.modalButton {
+  button {
+    display: block;
+  }
+}
+.modal-dialog {
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+
+  .modal-header {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    border-bottom: none;
+
+    .h4 {
+      font-size: 16px !important;
+      color: $font-color;
+    }
+    .btn-close {
+      display: none;
+    }
+  }
+  .modal-body {
+    border: none !important;
+    text-align: center;
+    border-bottom: none;
+    padding: 20px;
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 28px;
+  }
+  .modal-footer {
+    border-top: none;
+    display: block;
+    text-align: center;
+    width: 100%;
+    .btn {
+      width: 100%;
+      background-color: $main-color;
+      color: #fff;
+      line-height: 40px;
+      font-size: 18px;
+      font-weight: 600;
+      &:nth-of-type(2) {
+        background: #d9d9d9;
+        color: #909090;
+      }
+    }
+  }
+}
+.modal-dialog {
+  .modal-content {
+    .modal-body {
+      padding: 20px;
+      font-size: 18px;
+    }
+    .modal-footer {
+      .btn {
+        &:nth-of-type(2) {
+          background: #d9d9d9;
+          color: #909090;
+        }
+      }
+    }
+  }
 }

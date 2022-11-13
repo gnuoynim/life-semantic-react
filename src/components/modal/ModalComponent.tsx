@@ -22,6 +22,8 @@ const ModalComponent = () => {
     closeShow = false,
     confirmShow = false,
     cancelShow = false,
+    confirmText="확인",
+    cancelText="취소"
   } = modal;
 
   const handleClose = () => {
@@ -31,9 +33,6 @@ const ModalComponent = () => {
 
   return (
     <React.Fragment>
-      {/* <Button variant="" onClick={handleShow}>
-        modal버튼
-      </Button> */}
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>{title}</Modal.Title>
@@ -42,11 +41,11 @@ const ModalComponent = () => {
         <Modal.Footer>
           {cancelShow && (
             <Button variant="" onClick={handleClose}>
-              확인
+           {cancelText}
             </Button>
           )}
           <Button variant="" onClick={handleClose}>
-            확인
+            {confirmText}
           </Button>
         </Modal.Footer>
       </Modal>

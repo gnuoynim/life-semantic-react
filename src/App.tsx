@@ -9,6 +9,7 @@ import Program from "./pages/Program";
 import BookProgram from "./pages/BookProgram";
 import ProgramInfo from "./pages/ProgramInfo";
 import ProgramList from "./pages/ProgramList";
+import ReservationList from "./pages/ReservationList";
 import Pain from "./pages/Pain";
 import Tired from "./pages/Tired";
 import Survey from "./pages/Survey";
@@ -17,7 +18,7 @@ import LostId from "@pages/LostId";
 import ISI from "./pages/ISI";
 import NCCN from "./pages/NCCN";
 import Account from "./pages/Account";
-import Modal from "./pages/modal";
+import Modal from "./pages/Modal";
 import DeleteAccount from "./pages/DeleteAccount";
 import ForestList from "./pages/ForestList";
 import ForestContent from "./pages/ForestContent";
@@ -34,7 +35,8 @@ const App = () => {
       <Routes>
         <Route path="index" element={<IndexPage />} />
         <Route path="joinModify" element={<JoinModify />} />
-        <Route path="" element={<Modal />} />
+        <Route path="modal" element={<Modal/>} />
+        <Route path="" element={<ReservationList/>} />
         <Route path="schedule" element={<Schedule />} />
         <Route path="deleteAccount" element={<DeleteAccount />} />
         <Route path="account" element={<Account />} />
