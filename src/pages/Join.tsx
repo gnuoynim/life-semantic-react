@@ -13,6 +13,7 @@ import InputElement from "@components/elements/InputElement";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { surveyState } from "@/states/surveyState";
 
+
 const IndexPage = () => {
   const location = useLocation();
   const navigate = useNavigate();

@@ -14,6 +14,7 @@ import NCCNComponent01 from "@/components/survey/surveylist/nccn/NCCNComponent01
 import NCCNComponent02 from "@/components/survey/surveylist/nccn/NCCNComponent02";
 import NCCNComponent03 from "@/components/survey/surveylist/nccn/NCCNComponent03";
 
+
 const NCCN = () => {
   const location = useLocation();
   const navigate = useNavigate();

@@ -1,13 +1,24 @@
 import React, { useState } from "react";
+import { ErrorBoundary } from "react-error-boundary";
 import WebLayout from "@layouts/web/WebLayout";
 import HeaderComponent from "@/components/head/Header";
-import BookComponent from "@/components/program/book/BookComponent";
-import GoodByeComponent from "@/components/program/GoodByeProgramComponent";
-import GoodSleepComponent from "@/components/program/GoodSleepProgramComponent";
-import BannerComponent from "@/components/program/banner/BannerComponent";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useRecoilState } from "recoil";
+import { countState, sampleState } from "@states/sampleState";
+import { surveyState } from "@/states/surveyState";
+
 
 const Account = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const [sample, setSample] = useRecoilState(sampleState);
+  const [survey, setSurvey] = useRecoilState(surveyState);
+  const [count, setCount] = useRecoilState(countState);
+
+  const [userListError, setUserListError] = useState(true);
+  const [step, setStep] = useState(1);
+  const increase = () => setCount(count + 1);
+
   return (
     <WebLayout>
       <HeaderComponent />

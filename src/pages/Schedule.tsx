@@ -10,7 +10,11 @@ const Schedule = () => {
   const [modal, setModal] = useRecoilState(modalState);
 
   const handleModal = () => {
-    setModal({ ...modal, show: true, title: "" });
+    setModal({ ...modal,
+              show: true,
+              title: "안내",
+              content :"아이디 또는 비밀번호를 다시 확인해 주세요.",
+             });
   };
 
   const today = new Date();
@@ -98,7 +102,6 @@ const Schedule = () => {
         </div>
       </div>
       <button type="button" onClick={handleModal}></button>
-
       <ModalComponent />
     </WebLayout>
   );

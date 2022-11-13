@@ -1,10 +1,12 @@
 import React from "react";
 import { useEffect } from "react";
 import InputElement from "../../elements/InputElement";
+import ModalComponent from "@/components/modal/ModalComponent";
+import { useRecoilState } from "recoil";
 import $ from "jquery";
+import { modalState } from "@/states/modalState";
 
 const MemberChk01 = ({ nextStep }: { nextStep: Function }) => {
-
   const handleFocusBtn = (event: React.MouseEvent<HTMLButtonElement>) => {
     const username = document.getElementById("username") as HTMLInputElement;
     const passwrod = document.getElementById("passwrod") as HTMLInputElement;
@@ -39,7 +41,14 @@ const MemberChk01 = ({ nextStep }: { nextStep: Function }) => {
 
     nextStep(2);
   };
-
+  const [modal, setModal] = useRecoilState(modalState);
+  const handleModal = () => {
+    setModal({ ...modal,
+              show: true,
+              title: "안내",
+              content :"아이디 또는 비밀번호를 다시 확인해 주세요.",
+             });
+  };
 
 
   return (
@@ -57,7 +66,7 @@ const MemberChk01 = ({ nextStep }: { nextStep: Function }) => {
           <span>비밀번호</span>
         </label>
         <InputElement
-          type="text"
+          type="password"
           placeholder="영문, 숫자, 특수문자 포함 8~16자리"
           id="passwrod"
         />
@@ -65,9 +74,9 @@ const MemberChk01 = ({ nextStep }: { nextStep: Function }) => {
           <span>비밀번호 확인</span>
         </label>
         <InputElement
-          type="text"
-          placeholder="비밀번호 확인"
-          id="password_check"
+         type="password"
+         placeholder="비밀번호 확인"
+         id="password_check"
         />
         <label>
           <span>이름</span>
@@ -90,18 +99,30 @@ const MemberChk01 = ({ nextStep }: { nextStep: Function }) => {
             <span>미동의</span>
           </span>
         </div>
-
         <label>
-          <span>성별</span>
+          <span>이메일</span>
+        </label>
+        <div>
+          <span className="flexInput">
+            <InputElement type="email" placeholder="이메일 확인" id="" />@
+            <select>
+              <option></option>
+              <option></option>
+              <option></option>
+            </select>
+          </span>
+        </div>
+        <label>
+          <span>이메일 수신동의</span>
         </label>
         <div className="chk_radio">
           <span>
             <InputElement type="radio" value="동의" name="chk_gender" />
-            <span>남</span>
+            <span>동의</span>
           </span>
           <span>
             <InputElement type="radio" value="미동의" name="chk_gender" />
-            <span>여</span>
+            <span>미동의</span>
           </span>
         </div>
       </div>
@@ -113,6 +134,7 @@ const MemberChk01 = ({ nextStep }: { nextStep: Function }) => {
           다음
         </button>
       </div>
+      <button type="button" onClick={handleModal}></button>
     </React.Fragment>
   );
 };

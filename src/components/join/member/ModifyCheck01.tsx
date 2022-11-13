@@ -3,7 +3,10 @@ import { useEffect } from "react";
 import InputElement from "../../elements/InputElement";
 import $ from "jquery";
 
+
 const ModifyCheck01 = () => {
+
+
   return (
     <React.Fragment>
       <div className="modifyCheck">
@@ -22,7 +25,7 @@ const ModifyCheck01 = () => {
               </label>
               <InputElement
                 type="password"
-                placeholder="비밀번호 확인"
+                placeholder="비밀번호"
                 id="password_check"
               />
             </li>
@@ -40,11 +43,7 @@ const ModifyCheck01 = () => {
               <label>
                 <span>이름</span>
               </label>
-              <InputElement
-                type="text"
-                placeholder="이름확인"
-                id="name_check"
-              />
+              <span>이름</span>
             </li>
             <li>
               <label>
@@ -58,21 +57,55 @@ const ModifyCheck01 = () => {
               </label>
               <span>휴대폰번호</span>
             </li>
+            <li>
+              <label>
+                <span>문자 수신동의</span>
+              </label>
+              <div className="radioCheck">
+                <span>
+                  <InputElement type="radio" value="동의" name="chk_info" />
+                  <span>동의</span>
+                </span>
+                <span>
+                  <InputElement type="radio" value="미동의" name="chk_info" />
+                  <span>미동의</span>
+                </span>
+              </div>
+            </li>
+            <li>
+              <label>
+                <span>성별</span>
+              </label>
+              <span>여</span>
+            </li>
+            <li>
+              <label>
+                <span>이메일</span>
+              </label>
+              <span className="">
+                <InputElement
+                  type="email"
+                  placeholder=""
+                  id=""
+                />
+               </span>
+            </li>
+            <li>
+              <label>
+                <span>이메일 수신동의</span>
+              </label>
+              <div className="radioCheck">
+                <span>
+                  <InputElement type="radio" value="동의" name="chk_info" />
+                  <span>동의</span>
+                </span>
+                <span>
+                  <InputElement type="radio" value="미동의" name="chk_info" />
+                  <span>미동의</span>
+                </span>
+              </div>
+            </li>
           </ul>
-
-          <label>
-            <span>문자 수신동의</span>
-          </label>
-          <div className="chk_radio">
-            <span>
-              <InputElement type="radio" value="동의" name="chk_info" />
-              <span>동의</span>
-            </span>
-            <span>
-              <InputElement type="radio" value="미동의" name="chk_info" />
-              <span>미동의</span>
-            </span>
-          </div>
         </div>
       </div>
     </React.Fragment>

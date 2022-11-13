@@ -11,20 +11,21 @@ import { ModalInterface } from "@/interfaces/modalInterface";
 import { useRecoilState } from "recoil";
 import { modalState } from "@/states/modalState";
 
+
 const ModalComponent = () => {
   const [modal, setModal] = useRecoilState(modalState);
   const {
     show = false,
     title = "모달창",
-    content ='기본',
+    content = "기본",
     saveShow = false,
     closeShow = false,
     confirmShow = false,
     cancelShow = false,
-  } = modal
+  } = modal;
 
   const handleClose = () => {
-    setModal({...modal, show:false })
+    setModal({ ...modal, show: false });
   };
   const handleShow = () => {};
 
@@ -41,11 +42,11 @@ const ModalComponent = () => {
         <Modal.Footer>
           {cancelShow && (
             <Button variant="" onClick={handleClose}>
-              Close
+              확인
             </Button>
           )}
           <Button variant="" onClick={handleClose}>
-            Save Changes
+            확인
           </Button>
         </Modal.Footer>
       </Modal>

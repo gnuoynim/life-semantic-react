@@ -9,6 +9,7 @@ import { ListInterface } from "@interfaces/listInterface";
 import { UserInterface } from "@interfaces/userInterface";
 import $ from "jquery";
 
+
 const MostPainListComponent = () => {
   const dots = ["foreHead", ""];
   const [painColor, setPainColor] = useState<number[]>([]);

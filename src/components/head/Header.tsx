@@ -106,7 +106,7 @@ const HeaderComponent = () => {
                     <Link to="/">설문작성</Link>
                   </li>
                   <li>
-                    <Link to="/" className="arrow">
+                    <Link to="/" className="arrow" onClick={handleMenuClick}>
                       마이페이지
                     </Link>
                     <div className="two-dep">

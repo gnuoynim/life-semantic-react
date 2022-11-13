@@ -3,7 +3,7 @@ import InputElement from "@/components/elements/InputElement";
 import useUserHttp from "@hooks/queries/useUserQuery";
 import $ from "jquery";
 
-const TiredSurveyComponent03 = () => {
+const ISISurveyComponent03 = () => {
  
 
 
@@ -126,4 +126,4 @@ const TiredSurveyComponent03 = () => {
   );
 };
 
-export default TiredSurveyComponent03;
+export default ISISurveyComponent03;

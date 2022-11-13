@@ -12,7 +12,7 @@ const ReligionStressComponent = () => {
           지난 일주일 동안 염려되었던 항목이 있습니까?
           <strong>(해당되는 곳에 모두 체크하세요.)</strong>
         </p>
-        <span>실생활 문제()</span>
+        <span>실생활 문제(12)</span>
         <ul>
           <li>
             <InputElement type="checkbox" id="" className="check02" />
@@ -63,7 +63,7 @@ const ReligionStressComponent = () => {
             <label>치료 결정</label>
           </li>
         </ul>
-        <span>영성/종교 문제(9)</span>
+        <span>영성/종교 문제(6)</span>
         <ul>
           <li>
             <InputElement type="checkbox" id="" className="check02" />
@@ -89,12 +89,17 @@ const ReligionStressComponent = () => {
             <InputElement type="checkbox" id="" className="check02" />
             <label>의식 또는 식사의 필요성 </label>
           </li>
-          <li>
-            <textarea maxLength={500} placeholder="그 외의 염려되는 문제들이 있다면, 작성해주세요."
-            ></textarea>
-          </li>
         </ul>
-      </div> 
+        <div className="textareaBox">
+          <span>
+            기타문제
+          </span>
+          <textarea
+            maxLength={500}
+            placeholder="그 외의 염려되는 문제들이 있다면, 작성해주세요."
+          ></textarea>
+        </div>
+      </div>
     </React.Fragment>
   );
 };

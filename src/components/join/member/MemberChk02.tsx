@@ -1,11 +1,15 @@
 import React from 'react';
+import { useEffect } from "react";
 import InputElement from '../../elements/InputElement';
 import useUserHttp from '@hooks/queries/useUserQuery';
 import { ListInterface } from '@interfaces/listInterface';
 import { UserInterface } from '@interfaces/userInterface';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import $ from "jquery";
+
 
 const  MemberChk02= ({ nextStep }: { nextStep: Function }) => {
+  
   const handleFocusBtn = (event: React.MouseEvent<HTMLButtonElement>) => {
     const target = event.target;
     
@@ -39,6 +43,31 @@ const  MemberChk02= ({ nextStep }: { nextStep: Function }) => {
     }
     nextStep(3);
   };
+  useEffect(() => {  
+
+      $('#chkAll').click(function(){
+        chkAll(); 
+    });
+  
+    function chkAll(){
+      var chk = $('#chkAll').is(':checked');
+      if(chk) { 
+          $('.inputCheck input[type=checkbox]').prop('checked', true); // 체크박스 전체 선택
+      }else{
+          $('.inputCheck input[type=checkbox]').prop('checked', false); // 체크박스 전체 해제
+      }    
+    }
+  
+
+  
+    $('.isCheck').on('click', function() {
+      const options = $(this).parent().siblings(".input_detail"); 
+      options.css("display","block")
+
+  });
+
+  }, []);
+
   return (
     <React.Fragment>
       <p className='title'>개인정보 입력</p>

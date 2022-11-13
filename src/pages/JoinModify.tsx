@@ -13,7 +13,9 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { surveyState } from "@/states/surveyState";
 import $ from "jquery";
 
+
 const JoinModify = () => {
+
   const location = useLocation();
   const navigate = useNavigate();
   const [sample, setSample] = useRecoilState(sampleState);
@@ -23,7 +25,6 @@ const JoinModify = () => {
   const [step, setStep] = useState(1);
 
   const increase = () => setCount(count + 1);
-
   const setTitle = () =>
     setSample({
       ...sample,
@@ -35,6 +36,7 @@ const JoinModify = () => {
       setStep(step + 1);
     }
   };
+  
   const handlePrevStep = () => {
     if (step !== 4) {
       setStep(step - 1);
@@ -42,44 +44,46 @@ const JoinModify = () => {
   };
 
   useEffect(() => {
-    const scrollHeight = $(".Step").prop("scrollHeight");
-    console.log(scrollHeight);
+    const scrollHeight = $(".modifyProgress").prop("scrollHeight");
+
 
     $(window).on("scroll", function () {
       const height = $(document).scrollTop();
       console.log(height);
-      if (this.scrollY > 300) {
-        $(".Step").addClass("fixed");
+      if (this.scrollY > 100) {
+        $(".modifyProgress").addClass("fixed");
       } else {
-        $(".Step").removeClass("fixed");
+        $(".modifyProgress").removeClass("fixed");
       }
     });
   }, []);
+
 
   return (
     <WebLayout>
       {/* {menu === true ? <dd/> : null} */}
       <TitleHeadComponent name="회원정보 수정" />
       <div className="modify">
-        <ul className="modifyProgress">
-          <CircleComponent step="1" active={step === 1} />
-          <CircleComponent step="2" active={step === 2} />
-          <CircleComponent step="3" active={step === 3} />
-        </ul>
-      
+        <div className="modifyProgress">
+          <ul className="Step">
+            <CircleComponent step="1" active={step === 1} />
+            <CircleComponent step="2" active={step === 2} />
+            <CircleComponent step="3" active={step === 3} />
+          </ul>
+        </div>
 
-      {step === 1 && <ModifyCheck01 />}
-      {step === 2 && <ModifyCheck02 />}
-      {step === 3 && <ModifyCheck03 />}
+        {step === 1 && <ModifyCheck01 />}
+        {step === 2 && <ModifyCheck02 />}
+        {step === 3 && <ModifyCheck03 />}
 
-      <div className="fixBtn ">
-        <button type="button" className="prev">
-          이전
-        </button>
-        <button type="button" className="next" onClick={handleNextStep}>
-          다음
-        </button>
-      </div>
+        <div className="fixBtn ">
+          <button type="button" className="prev" onClick={handlePrevStep}>
+            이전
+          </button>
+          <button type="button" className="next" onClick={handleNextStep}>
+            다음
+          </button>
+        </div>
       </div>
     </WebLayout>
   );

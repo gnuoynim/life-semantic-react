@@ -2,9 +2,11 @@ import React from "react";
 import { useEffect } from "react";
 import InputElement from "../../elements/InputElement";
 import $ from "jquery";
-
+import { modalState } from "@/states/modalState";
 
 const ModifyCheck02 = () => {
+
+
   useEffect(() => {  
     $('.isCheck').on('click', function() {
       const options = $(this).parent().siblings(".input_detail"); // 체크된 Radio 버튼의 값을 가져옵니다.

@@ -17,6 +17,7 @@ import LostId from "@pages/LostId";
 import ISI from "./pages/ISI";
 import NCCN from "./pages/NCCN";
 import Account from "./pages/Account";
+import Modal from "./pages/modal";
 import DeleteAccount from "./pages/DeleteAccount";
 import ForestList from "./pages/ForestList";
 import ForestContent from "./pages/ForestContent";
@@ -32,9 +33,11 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path="index" element={<IndexPage />} />
-        <Route path="" element={<JoinModify />} />
+        <Route path="joinModify" element={<JoinModify />} />
+        <Route path="" element={<Modal />} />
         <Route path="schedule" element={<Schedule />} />
         <Route path="deleteAccount" element={<DeleteAccount />} />
+        <Route path="account" element={<Account />} />
         <Route path="programList" element={<ProgramList />} />
         <Route path="programInfo" element={<ProgramInfo />} />
         <Route path="forestList" element={<ForestList />} />

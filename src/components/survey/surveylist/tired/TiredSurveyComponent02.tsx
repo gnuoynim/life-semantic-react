@@ -13,7 +13,7 @@ const TiredSurveyComponent02 = () => {
      <div className="surveyList">
       <ul>
         <li className="surveyContent">
-          <p>6. 쉽게 피곤해지십니까?</p>
+          <p>6. 몸이 무겁고 나른하다고 느끼십니까?</p>
           <ul>
             <li>
               <InputElement type='radio' className='radioButton' value='1' name='qna1'/>
@@ -35,7 +35,7 @@ const TiredSurveyComponent02 = () => {
           </ul>
         </li>
         <li className="surveyContent">
-          <p>7. 누워있고 싶은 마음이 드십니까?</p>
+          <p>7. 말할 때 실수가 늘어난 것 같다고 느끼십니까?</p>
           <ul>
             <li>
               <InputElement type='radio' className='radioButton' value='1' name='qna2'/>
@@ -57,7 +57,7 @@ const TiredSurveyComponent02 = () => {
           </ul>
         </li>
         <li className="surveyContent">
-          <p>8. 기운이 다 빠진 느낌이 드십니까?</p>
+          <p>8. 무엇인가에 흥미가 느껴지십니까?</p>
           <ul>
             <li>
               <InputElement type='radio' className='radioButton' value='1' name='qna3'/>
@@ -79,7 +79,7 @@ const TiredSurveyComponent02 = () => {
           </ul>
         </li>
         <li className="surveyContent">
-          <p>9. (매사에) 주의력이 떨어졌다고 느끼십니까?</p>
+          <p>9. (어떤 것을 할 때) 지쳐서 하기 싫다고 느끼십니까?</p>
           <ul>
             <li>
               <InputElement type='radio' className='radioButton' value='1' name='qna4'/>
@@ -100,7 +100,7 @@ const TiredSurveyComponent02 = () => {
           </ul>
         </li>
         <li className="surveyContent">
-          <p>10. 활력이 있습니까?</p>
+          <p>10. 자주 깜박하거나 건망증이 있다고 느끼십니까?</p>
           <ul>
             <li>
               <InputElement type='radio' className='radioButton' value='1' name='qna4'/>

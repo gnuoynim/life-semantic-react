@@ -9,6 +9,11 @@ import { UserInterface } from "@interfaces/userInterface";
 const PhysicalStressComponent = () => {
   return (
     <React.Fragment>
+
+        <p className="text">
+          아래는 디스트레스의 정도를 측정하는 설문입니다. 해당 설문에 답을
+          해주세요.
+        </p>
       <div className="physicalStress">
         <p className="title">
           오늘을 포함하여 <strong>지난 한 주 </strong>동안을 귀하가 경험한

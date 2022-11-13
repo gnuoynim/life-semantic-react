@@ -8,6 +8,7 @@ import BannerComponent from "@/components/program/banner/BannerComponent";
 import { Link } from "react-router-dom";
 import InputElement from "@/components/elements/InputElement";
 
+
 const DeleteAccount = () => {
   return (
     <WebLayout>

@@ -18,9 +18,6 @@ const AnotherPage = () => {
   const [sample, setSample] = useRecoilState(sampleState);
   const [count, setCount] = useRecoilState(countState);
 
-  // useAppQueries<UserInterface>((user.isSuccess ? user.data.list : []).map(item =>
-  //   userQuery(`/user/view/${item.userId}`, item.userId),
-  // ));
 
   const decrease = () => setCount(count - 1);
   const setTitle = () => setSample({ ...sample, title: String(document.querySelector('input')?.value) });
@@ -36,6 +33,7 @@ const AnotherPage = () => {
     setBoardListError(false);
   };
 
+  
   return (
     <WebLayout>
       <div>

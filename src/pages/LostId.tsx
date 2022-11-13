@@ -7,6 +7,7 @@ import WebLayout from "@layouts/web/WebLayout";
 import InputElement from "@components/elements/InputElement";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
+
 const IndexPage = () => {
   const location = useLocation();
   const navigate = useNavigate();

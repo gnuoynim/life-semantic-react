@@ -20,7 +20,11 @@ const ModifyCheck03 = () => {
               <label>
                 <span>암 종(진단명)</span>
               </label>
-              <InputElement type="text" placeholder="암 종 선택" id="cancer" />
+              <select name="cancer">
+                  <option>암 종(진단명)</option>
+                  <option></option>
+                  <option></option>
+                </select>
             </li>
             <li>
               <label>
@@ -138,56 +142,53 @@ const ModifyCheck03 = () => {
               </div>
             </li>
             <li>
-            <label className="labelType">
-            <span> 암 이외의 진단받고 치료 중인 질환</span>
-            (해당질환 모두 선택)
-          </label>
-          <div className="chk_list disease">
-            <ul>
-              <li>
-                <InputElement type="checkbox" value="" className="" />
-                <label>없음</label>
-              </li>
-              <li>
-                <InputElement type="checkbox" value="고혈압" />
-                <label>고혈압</label>
-              </li>
-              <li>
-                <InputElement type="checkbox" value="당뇨병" />
-                <label>당뇨병</label>
-              </li>
-              <li>
-                <InputElement type="checkbox" value="뇌혈관질환" />
-                <label>뇌혈관질환</label>
-              </li>
-              <li>
-                <InputElement type="checkbox" value="호흡기질환" />
-                <label>호흡기질환</label>
-              </li>
-              <li>
-                <InputElement type="checkbox" value="심장질환" />
-                <label>심장질환</label>
-              </li>
-              <li>
-                <InputElement type="checkbox" value="우울증" />
-                <label>우울증</label>
-              </li>
-              <li>
-                <InputElement type="checkbox" value="관련 질환" />
-                <label>관련 질환</label>
-              </li>
-              <li>
-                <InputElement type="checkbox" value="기타" />
-                <label>기타</label>
-              </li>
-            </ul>
-            <InputElement type="text" placeholder="직접 작성" />
-          </div>
+              <label className="labelType">
+                <span> 암 이외의 진단받고 치료 중인 질환</span>
+                (해당질환 모두 선택)
+              </label>
+              <div className="chk_list disease">
+                <ul>
+                  <li>
+                    <InputElement type="checkbox" value="" className="" />
+                    <label>없음</label>
+                  </li>
+                  <li>
+                    <InputElement type="checkbox" value="고혈압" />
+                    <label>고혈압</label>
+                  </li>
+                  <li>
+                    <InputElement type="checkbox" value="당뇨병" />
+                    <label>당뇨병</label>
+                  </li>
+                  <li>
+                    <InputElement type="checkbox" value="뇌혈관질환" />
+                    <label>뇌혈관질환</label>
+                  </li>
+                  <li>
+                    <InputElement type="checkbox" value="호흡기질환" />
+                    <label>호흡기질환</label>
+                  </li>
+                  <li>
+                    <InputElement type="checkbox" value="심장질환" />
+                    <label>심장질환</label>
+                  </li>
+                  <li>
+                    <InputElement type="checkbox" value="우울증" />
+                    <label>우울증</label>
+                  </li>
+                  <li>
+                    <InputElement type="checkbox" value="관련 질환" />
+                    <label>관련 질환</label>
+                  </li>
+                  <li>
+                    <InputElement type="checkbox" value="기타" />
+                    <label>기타</label>
+                  </li>
+                </ul>
+                <InputElement type="text" placeholder="직접 작성" />
+              </div>
             </li>
           </ul>
-
-         
-
         </div>
       </div>
 

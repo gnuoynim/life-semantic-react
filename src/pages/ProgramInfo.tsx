@@ -11,6 +11,8 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { modalState } from "@/states/modalState";
 import TitleHeadComponent from "@/components/head/TitleHeadComponent";
 import $ from "jquery";
+
+
 const PrgramInfo = () => {
   return (
     <React.Fragment>

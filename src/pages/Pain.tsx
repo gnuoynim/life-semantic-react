@@ -5,7 +5,6 @@ import { countState, sampleState } from "@states/sampleState";
 import ModalComponent from "@/components/modal/ModalComponent";
 import ProgressComponent from "@/components/ProgressComponent";
 import PainComponent from "@/components/survey/surveylist/PainComponent";
-import MostPainComponent from "@/components/survey/surveylist/MostPainComponent";
 import MostPainListComponent from "@/components/survey/surveylist/MostPainListComponent";
 import FrontPainComponent from "@/components/survey/surveylist/pain/FrontPainComponent";
 import BackPainComponent from "@/components/survey/surveylist/pain/BackPainComponent";
@@ -13,6 +12,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { modalState } from "@/states/modalState";
 import TitleHeadComponent from "@/components/head/TitleHeadComponent";
 import $ from "jquery";
+
 
 const Pain = () => {
   const location = useLocation();
@@ -38,6 +38,22 @@ const Pain = () => {
     }
   }, [step]);
 
+  useEffect(() => {
+    const scHeight = $(".Step").prop("scrollHeight");
+    console.log(scHeight);
+
+    $(window).on("scroll", function () {
+      var height = $(document).scrollTop();
+      console.log(height);
+      if (this.scrollY > 300) {
+        $(".Step").addClass("fixed");
+      } else {
+        $(".Step").removeClass("fixed");
+      }
+    });
+  }, []);
+
+  
   const handleNextStep = () => {
     if (step !== 3) {
       setStep(step + 1);
