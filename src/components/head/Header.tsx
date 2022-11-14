@@ -1,14 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useRef } from "react";
-import InputElement from "../elements/InputElement";
-import MemberChk01 from "../join/member/MemberChk01";
-import MemberChk02 from "../join/member/MemberChk02";
-import MemberChk03 from "../join/member/MemberChk03";
-import useUserHttp from "@hooks/queries/useUserQuery";
-import { ListInterface } from "@interfaces/listInterface";
-import { UserInterface } from "@interfaces/userInterface";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const HeaderComponent = () => {
   const [closeList, setCloseList] = useState<boolean>(false);

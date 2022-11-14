@@ -1,0 +1,15 @@
+export interface ProgramInterface {
+  pgIdx: string,
+  type: string,
+  pgTitle: string,
+  pgAppSttDate: string,
+  pgAppEndDate: string,
+  pgSttDate: string,
+  pgEndDate: string,
+  pgWklyTimes: string,
+  pgAppNow: string,
+  pgPlace: string,
+  pgStatus: string,
+  pgIsApply: string,
+  pgAppLimit: string,
+}

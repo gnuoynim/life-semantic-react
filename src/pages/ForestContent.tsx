@@ -1,23 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { ErrorBoundary } from "react-error-boundary";
-import { useRecoilState } from "recoil";
-import { countState, sampleState } from "@states/sampleState";
-import ModalComponent from "@/components/modal/ModalComponent";
-import HeaderComponent from "@/components/head/Header";
-import ProgramDetailComponent from "@/components/program/programDetail/ProgramDetailComponent";
-import ProgramNumberComponent from "@/components/program/ProgramNumberComponent";
-import DownLoadComponent from "@/components/program/programDetail/DownLoadComponent";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import { modalState } from "@/states/modalState";
-import TitleHeadComponent from "@/components/head/TitleHeadComponent";
-import RoundComponent from "@/components/program/RoundComponent";
-import $ from "jquery";
-
-
+import React from "react";
+import { Link } from "react-router-dom";
+import HeaderComponent from "../components/head/Header";
 const ForestContent = () => {
   return (
     <React.Fragment>
-      <HeaderComponent />
+      <HeaderComponent/>
       <div className="programInfo">
         <h2>치유의 숲 찾기</h2>
         <div className="forestContent">
@@ -66,7 +53,7 @@ const ForestContent = () => {
             </p>
           </div>
         </div>
-        <Link to={""} className="listButton">
+        <Link to={"/program"} className="listButton">
           목록으로 돌아가기
         </Link>
       </div>

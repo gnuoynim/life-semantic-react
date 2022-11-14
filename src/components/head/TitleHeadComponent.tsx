@@ -13,7 +13,9 @@ const TitleHeadComponent= ({name}:{name:string}) => {
     <React.Fragment>
         <div className='HeaderFix' >
           <button type='button'>
-            <img src='images/arrow.svg'></img>
+              <Link to={"/program"} >
+                  <img src='images/arrow.svg'></img>
+              </Link>
           </button>
           <h2>{name}</h2> 
         </div> 
