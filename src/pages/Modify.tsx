@@ -8,50 +8,38 @@ import BannerComponent from "@/components/program/banner/BannerComponent";
 import { Link } from "react-router-dom";
 import InputElement from "@/components/elements/InputElement";
 
-
-const DeleteAccount = () => {
-
-  
+const Modify = () => {
   return (
     <WebLayout>
       <HeaderComponent />
       <div className="account">
-        <h2>회원 탈퇴</h2>
-        <div className="delete">
+        <h2>내 정보 수정</h2>
+        <div className="modifyInfomation">
           <p>
-            회원 탈퇴 시 모든 정보가 삭제되며, <br />
-            <strong>이후 복구가 불가능</strong>합니다.
+            개인정보를 수정하시려면
+            <br /> 비밀번호를 입력하셔야 합니다.
+            <span>
+              회원님의 개인정보 보호를 위한
+              <br /> 본인 확인 절차이오니,
+              <br /> 회원 로그인 시 사용하시는 비밀번호를 입력해주세요.
+            </span>
           </p>
-          <table>
-            <tbody>
-              <tr>
-                <td>아이디</td>
-                <td>dtha1234</td>
-              </tr>
-              <tr>
-                <td>최초가입일자</td>
-                <td>2022-07-01</td>
-              </tr>
-            </tbody>
-          </table>
+
           <div className="deletId">
-            <p>
-              비밀번호 확인 후 아이디는
-              <br />
-              <strong>즉시 탈퇴</strong>됩니다.
-            </p>
             <span className="password">
               <label htmlFor="">비밀번호</label>
-              <InputElement type="password"  maxLength={16}/>
+              <InputElement type="password" maxLength={16} />
             </span>
+            <Link to="">비밀번호가 기억나지 않아요.</Link>
           </div>
+          
         </div>
         <div className="buttonBox">
           <button type="button" className="prevButton">
-            취소
+            확인
           </button>
           <button type="button" className="nextButton">
-            탈퇴
+            취소
           </button>
         </div>
       </div>
@@ -59,4 +47,4 @@ const DeleteAccount = () => {
   );
 };
 
-export default DeleteAccount;
+export default Modify;

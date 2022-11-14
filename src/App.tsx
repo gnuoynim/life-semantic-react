@@ -23,6 +23,8 @@ import DeleteAccount from "./pages/DeleteAccount";
 import ForestList from "./pages/ForestList";
 import ForestContent from "./pages/ForestContent";
 import JoinModify from "./pages/JoinModify";
+import Modify from "./pages/Modify";
+import ModifyInformation from "./pages/ModifyInformation";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "../node_modules/scss-reset/_reset.scss";
 import "@assets/sass/style.scss";
@@ -36,7 +38,9 @@ const App = () => {
         <Route path="index" element={<IndexPage />} />
         <Route path="joinModify" element={<JoinModify />} />
         <Route path="modal" element={<Modal/>} />
-        <Route path="" element={<ReservationList/>} />
+        <Route path="reservation" element={<ReservationList/>} />
+        <Route path="modify" element={<Modify/>} />
+        <Route path="" element={<ModifyInformation/>} />
         <Route path="schedule" element={<Schedule />} />
         <Route path="deleteAccount" element={<DeleteAccount />} />
         <Route path="account" element={<Account />} />

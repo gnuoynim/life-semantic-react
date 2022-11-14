@@ -28,7 +28,7 @@ const UnBookComponent = () => {
         <div className="prg prg-reserve">
           <div className="ready-prg">
             <div className="prg-head unBook">
-              <span className="reserve reserve-02">참여중</span>
+              <span className="participate reserve-02">참여중</span>
               <p> 굿바이 피로 1기 </p>
             </div>
             <ul className="term">
@@ -38,14 +38,14 @@ const UnBookComponent = () => {
               <li className="">장소: 서울 안산도시자연공원</li>
             </ul>
           </div>
-          <button type="button" className="btn-02 gray-btn">
+          <button type="button" className="btn-02">
             취소불가
           </button>
         </div>
         <div className="prg prg-reserve">
           <div className="ready-prg">
             <div className="prg-head unBook">
-              <span className="reserve">참여 중</span>
+              <span className="participate">참여 중</span>
               <p> 굿바이 피로 1기 </p>
             </div>
             <ul className="term">
@@ -55,14 +55,14 @@ const UnBookComponent = () => {
               <li className="">장소: 서울 안산도시자연공원</li>
             </ul>
           </div>
-          <button type="button" className="btn-02 gray-btn">
+          <button type="button" className="btn-02">
             운영중
           </button>
         </div>
         <div className="prg  prg-reserve prg-reserve-02">
           <div className="ready-prg">
             <div className="prg-head unBook">
-              <span className="reserve">참여 중</span>
+              <span className="participate">참여 중</span>
               <p> 굿바이 피로 1기 </p>
             </div>
             <ul className="term">
@@ -72,7 +72,7 @@ const UnBookComponent = () => {
               <li className="">장소: 서울 안산도시자연공원</li>
             </ul>
           </div>
-          <button type="button" className="btn-02 gray-btn">
+          <button type="button" className="btn-02 active ">
             운영중
           </button>
         </div>

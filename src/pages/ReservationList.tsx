@@ -10,6 +10,8 @@ import $, { each } from "jquery";
 const ReservationList = () => {
 
   useEffect(() => {
+
+    
     $(".dropDown .selected span").click(function () {
       const options = $(this).parent().siblings(".options");
       options.find("ul").show();

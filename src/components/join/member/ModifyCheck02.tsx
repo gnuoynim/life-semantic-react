@@ -8,11 +8,16 @@ const ModifyCheck02 = () => {
 
 
   useEffect(() => {  
-    $('.isCheck').on('click', function() {
-      const options = $(this).parent().siblings(".input_detail"); // 체크된 Radio 버튼의 값을 가져옵니다.
-      options.css("display","block")
-
-  });
+    $('.check').click(function(){
+      var checked = $('.check').is(':checked');
+      
+      if(checked){
+        $(this).parent().parent().addClass("on");
+      }else{
+        $(this).parent().parent().removeClass("on");
+      }
+        
+    });
 
   }, []);
 
