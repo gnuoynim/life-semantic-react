@@ -2748,26 +2748,85 @@ table {
 }
 .reservationList {
   margin: 40px;
-  h2{
+  h2 {
     margin-bottom: 50px;
   }
-  .cancelButton{
+  .cancelButton {
     border: 1px solid;
-    padding:5px 10px;
+    padding: 5px 10px;
     border-radius: 8px;
   }
+  .tabelDropdown{
+    display: flex;
+    justify-content: flex-end;
+    .dropDown {
+      width: 130px;
+      position: relative;
+      top: 10px;
+      .selected {
+        span {
+          background: #fff;
+          display: block;
+          padding: 0 15px 0 15px;
+          border: none;
+          border-radius: 0;
+          text-decoration: none;
+          width: 100%;
+          height: 35px;
+          font-weight: 400;
+          font-size: 12px;
+          text-align: center;
+          box-sizing: border-box;
+          line-height: 35px;
+          color: #000;
+          position: relative;
+          &::after {
+            background: url($url-images + "dropArrow.svg") no-repeat;
+            right: 15px;
+          }
+        }
+      }
+      .options {
+        position: absolute;
+        top: 44px;
+        right: 0;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        ul {
+          padding-left: 0;
+          margin: 0;
+          padding-top: 0;
+          li {
+            font-weight: 400;
+            font-size: 16px;
+            padding:8px 15px;
+            border-bottom: 0.5px solid #8F8F8F;
+          &:hover{
+            background: #F3F3F3;
+            border: none;
+          }
+          &:last-of-type{
+            border-bottom: none;
+          }
+          }
+
+        }
+      }
+    }
+  }
+
+
   .reservationTable {
-    .order{
+    .order {
       display: block;
       text-align: right;
     }
-    table{
+    table {
       border-radius: 0;
-      tr{
+      tr {
         border-bottom: 0.5px solid #8f8f8f;
-        td{
+        td {
           text-align: center;
-          &:nth-of-type(1){
+          &:nth-of-type(1) {
             width: 20%;
             input[type="checkbox"] {
               margin: 0 auto;
@@ -2778,7 +2837,7 @@ table {
               height: 18px;
               padding: 0;
               &:checked {
-                background:url($url-images + "check-bx.svg") no-repeat;
+                background: url($url-images + "check-bx.svg") no-repeat;
                 width: 18px;
                 height: 18px;
                 border: none;
@@ -2786,18 +2845,26 @@ table {
               }
             }
           }
-          &:nth-of-type(2){
+          &:nth-of-type(2) {
             border-right: 0.5px solid #8f8f8f;
           }
         }
-        &:nth-child(n+2){
-          td{
+        &:nth-child(n + 2) {
+          td {
             padding: 20px;
           }
         }
       }
+      tr.on{
+        background-color:rgba(216, 250, 205, 0.45);
+      }
     }
-   
+    .reserved {
+      color: $red;
+    }
+    .attend {
+      color: $main-color;
+    }
   }
 }
 #ISI {

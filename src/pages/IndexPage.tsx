@@ -77,13 +77,13 @@ const Login = () => {
             <label>자동 로그인</label>
           </span>
           {buttonShow && (
-            <button type="button" className="loginBtn" onClick={handleLogin}>
-              로그인(초록버튼)
+            <button type="button" className="loginBtn active" onClick={handleLogin}>
+              로그인
             </button>
           )}
           {!buttonShow && (
-            <button type="button" className="loginBtn">
-              로그인(회색버튼)
+            <button type="button" className="loginBtn ">
+              로그인
             </button>
           )}
           <div className="BtnBox">
