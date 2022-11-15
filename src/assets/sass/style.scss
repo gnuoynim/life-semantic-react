@@ -93,15 +93,25 @@ ol {
 }
 .Logo {
   display: block;
-  width: 110px;
-  height: 80px;
-  margin: 30px auto 0 auto;
+  // width: 110px;
+  // height: 80px;
+  margin: 50px auto 0 auto;
 }
-.Logo img {
-  width: 100%;
+.Logo {
+  display: block;
   position: relative;
-  top: 50%;
-  transform: translateY(-50%);
+
+  img {
+    display: block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    &:first-of-type {
+      width: 110px;
+    }
+    &:last-of-type {
+    }
+  }
 }
 .Login .Header h2 {
   color: $main-color;
@@ -689,6 +699,7 @@ select {
   .term {
     display: block;
     margin-top: 40px;
+
     input {
       width: 100px;
       text-align: center;
@@ -1136,9 +1147,9 @@ select {
         }
       }
     }
-    .prg-head.unBook.unLog{
+    .prg-head.unBook.unLog {
       padding: 17px 38px;
-      .d-day{
+      .d-day {
         padding-bottom: 10px;
       }
     }
@@ -1150,7 +1161,10 @@ select {
     }
     .term {
       padding: 20px 15px;
-
+      margin-bottom: 0;
+      li {
+        margin-bottom: 10px;
+      }
       .red {
         color: #f30909;
       }
@@ -3090,15 +3104,20 @@ table {
 }
 
 /*modal*/
-
+#modal {
+  --bs-modal-footer-gap: 0;
+}
 .modalButton {
   button {
     display: block;
   }
 }
+
 .modal-dialog {
+  width: 80% !important;
+  left: 50% !important;
   top: 50% !important;
-  transform: translateY(-50%) !important;
+  transform: translate3d(-50%, -50%, 0) !important;
 
   .modal-header {
     display: flex;
@@ -3121,14 +3140,15 @@ table {
     border-bottom: none;
     padding: 20px;
     font-size: 26px;
-    font-weight: 500;
-    line-height: 28px;
+    font-weight: 600;
+    line-height: 22px;
   }
   .modal-footer {
     border-top: none;
     display: block;
     text-align: center;
     width: 100%;
+    padding: 20px;
     .btn {
       width: 100%;
       background-color: $main-color;

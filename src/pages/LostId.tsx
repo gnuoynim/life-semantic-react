@@ -5,10 +5,12 @@ import TitleHeadComponent from "@/components/head/TitleHeadComponent";
 import { countState, sampleState } from "@states/sampleState";
 import WebLayout from "@layouts/web/WebLayout";
 import InputElement from "@components/elements/InputElement";
+import ModalComponent from "@components/modal/ModalComponent";
+import { modalState } from "@states/modalState";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
-
 const IndexPage = () => {
+  const [modal, setModal] = useRecoilState(modalState);
   const location = useLocation();
   const navigate = useNavigate();
   const [sample, setSample] = useRecoilState(sampleState);
@@ -21,6 +23,19 @@ const IndexPage = () => {
       title: String(document.querySelector("input")?.value),
     });
 
+  const handleModal = () => {
+    setModal({
+      ...modal,
+      show: true,
+      title: "안내",
+      cancelShow: false,
+      content: <div>이름 또는 전화번호를<br/> 다시 확인해 주세요</div>,
+      confirmText: "확인",
+    });
+  };
+  const handlePopup = () => {
+    
+  };
   return (
     <WebLayout>
       <div className="Login">

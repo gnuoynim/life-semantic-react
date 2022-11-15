@@ -33,7 +33,7 @@ const ModalComponent = () => {
 
   return (
     <React.Fragment>
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose} id="modal">
         <Modal.Header closeButton>
           <Modal.Title>{title}</Modal.Title>
         </Modal.Header>
