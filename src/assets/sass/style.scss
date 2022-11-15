@@ -1724,6 +1724,10 @@ select {
 }
 
 .surveyList {
+  p{
+    font-size: 18px;
+    font-weight: 400;
+  }
   .radioButton {
     padding: 0;
     appearance: none;
@@ -1814,6 +1818,32 @@ select {
         width: 130%;
         text-align: center;
       }
+    }
+  }
+}
+.isi{
+  p{
+    padding:25px 0 20px 0;
+    font-size: 18px;
+  }
+  span{
+    font-weight: 600;
+  }
+  .subTitle{
+    color: $font-color;
+    text-align: center;
+    padding: 0;
+    font-size: 14px;
+    span{
+      color: #0037f8;
+    }
+  }
+  .surveyContent{
+    p{
+      font-weight: 500;
+    }
+    li{
+      
     }
   }
 }
@@ -2397,10 +2427,13 @@ select {
 }
 .tired {
   margin: 40px 30px;
+  .explainText{
+    padding: 20px 0;
+  }
   li {
     p {
       font-size: 18px;
-      font-weight: 600;
+      font-weight: 500;
     }
   }
 }
@@ -3006,7 +3039,7 @@ table {
     }
   }
   .Arrow {
-    top: 0;
+    top: 30px;
     margin-bottom: 150px;
     span {
       white-space: nowrap;
@@ -3016,7 +3049,60 @@ table {
     background-color: #0037f8;
   }
 }
-
+#NCCN{
+  .Step.fixed {
+    background-color: #fff;
+    width: 100%;
+    top: 65px;
+    margin-top: 0;
+    div{
+      background-color: #fff;
+      width: 100%;
+      padding: 15px 23px;
+      ul{
+        padding: 0;
+        z-index: 20;
+        width: 50%;
+        box-shadow: none;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+      &::after{
+        content: "";
+        display: block;
+        width: 100%;
+        height: 1px;
+        background-color: #41b946;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+      }
+      }
+    }
+  }
+  .Step{
+    background-color: #fff;
+    width: 100%;
+    margin-top: 30px;
+    div{
+      background-color: #fff;
+      width: 100%;
+      padding:0;
+      ul{
+        padding: 0;
+        z-index: 20;
+        width: 50%;
+        box-shadow: none;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+      }
+    }
+    
+   
+  }
+}
 /*button*/
 .grayButton {
   width: 100%;

@@ -57,7 +57,7 @@ const IndexPage = () => {
     setToast(true);
     setTimeout(() =>{
       setToast(false);
-    }, 5000)
+    }, 3000)
   };
 
   return (

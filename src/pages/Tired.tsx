@@ -10,6 +10,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { modalState } from "@/states/modalState";
 import TitleHeadComponent from "@/components/head/TitleHeadComponent";
 import $ from "jquery";
+import ToastPopup from "@/components/modal/ToastPopup";
 import TiredSurveyComponent01 from "@/components/survey/surveylist/tired/TiredSurveyComponent01";
 import TiredSurveyComponent02 from "@/components/survey/surveylist/tired/TiredSurveyComponent02";
 import TiredSurveyComponent03 from "@/components/survey/surveylist/tired/TiredSurveyComponent03"; 
@@ -22,6 +23,7 @@ const Tired = () => {
   const [count, setCount] = useRecoilState(countState);
   const [modal, setModal] = useRecoilState(modalState);
   const [userListError, setUserListError] = useState(true);
+  const [toast, setToast] = useState(false);
   const increase = () => setCount(count + 1);
   const setTitle = () =>
     setSample({
@@ -43,6 +45,13 @@ const Tired = () => {
       setStep(step - 1);
     }
   };
+  const handlePopup = () => {
+    setToast(true);
+    setTimeout(() => {
+      setToast(false);
+    }, 2000);
+  };
+
   useEffect(() => {
     const scrollHeight = $(".Step").prop("scrollHeight");
     console.log(scrollHeight);
@@ -88,6 +97,11 @@ const Tired = () => {
         </button>
         <div className="buttonSpace"></div>
       </div>
+      <ToastPopup text="이번페이지는 설문을 완료하여주세요." show={toast} />
+      <ToastPopup
+        text="완료하시면 수정이 불가합니다. 내용을 확인해주세요."
+        show={toast}
+      />
     </div>
   );
 };

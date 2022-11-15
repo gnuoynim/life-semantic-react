@@ -189,7 +189,7 @@ const TiredSurveyComponent01 = () => {
                   type="radio"
                   className="radioButton"
                   value="1"
-                  name="qna4"
+                  name="qna5"
                 />
                 <label htmlFor="">전혀 그렇지 않다</label>
               </li>
@@ -198,7 +198,7 @@ const TiredSurveyComponent01 = () => {
                   type="radio"
                   className="radioButton"
                   value="2"
-                  name="qna4"
+                  name="qna5"
                 />
                 <label htmlFor="">그렇지 않다</label>
               </li>
@@ -207,7 +207,7 @@ const TiredSurveyComponent01 = () => {
                   type="radio"
                   className="radioButton"
                   value="3"
-                  name="qna4"
+                  name="qna5"
                 />
                 <label htmlFor="">그렇다</label>
               </li>
@@ -216,7 +216,7 @@ const TiredSurveyComponent01 = () => {
                   type="radio"
                   className="radioButton"
                   value="4"
-                  name="qna4"
+                  name="qna5"
                 />
                 <label htmlFor="">매우 그렇다</label>
               </li>

@@ -14,7 +14,6 @@ import NCCNComponent01 from "@/components/survey/surveylist/nccn/NCCNComponent01
 import NCCNComponent02 from "@/components/survey/surveylist/nccn/NCCNComponent02";
 import NCCNComponent03 from "@/components/survey/surveylist/nccn/NCCNComponent03";
 
-
 const NCCN = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -33,7 +32,7 @@ const NCCN = () => {
   useEffect(() => {
     const inner = document.querySelector(".next") as HTMLButtonElement;
     const text = document.querySelector(".explainText") as HTMLBodyElement;
-    
+
     console.log(text);
     if (step === 3) {
       inner.innerText = "작성완료";
@@ -78,14 +77,15 @@ const NCCN = () => {
     <div>
       <TitleHeadComponent name="수면위생(NCCN)" />
       {/* <button type='button' onClick={() => setModal({...modal, show:true, title:'기본2'})}>버튼</button> */}
-      <div className="tired painBox">
+      <div className="tired painBox" id="NCCN">
         <h2>시작전 설문 - 수면위생(NCCN)</h2>
         <div className="Step">
-          <ul>
-            <ProgressComponent active={step === 1} />
-            <ProgressComponent active={step === 2} />
-            <ProgressComponent active={step === 3} />
-          </ul>
+          <div>
+            <ul>
+              <ProgressComponent active={step === 1} />
+              <ProgressComponent active={step === 2} />
+            </ul>
+          </div>
         </div>
         <p className="explainText">
           다음은 수면위생에 대한 질문입니다. <br />
@@ -93,7 +93,6 @@ const NCCN = () => {
         </p>
         {step === 1 && <NCCNComponent01 />}
         {step === 2 && <NCCNComponent02 />}
-        {step === 3 && <NCCNComponent03 />}
       </div>
       <div className="fixBtn">
         <button type="button" className="prev" onClick={handlePrevStep}>
