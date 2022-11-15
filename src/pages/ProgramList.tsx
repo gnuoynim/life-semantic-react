@@ -122,20 +122,10 @@ const ProgramList = () => {
                     </div>
                 </div>
                 <div className="checkBox" id="checkBox">
-          <span className="inputCheckType01">
-            <InputElement type="checkbox" className="check" id="agree"/>
-            <label>예약/참여 중</label>
-          </span>
-                    <div className="standbyNot">
-            <span>
-              <img src="images/no.svg"/>
-            </span>
-                        <span>
-              운영 대기 중인
-              <br/>
-              프로그램이 없습니다.
-            </span>
-                    </div>
+<span className="inputCheckType01">
+<InputElement type="checkbox" className="check" id="agree"/>
+<label>예약/참여 중</label>
+</span>
                 </div>
             </div>
             <BookComponent/>
@@ -145,6 +135,16 @@ const ProgramList = () => {
                     산림치유 프로그램 보러가기
                 </Link>
             </div>
+            {/*<div className="standbyNot">*/}
+            {/*<span>*/}
+            {/*  <img src="images/no.svg"/>*/}
+            {/*</span>*/}
+            {/*    <span>*/}
+            {/*  운영 대기 중인*/}
+            {/*  <br/>*/}
+            {/*  프로그램이 없습니다.*/}
+            {/*</span>*/}
+            {/*</div>*/}
         </React.Fragment>
     );
 };

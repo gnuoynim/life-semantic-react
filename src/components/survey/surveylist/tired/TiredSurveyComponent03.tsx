@@ -23,19 +23,19 @@ const TiredSurveyComponent03 = () => {
                         <p>11. (어떤 것을 할 때)집중할 수 있으십니까?</p>
                         <ul>
                             <li>
-                                <InputElement type='radio' className='radioButton' value='1' name='qna1'/>
+                                <InputElement type='radio' className='radioButton' value='1' name='qna11'/>
                                 <label htmlFor="">전혀 그렇지 않다</label>
                             </li>
                             <li>
-                                <InputElement type='radio' className='radioButton' value='2' name='qna1'/>
+                                <InputElement type='radio' className='radioButton' value='2' name='qna11'/>
                                 <label htmlFor="">그렇지 않다</label>
                             </li>
                             <li>
-                                <InputElement type='radio' className='radioButton' value='3' name='qna1'/>
+                                <InputElement type='radio' className='radioButton' value='3' name='qna11'/>
                                 <label htmlFor="">그렇다</label>
                             </li>
                             <li>
-                                <InputElement type='radio' className='radioButton' value='4' name='qna1'/>
+                                <InputElement type='radio' className='radioButton' value='4' name='qna11'/>
                                 <label htmlFor="">매우 그렇다</label>
                             </li>
 
@@ -45,19 +45,19 @@ const TiredSurveyComponent03 = () => {
                         <p>12. (어떤 것을 할 때)주저하게 되거나 귀찮다고 느끼십니까?</p>
                         <ul>
                             <li>
-                                <InputElement type='radio' className='radioButton' value='1' name='qna2'/>
+                                <InputElement type='radio' className='radioButton' value='1' name='qna12'/>
                                 <label htmlFor="">전혀 그렇지 않다</label>
                             </li>
                             <li>
-                                <InputElement type='radio' className='radioButton' value='2' name='qna2'/>
+                                <InputElement type='radio' className='radioButton' value='2' name='qna12'/>
                                 <label htmlFor="">그렇지 않다</label>
                             </li>
                             <li>
-                                <InputElement type='radio' className='radioButton' value='3' name='qna2'/>
+                                <InputElement type='radio' className='radioButton' value='3' name='qna12'/>
                                 <label htmlFor="">그렇다</label>
                             </li>
                             <li>
-                                <InputElement type='radio' className='radioButton' value='4' name='qna2'/>
+                                <InputElement type='radio' className='radioButton' value='4' name='qna12'/>
                                 <label htmlFor="">매우 그렇다</label>
                             </li>
 
@@ -67,19 +67,19 @@ const TiredSurveyComponent03 = () => {
                         <p>13. 기운이 다 빠진 느낌이 드십니까?</p>
                         <ul>
                             <li>
-                                <InputElement type='radio' className='radioButton' value='1' name='qna3'/>
+                                <InputElement type='radio' className='radioButton' value='1' name='qna13'/>
                                 <label htmlFor="">전혀 그렇지 않다</label>
                             </li>
                             <li>
-                                <InputElement type='radio' className='radioButton' value='2' name='qna3'/>
+                                <InputElement type='radio' className='radioButton' value='2' name='qna13'/>
                                 <label htmlFor="">그렇지 않다</label>
                             </li>
                             <li>
-                                <InputElement type='radio' className='radioButton' value='3' name='qna3'/>
+                                <InputElement type='radio' className='radioButton' value='3' name='qna13'/>
                                 <label htmlFor="">그렇다</label>
                             </li>
                             <li>
-                                <InputElement type='radio' className='radioButton' value='4' name='qna4'/>
+                                <InputElement type='radio' className='radioButton' value='4' name='qna13'/>
                                 <label htmlFor="">매우 그렇다</label>
                             </li>
 
@@ -89,19 +89,19 @@ const TiredSurveyComponent03 = () => {
                         <p>14. 어떤 것을 하기 위해서 스스로 자신을 격려할 수 있습니까?</p>
                         <ul>
                             <li>
-                                <InputElement type='radio' className='radioButton' value='1' name='qna4'/>
+                                <InputElement type='radio' className='radioButton' value='1' name='qna14'/>
                                 <label htmlFor="">전혀 그렇지 않다</label>
                             </li>
                             <li>
-                                <InputElement type='radio' className='radioButton' value='2' name='qna4'/>
+                                <InputElement type='radio' className='radioButton' value='2' name='qna14'/>
                                 <label htmlFor="">그렇지 않다</label>
                             </li>
                             <li>
-                                <InputElement type='radio' className='radioButton' value='3' name='qna4'/>
+                                <InputElement type='radio' className='radioButton' value='3' name='qna14'/>
                                 <label htmlFor="">그렇다</label>
                             </li>
                             <li>
-                                <InputElement type='radio' className='radioButton' value='4' name='qna4'/>
+                                <InputElement type='radio' className='radioButton' value='4' name='qna14'/>
                                 <label htmlFor="">매우 그렇다</label>
                             </li>
                         </ul>
@@ -110,22 +110,22 @@ const TiredSurveyComponent03 = () => {
                         <p>15. 너무 피곤해서 무엇을 해야 할 지 잘 모르겠다고 느끼십니까?</p>
                         <ul>
                             <li>
-                                <InputElement type='radio' className='radioButton' value='1' name='qna4'
+                                <InputElement type='radio' className='radioButton' value='1' name='qna15'
                                               onClick={handleToast}/>
                                 <label htmlFor="">전혀 그렇지 않다</label>
                             </li>
                             <li>
-                                <InputElement type='radio' className='radioButton' value='2' name='qna4'
+                                <InputElement type='radio' className='radioButton' value='2' name='qna15'
                                               onClick={handleToast}/>
                                 <label htmlFor="">그렇지 않다</label>
                             </li>
                             <li>
-                                <InputElement type='radio' className='radioButton' value='3' name='qna4'
+                                <InputElement type='radio' className='radioButton' value='3' name='qna15'
                                               onClick={handleToast}/>
                                 <label htmlFor="">그렇다</label>
                             </li>
                             <li>
-                                <InputElement type='radio' className='radioButton' value='4' name='qna4'
+                                <InputElement type='radio' className='radioButton' value='4' name='qna15'
                                               onClick={handleToast}/>
                                 <label htmlFor="">매우 그렇다</label>
                             </li>

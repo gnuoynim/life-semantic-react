@@ -100,13 +100,6 @@ const Pain = () => {
         });
     };
 
-    const handlePopup = () => {
-        setToast(true);
-        setTimeout(() => {
-            setToast(false);
-            handlePainSurveyComplete();
-        }, 3000);
-    };
 
     return (
         <React.Fragment>
@@ -129,7 +122,7 @@ const Pain = () => {
                 <button type="button" className="next" onClick={handleNextStep}>다음</button>
                 }
                 {step === 3 &&
-                <button type="button" className="next" onClick={handlePopup}>작성완료</button>
+                <button type="button" className="next" onClick={handlePainSurveyComplete}>작성완료</button>
                 }
             </div>
             {/*<ToastPopup text="이번페이지는 설문을 완료하여주세요." show={toast}/>*/}

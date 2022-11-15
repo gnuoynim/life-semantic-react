@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-import { useEffect } from "react";
 import InputElement from "../../elements/InputElement";
-import $ from "jquery";
-import { modalState } from "@/states/modalState";
 
 const ModifyCheck02 = ({ nextStep }: { nextStep: Function }) => {
   const [isSmoke, setIsSmoke] = useState(false);

@@ -73,7 +73,7 @@ const SurveyDeStress = () => {
         });
     }, []);
 
-    const handleModal01 = () => {
+    const handleDeStressSurveyComplete = () => {
         setModal({
             ...modal,
             show: true,
@@ -81,7 +81,7 @@ const SurveyDeStress = () => {
             cancelShow: false,
             content: (
                 <div>
-                    디스트레스 설문을
+                    디스트레스 설문이
                     <br/>
                     완료되었습니다.
                 </div>
@@ -123,12 +123,13 @@ const SurveyDeStress = () => {
                 {step === 2 && <SocialStressComponent/>}
                 {step === 3 && <ReligionStressComponent/>}
                 <div className="fixBtn">
-                    <button type="button" className="prev" onClick={handlePrevStep}>
-                        이전
-                    </button>
-                    <button type="button" className="next" onClick={handleNextStep}>
-                        다음
-                    </button>
+                    <button type="button" className="prev" onClick={handlePrevStep}>이전</button>
+                    {step < 3 &&
+                    <button type="button" className="next" onClick={handleNextStep}>다음</button>
+                    }
+                    {step === 3 &&
+                    <button type="button" className="next" onClick={handleDeStressSurveyComplete}>작성완료</button>
+                    }
                 </div>
             </div>
             <ModalComponent/>

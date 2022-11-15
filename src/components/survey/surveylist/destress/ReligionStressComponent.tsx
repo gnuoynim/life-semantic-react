@@ -1,17 +1,10 @@
 import React, {useState} from "react";
 import InputElement from "@components/elements/InputElement";
 import ToastPopup from "@components/modal/ToastPopup";
-import ModalComponent from "@components/modal/ModalComponent";
-import {useRecoilState} from "recoil";
-import {modalState} from "@states/modalState";
 
 const ReligionStressComponent = () => {
-
-    const [modal, setModal] = useRecoilState(modalState);
     const [toast, setToast] = useState(false);
-
     const handlePopup = () => {
-        console.log('test')
         setToast(true);
         setTimeout(() => {
             setToast(false);
@@ -108,11 +101,12 @@ const ReligionStressComponent = () => {
             기타문제
           </span>
                     <textarea
-                        maxLength={500} onKeyUp={handlePopup}
+                        maxLength={500} onChange={handlePopup}
                         placeholder="그 외의 염려되는 문제들이 있다면, 작성해주세요."
                     ></textarea>
                 </div>
             </div>
+            <ToastPopup text="완료하시면 수정이 불가합니다. 내용을 확인해주세요." show={toast}/>
         </React.Fragment>
     );
 };

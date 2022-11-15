@@ -31,11 +31,22 @@ const Tired = () => {
             setStep(step - 1);
         }
     };
-    const handlePopup = () => {
-        setToast(true);
-        setTimeout(() => {
-            setToast(false);
-        }, 3000);
+
+    const handleTiredSurveyComplete = () => {
+        setModal({
+            ...modal,
+            show: true,
+            title: "",
+            cancelShow: false,
+            content: (
+                <div>
+                    피로 설문을
+                    <br />
+                    완료하셨습니다.
+                </div>
+            ),
+            confirmText: "확인",
+        });
     };
 
     useEffect(() => {
@@ -67,7 +78,6 @@ const Tired = () => {
     return (
         <React.Fragment>
             <TitleHeadComponent name="피로"/>
-            {/* <button type='button' onClick={() => setModal({...modal, show:true, title:'기본2'})}>버튼</button> */}
             <div className="tired painBox">
 
                 <div className="Step">
@@ -83,12 +93,13 @@ const Tired = () => {
 
             </div>
             <div className="fixBtn">
-                <button type="button" className="prev" onClick={handlePrevStep}>
-                    이전
-                </button>
-                <button type="button" className="next" onClick={handlePopup}>
-                    다음
-                </button>
+                <button type="button" className="prev" onClick={handlePrevStep}>이전</button>
+                {step < 3 &&
+                <button type="button" className="next" onClick={handleNextStep}>다음</button>
+                }
+                {step === 3 &&
+                <button type="button" className="next" onClick={handleTiredSurveyComplete}>작성완료</button>
+                }
                 <div className="buttonSpace"></div>
             </div>
             <ToastPopup text="이번페이지는 설문을 완료하여주세요." show={toast}/>
