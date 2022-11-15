@@ -27,6 +27,7 @@ import Modify from "@/pages/Modify";
 import ModifyInformation from "@/pages/ModifyInformation";
 import SurveyToday from "@/pages/SurveyToday";
 import React from "react";
+import Login from "../pages/Login";
 
 function Router() {
     const routes = [
@@ -36,6 +37,15 @@ function Router() {
                 {
                     path: '',
                     element: <IndexPage/>,
+                },
+            ],
+        },
+        {
+            path: 'login',
+            children: [
+                {
+                    path: '',
+                    element: <Login/>,
                 },
             ],
         },
@@ -79,7 +89,7 @@ function Router() {
             ],
         },
         {
-            path: 'home',
+            path: 'main',
             element: <TotalLayout/>,
             children: [
                 {
