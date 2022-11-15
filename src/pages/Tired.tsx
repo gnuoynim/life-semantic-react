@@ -86,7 +86,7 @@ const Tired = () => {
                 <button type="button" className="prev" onClick={handlePrevStep}>
                     이전
                 </button>
-                <button type="button" className="next" onClick={handleNextStep}>
+                <button type="button" className="next" onClick={handlePopup}>
                     다음
                 </button>
                 <div className="buttonSpace"></div>

@@ -3629,6 +3629,7 @@ table tr td:nth-of-type(2) {
   width: calc(100% - 40px);
   position: absolute;
   left: 50%;
+  bottom: 70px;
   transform: translateX(-50%);
   display: block;
 }
