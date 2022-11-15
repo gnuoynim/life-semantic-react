@@ -8,12 +8,16 @@ import PhysicalStressComponent from "@/components/survey/surveylist/destress/Phy
 import SocialStressComponent from "@/components/survey/surveylist/destress/SocialStressComponent";
 import ReligionStressComponent from "@/components/survey/surveylist/destress/ReligionStressComponent";
 import WebLayout from "@layouts/web/WebLayout";
+import ToastPopup from "@/components/modal/ToastPopup";
+import ModalComponent from "@/components/modal/ModalComponent";
 import InputElement from "@components/elements/InputElement";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import $ from "jquery";
+import { modalState } from "@/states/modalState";
 
 
 const SurveyDestress = () => {
+  const [modal, setModal] = useRecoilState(modalState);
   const location = useLocation();
   const navigate = useNavigate();
   const [sample, setSample] = useRecoilState(sampleState);
@@ -21,6 +25,8 @@ const SurveyDestress = () => {
   const [userListError, setUserListError] = useState(true);
   const [step, setStep] = useState(1);
   const increase = () => setCount(count + 1);
+  const [toast, setToast] = useState(false);
+
   const setTitle = () =>
     setSample({
       ...sample,
@@ -30,20 +36,18 @@ const SurveyDestress = () => {
   useEffect(() => {
     const inner = document.querySelector(".next") as HTMLButtonElement;
     const textBox = document.querySelector(".textBox") as HTMLElement;
-    
-    
+
     if (step === 3) {
       inner.innerText = "작성완료";
     } else if (step !== 3) {
       inner.innerText = "다음";
     }
 
-    if(step === 1){
-      textBox.style.display = "block"
-    }else if(step !== 1){
-      textBox.style.display = "none"
+    if (step === 1) {
+      textBox.style.display = "block";
+    } else if (step !== 1) {
+      textBox.style.display = "none";
     }
-
   }, [step]);
 
   const handleNextStep = () => {
@@ -71,6 +75,30 @@ const SurveyDestress = () => {
       }
     });
   }, []);
+
+  const handleModal01 = () => {
+    setModal({
+      ...modal,
+      show: true,
+      title: "",
+      cancelShow: false,
+      content: (
+        <div>
+          디스트레스 설문을
+          <br />
+          완료되었습니다.
+        </div>
+      ),
+      confirmText: "확인",
+    });
+  };
+
+  const handlePopup = () => {
+    setToast(true);
+    setTimeout(() => {
+      setToast(false);
+    }, 2000);
+  };
 
   return (
     <WebLayout>
@@ -113,6 +141,12 @@ const SurveyDestress = () => {
           </button>
         </div>
       </div>
+      <ModalComponent />
+      <ToastPopup text="이번페이지는 설문을 완료하여주세요." show={toast} />
+      <ToastPopup
+        text="완료하시면 수정이 불가합니다. 내용을 확인해주세요."
+        show={toast}
+      />
     </WebLayout>
   );
 };
