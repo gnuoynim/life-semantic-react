@@ -1,7 +1,7 @@
-import React from "react";
-import {useState} from "react";
-import {useRef} from "react";
-import {Link} from "react-router-dom";
+import React from 'react';
+import {useState} from 'react';
+import {useRef} from 'react';
+import {Link} from 'react-router-dom';
 
 const HeaderComponent = () => {
     const [closeList, setCloseList] = useState<boolean>(false);
@@ -13,9 +13,9 @@ const HeaderComponent = () => {
         }
         const style = listRef.current.style;
         if (closeList) {
-            style.display = "none";
+            style.display = 'none';
         } else if (!closeList) {
-            style.display = "block";
+            style.display = 'block';
         }
         setCloseList(!closeList);
     }
@@ -26,98 +26,96 @@ const HeaderComponent = () => {
         const target = event.target as HTMLLinkElement;
         const twoDep = target.nextElementSibling as HTMLDivElement;
 
-        if (target.classList.contains("on")) {
-            target.classList.remove("on");
-            twoDep.style.display = "none";
+        if (target.classList.contains('on')) {
+            target.classList.remove('on');
+            twoDep.style.display = 'none';
         } else {
-            target.classList.add("on");
-            twoDep.style.display = "block";
+            target.classList.add('on');
+            twoDep.style.display = 'block';
         }
     };
 
     return (
         <React.Fragment>
-            <div className="header">
-        <span className="logo">
-          <img src="images/logo.png" alt="logo"/>
+            <div className='header'>
+        <span className='logo'>
+          <img src='images/logo.png' alt='logo'/>
         </span>
                 <button
-                    type="button"
+                    type='button'
                     onClick={foldList}
-                    className={`${closeList ? "close" : "open"}`}
+                    className={`${closeList ? 'close' : 'open'}`}
                 >
-                    <img src=""/>
+                    <img src=''/>
                 </button>
-                <div className="m-menu" ref={listRef}>
-                    <div className="drawer on">
-                        <div className="head">
-              <span className="logo">
-                <img src="images/logo.png" alt="logo"/>
+                <div className='m-menu' ref={listRef}>
+                    <div className='drawer on'>
+                        <div className='head'>
+              <span className='logo'>
+                <img src='images/logo.png' alt='logo'/>
               </span>
                             <button
-                                type="button"
+                                type='button'
                                 onClick={foldList}
-                                className={`${closeList ? "close" : "open"}`}
+                                className={`${closeList ? 'close' : 'open'}`}
                             >
                                 메뉴닫기
                             </button>
-                            <div className="log-btn">
+                            <div className='log-btn'>
                                 <ul>
                                     <li>
-                                        <Link to="/">로그아웃</Link>
+                                        <Link to='/'>로그아웃</Link>
                                     </li>
                                     <li>
-                                        <Link to="/reservation">예약내역</Link>
+                                        <Link to='/reservation'>예약내역</Link>
                                     </li>
                                 </ul>
                             </div>
                         </div>
-                        <div className="">
-                            <nav className="nav">
+                        <div className=''>
+                            <nav className='nav'>
                                 <ul>
                                     <li>
-                                        <Link to="/program">산림치유프로그램</Link>
+                                        <Link to='/program'>산림치유프로그램</Link>
                                     </li>
-                                    <li className="">
-                                        <Link to="/forest">치유의 숲 찾기</Link>
+                                    <li className=''>
+                                        <Link to='/forest'>치유의 숲 찾기</Link>
                                     </li>
                                     <li>
-                                        <Link to="/" className="arrow" onClick={handleMenuClick}>
+                                        <Link to='/' className='arrow' onClick={handleMenuClick}>
                                             자료실
                                         </Link>
-                                        <div className="two-dep">
+                                        <div className='two-dep'>
                                             <ul>
                                                 <li>
-                                                    {/*<Link to="/">• 프로그램 사진 및 영상</Link>*/}
-                                                    <button>• 프로그램 사진 및 영상</button>
+                                                    <Link to=''>• 프로그램 사진 및 영상</Link>
                                                 </li>
                                                 <li>
-                                                    {/*<Link to="/">• 암 치유인자</Link>*/}
-                                                    <button>• 암 치유인자</button>
+                                                    <Link to=''>• 암 치유인자</Link>
                                                 </li>
                                             </ul>
                                         </div>
                                     </li>
                                     <li>
-                                        <Link to="/survey">설문작성</Link>
+                                        <Link to='/survey'>설문작성</Link>
                                     </li>
                                     <li>
-                                        <Link to="/account" className="arrow" onClick={handleMenuClick}>
+                                        <Link to='/account' className='arrow' onClick={handleMenuClick}>
                                             마이페이지
                                         </Link>
-                                        <div className="two-dep">
+                                        <div className='two-dep'>
                                             <ul>
                                                 <li>
-                                                    <Link to="/reservation">• 예약내역</Link>
+                                                    <Link to='/reservation'>• 예약내역</Link>
                                                 </li>
                                                 <li>
-                                                    <Link to="/schedule">• 일정관리</Link>
+                                                    <Link to='/schedule'>• 일정관리</Link>
                                                 </li>
                                                 <li>
-                                                    <Link to="/myPage">• 내 정보</Link>
+                                                    <Link to='/myPage'>• 내 정보</Link>
                                                 </li>
                                                 <li>
-                                                    <Link to="/account">• 계정관리</Link>
+                                                    <Link to='/account'>• 계정관리</Link>
                                                 </li>
                                             </ul>
                                         </div>
