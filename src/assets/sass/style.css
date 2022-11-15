@@ -2853,7 +2853,7 @@ select option {
   margin: 40px;
 }
 .account h2 {
-  margin-top: 70px;
+  margin-top: 40px;
   font-weight: 700;
   font-size: 25px;
 }
@@ -3179,8 +3179,9 @@ table tr td:nth-of-type(2) {
   align-items: center;
   width: 50%;
 }
-.modify .modifyCheck ul li .radioCheck span span {
+.modify .modifyCheck ul li .radioCheck span label {
   margin-left: 20px;
+  margin-bottom: 0;
 }
 .modify .modifyCheck ul li .flexInput {
   display: flex;
@@ -3192,6 +3193,10 @@ table tr td:nth-of-type(2) {
   width: 45%;
 }
 .modify .modifyCheck ul .chk_list label {
+  margin-bottom: 0;
+}
+
+#modify ul li .chk_radio02 label {
   margin-bottom: 0;
 }
 
@@ -3610,7 +3615,12 @@ table tr td:nth-of-type(2) {
 }
 .modal-dialog .modal-content .modal-footer .btn:nth-of-type(2) {
   background: #d9d9d9;
+  margin-top: 10px;
   color: #909090;
+}
+
+#NCCN .btn:nth-of-type(1) {
+  margin-bottom: 10px;
 }
 
 .toastPop {

@@ -81,7 +81,7 @@ const JoinModify = () => {
             이전
           </button>
           <button type="button" className="next" onClick={handleNextStep}>
-            다음
+            수정
           </button>
         </div>
       </div>

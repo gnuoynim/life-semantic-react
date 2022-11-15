@@ -57,7 +57,39 @@ const NCCN = () => {
       setStep(step - 1);
     }
   };
-
+  const handleModal = () => {
+    setModal({
+      ...modal,
+      show: true,
+      cancelShow: false,
+      title: "",
+      content: (
+        <div>
+          수면(NCCN) 설문을
+          <br />
+          완료하셨습니다.
+        </div>
+      ),
+      confirmText: "확인",
+    });
+  };
+  const handleModal01 = () => {
+    setModal({
+      ...modal,
+      show: true,
+      title: "",
+      cancelShow: true,
+      cancelText: "이어서 설문할게요",
+      content: (
+        <div>
+          설문을 종료하시겠습니까?
+          <br />
+          완료한 설문 페이지까지만 저장됩니다.
+        </div>
+      ),
+      confirmText: "네,중단할게요.",
+    });
+  };
   useEffect(() => {
     const scrollHeight = $(".Step").prop("scrollHeight");
     console.log(scrollHeight);
@@ -78,6 +110,7 @@ const NCCN = () => {
       <TitleHeadComponent name="수면위생(NCCN)" />
       {/* <button type='button' onClick={() => setModal({...modal, show:true, title:'기본2'})}>버튼</button> */}
       <div className="tired painBox" id="NCCN">
+      <ModalComponent/>
         <h2>시작전 설문 - 수면위생(NCCN)</h2>
         <div className="Step">
           <div>
@@ -98,11 +131,13 @@ const NCCN = () => {
         <button type="button" className="prev" onClick={handlePrevStep}>
           이전
         </button>
-        <button type="button" className="next" onClick={handleNextStep}>
+        <button type="button" className="next" onClick={handleModal01}>
           다음
         </button>
         <div className="buttonSpace"></div>
+        
       </div>
+     
     </div>
   );
 };

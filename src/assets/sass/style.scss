@@ -2545,7 +2545,7 @@ select {
 .account {
   margin: 40px;
   h2 {
-    margin-top: 70px;
+    margin-top: 40px;
     font-weight: 700;
     font-size: 25px;
   }
@@ -2867,14 +2867,16 @@ table {
             label {
               width: 100%;
               margin-bottom: 0;
+              
             }
           }
           span {
             display: flex;
             align-items: center;
             width: 50%;
-            span {
+            label {
               margin-left: 20px;
+              margin-bottom: 0;
             }
           }
         }
@@ -2893,6 +2895,18 @@ table {
           margin-bottom: 0;
         }
       }
+    }
+  }
+}
+#modify{
+  ul{
+    li{
+      .chk_radio02{
+        label{
+          margin-bottom: 0;
+        }
+      }
+      
     }
   }
 }
@@ -3316,11 +3330,22 @@ table {
     }
     .modal-footer {
       .btn {
+        &:nth-of-type(1){
+          
+        }
         &:nth-of-type(2) {
           background: #d9d9d9;
+          margin-top: 10px;
           color: #909090;
         }
       }
+    }
+  }
+}
+#NCCN{
+  .btn{
+    &:nth-of-type(1){
+      margin-bottom: 10px;
     }
   }
 }

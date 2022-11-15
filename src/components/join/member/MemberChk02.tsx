@@ -1,41 +1,49 @@
-import React, { useState } from 'react';
-import { useEffect } from 'react';
-import InputElement from '../../elements/InputElement';
-import useUserHttp from '@hooks/queries/useUserQuery';
-import { ListInterface } from '@interfaces/listInterface';
-import { UserInterface } from '@interfaces/userInterface';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import $ from 'jquery';
-
+import React, { useState } from "react";
+import { useEffect } from "react";
+import InputElement from "../../elements/InputElement";
+import useUserHttp from "@hooks/queries/useUserQuery";
+import { ListInterface } from "@interfaces/listInterface";
+import { UserInterface } from "@interfaces/userInterface";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import $ from "jquery";
 
 const MemberChk02 = ({ nextStep }: { nextStep: Function }) => {
   const [isSmoke, setIsSmoke] = useState(false);
   const [isDrink, setIsDrink] = useState(false);
 
   const handleFocusBtn = (event: React.MouseEvent<HTMLButtonElement>) => {
-
-    const checkSmoking = document.querySelector('[name="check_smoking"]:checked') as HTMLInputElement;
-    const checkDrink = document.querySelector('[name="check_drink"]:checked') as HTMLInputElement;
-    const checkCaffeine = document.querySelector('[name="check_caffeine"]:checked') as HTMLInputElement;
+    const checkSmoking = document.querySelector(
+      '[name="check_smoking"]:checked'
+    ) as HTMLInputElement;
+    const checkDrink = document.querySelector(
+      '[name="check_drink"]:checked'
+    ) as HTMLInputElement;
+    const checkCaffeine = document.querySelector(
+      '[name="check_caffeine"]:checked'
+    ) as HTMLInputElement;
 
     if (!checkSmoking) return false;
-    if (checkSmoking && checkSmoking.value === '흡연')
+    if (checkSmoking && checkSmoking.value === "흡연")
       return checkSmokingValues();
 
     if (!checkDrink) return false;
-    if (checkDrink && checkDrink.value === '음주')
-      return checkDrinkingValues();
+    if (checkDrink && checkDrink.value === "음주") return checkDrinkingValues();
 
-    if (!checkCaffeine)
-      return false;
+    if (!checkCaffeine) return false;
 
     nextStep(3);
   };
 
   const checkSmokingValues = () => {
-    const smokingRate = document.getElementById('smoking_rate') as HTMLInputElement;
-    const smokingStart = document.getElementById('smoking_start') as HTMLInputElement;
-    const smokingEnd = document.getElementById('smoking_end') as HTMLInputElement;
+    const smokingRate = document.getElementById(
+      "smoking_rate"
+    ) as HTMLInputElement;
+    const smokingStart = document.getElementById(
+      "smoking_start"
+    ) as HTMLInputElement;
+    const smokingEnd = document.getElementById(
+      "smoking_end"
+    ) as HTMLInputElement;
 
     if (!smokingRate.value) {
       smokingRate.focus();
@@ -54,9 +62,15 @@ const MemberChk02 = ({ nextStep }: { nextStep: Function }) => {
   };
 
   const checkDrinkingValues = () => {
-    const drinkingRate = document.getElementById('drinking_rate') as HTMLInputElement;
-    const drinkingStart = document.getElementById('drinking_start') as HTMLInputElement;
-    const drinkingEnd = document.getElementById('drinking_end') as HTMLInputElement;
+    const drinkingRate = document.getElementById(
+      "drinking_rate"
+    ) as HTMLInputElement;
+    const drinkingStart = document.getElementById(
+      "drinking_start"
+    ) as HTMLInputElement;
+    const drinkingEnd = document.getElementById(
+      "drinking_end"
+    ) as HTMLInputElement;
 
     if (!drinkingRate.value) {
       drinkingRate.focus();
@@ -76,7 +90,7 @@ const MemberChk02 = ({ nextStep }: { nextStep: Function }) => {
 
   const handleSmoke = (event: React.ChangeEvent<HTMLInputElement>) => {
     const target = event.target;
-    if (target.value === '흡연') {
+    if (target.value === "흡연") {
       setIsSmoke(true);
     } else {
       setIsSmoke(false);
@@ -85,7 +99,7 @@ const MemberChk02 = ({ nextStep }: { nextStep: Function }) => {
 
   const handleDrink = (event: React.ChangeEvent<HTMLInputElement>) => {
     const target = event.target;
-    if (target.value === '음주') {
+    if (target.value === "음주") {
       setIsDrink(true);
     } else {
       setIsDrink(false);
@@ -93,13 +107,10 @@ const MemberChk02 = ({ nextStep }: { nextStep: Function }) => {
   };
 
   useEffect(() => {
-
-    $('.isCheck').on('click', function() {
-      const options = $(this).parent().siblings('.input_detail');
-      options.css('display', 'block');
-
+    $(".isCheck").on("click", function () {
+      const options = $(this).parent().siblings(".input_detail");
+      options.css("display", "block");
     });
-
   }, []);
 
   return (
@@ -111,19 +122,40 @@ const MemberChk02 = ({ nextStep }: { nextStep: Function }) => {
         </label>
         <div className="chk_radio02">
           <span>
-            <InputElement type="radio" value="흡연" name="check_smoking" id="agree" onChange={handleSmoke} />
+            <InputElement
+              type="radio"
+              value="흡연"
+              name="check_smoking"
+              id="agree"
+              onChange={handleSmoke}
+            />
             <label htmlFor="agree">흡연</label>
           </span>
           <span>
-            <InputElement type="radio" value="비흡연" name="check_smoking" id="agree01" onChange={handleSmoke} />
+            <InputElement
+              type="radio"
+              value="비흡연"
+              name="check_smoking"
+              id="agree01"
+              onChange={handleSmoke}
+            />
             <label htmlFor="agree01">비흡연</label>
           </span>
           <span>
-            <InputElement type="radio" value="금연" name="check_smoking" id="agree02" onChange={handleSmoke} />
+            <InputElement
+              type="radio"
+              value="금연"
+              name="check_smoking"
+              id="agree02"
+              onChange={handleSmoke}
+            />
             <label htmlFor="agree02">금연</label>
           </span>
         </div>
-        <div className="input_detail" style={{ display: isSmoke ? 'block' : 'none' }}>
+        <div
+          className="input_detail"
+          style={{ display: isSmoke ? "block" : "none" }}
+        >
           <span>양</span>
           <span>
             <InputElement type="number" id="smoking_rate" />
@@ -143,19 +175,40 @@ const MemberChk02 = ({ nextStep }: { nextStep: Function }) => {
         </label>
         <div className="chk_radio02">
           <span>
-            <InputElement type="radio" value="음주" name="check_drink" id="agree03" onChange={handleDrink} />
+            <InputElement
+              type="radio"
+              value="음주"
+              name="check_drink"
+              id="agree03"
+              onChange={handleDrink}
+            />
             <label htmlFor="agree03">음주</label>
           </span>
           <span>
-            <InputElement type="radio" value="비흡연" name="check_drink" id="agree04" onChange={handleDrink} />
+            <InputElement
+              type="radio"
+              value="비흡연"
+              name="check_drink"
+              id="agree04"
+              onChange={handleDrink}
+            />
             <label htmlFor="agree04">비음주</label>
           </span>
           <span>
-            <InputElement type="radio" value="금연" name="check_drink" id="agree05" onChange={handleDrink} />
+            <InputElement
+              type="radio"
+              value="금연"
+              name="check_drink"
+              id="agree05"
+              onChange={handleDrink}
+            />
             <label htmlFor="agree05">금주</label>
           </span>
         </div>
-        <div className="input_detail" style={{ display: isDrink ? 'block' : 'none' }}>
+        <div
+          className="input_detail"
+          style={{ display: isDrink ? "block" : "none" }}
+        >
           <span>종류</span>
           <span>
             <InputElement type="number" id="drinking_rate" />
@@ -163,10 +216,18 @@ const MemberChk02 = ({ nextStep }: { nextStep: Function }) => {
           </span>
           <span className="term">
             <span>기간</span>
-            <InputElement type="number" placeholder="시작" id="drinking_start" />
+            <InputElement
+              type="number"
+              placeholder="시작"
+              id="drinking_start"
+            />
             <label>년</label>
             <b>~</b>
-            <InputElement type="number" placeholder="마지막" id="drinking_end" />
+            <InputElement
+              type="number"
+              placeholder="마지막"
+              id="drinking_end"
+            />
             <label>년</label>
           </span>
         </div>
@@ -175,11 +236,21 @@ const MemberChk02 = ({ nextStep }: { nextStep: Function }) => {
         </label>
         <div className="chk_radio">
           <span>
-            <InputElement type="radio" value="섭취" name="check_caffeine" id="agree06" />
+            <InputElement
+              type="radio"
+              value="섭취"
+              name="check_caffeine"
+              id="agree06"
+            />
             <label htmlFor="agree06">섭취</label>
           </span>
           <span>
-            <InputElement type="radio" value="비섭취" name="check_caffeine" id="agree07" />
+            <InputElement
+              type="radio"
+              value="비섭취"
+              name="check_caffeine"
+              id="agree07"
+            />
             <label htmlFor="agree07">비섭취</label>
           </span>
         </div>
