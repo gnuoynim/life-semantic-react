@@ -15,79 +15,79 @@ const ReligionStressComponent = () => {
         <span>실생활 문제(12)</span>
         <ul>
           <li>
-            <InputElement type="checkbox" id="" className="check02" />
-            <label>자신 돌보기</label>
+            <InputElement type="checkbox" id="oneself" className="check02" />
+            <label htmlFor="oneself">자신 돌보기</label>
           </li>
           <li>
-            <InputElement type="checkbox" id="" className="check02" />
-            <label>타인 돌보기</label>
+            <InputElement type="checkbox" id="others" className="check02" />
+            <label htmlFor="others">타인 돌보기</label>
           </li>
           <li>
-            <InputElement type="checkbox" id="" className="check02" />
-            <label>직장</label>
+            <InputElement type="checkbox" id="job" className="check02" />
+            <label htmlFor="job">직장</label>
           </li>
           <li>
-            <InputElement type="checkbox" id="" className="check02" />
-            <label>학교</label>
+            <InputElement type="checkbox" id="school" className="check02" />
+            <label htmlFor="school">학교</label>
           </li>
           <li>
-            <InputElement type="checkbox" id="" className="check02" />
-            <label>주택</label>
+            <InputElement type="checkbox" id="house" className="check02" />
+            <label htmlFor="house">주택</label>
           </li>
           <li>
-            <InputElement type="checkbox" id="" className="check02" />
-            <label>금융</label>
+            <InputElement type="checkbox" id="finance" className="check02" />
+            <label htmlFor="finance">금융</label>
           </li>
           <li>
-            <InputElement type="checkbox" id="" className="check02" />
-            <label>보험</label>
+            <InputElement type="checkbox" id="insurance" className="check02" />
+            <label htmlFor="insurance">보험</label>
           </li>
           <li>
-            <InputElement type="checkbox" id="" className="check02" />
-            <label>교통</label>
+            <InputElement type="checkbox" id="traffic" className="check02" />
+            <label htmlFor="traffic">교통</label>
           </li>
           <li>
-            <InputElement type="checkbox" id="" className="check02" />
-            <label>육아</label>
+            <InputElement type="checkbox" id="infantCare" className="check02" />
+            <label htmlFor="infantCare">육아</label>
           </li>
           <li>
-            <InputElement type="checkbox" id="" className="check02" />
-            <label>충분한 음식 섭취</label>
+            <InputElement type="checkbox" id="food" className="check02" />
+            <label htmlFor="food">충분한 음식 섭취</label>
           </li>
           <li>
-            <InputElement type="checkbox" id="" className="check02" />
-            <label>약 구하기</label>
+            <InputElement type="checkbox" id="drug" className="check02" />
+            <label htmlFor="drug">약 구하기</label>
           </li>
           <li>
-            <InputElement type="checkbox" id="" className="check02" />
-            <label>치료 결정</label>
+            <InputElement type="checkbox" id="treatment" className="check02" />
+            <label htmlFor="treatment">치료 결정</label>
           </li>
         </ul>
         <span>영성/종교 문제(6)</span>
         <ul>
           <li>
-            <InputElement type="checkbox" id="" className="check02" />
-            <label>삶의 의미 또는 목적</label>
+            <InputElement type="checkbox" id="life" className="check02" />
+            <label htmlFor="life">삶의 의미 또는 목적</label>
           </li>
           <li>
-            <InputElement type="checkbox" id="" className="check02" />
-            <label>믿음이나 신념의 변화</label>
+            <InputElement type="checkbox" id="belief" className="check02" />
+            <label htmlFor="belief">믿음이나 신념의 변화</label>
           </li>
           <li>
-            <InputElement type="checkbox" id="" className="check02" />
-            <label>죽음, 임종과정, 사후세계</label>
+            <InputElement type="checkbox" id="death" className="check02" />
+            <label htmlFor="death">죽음, 임종과정, 사후세계</label>
           </li>
           <li>
-            <InputElement type="checkbox" id="" className="check02" />
-            <label>신념과 항암치료 사이의 갈등</label>
+            <InputElement type="checkbox" id="conflict" className="check02" />
+            <label htmlFor="conflict">신념과 항암치료 사이의 갈등</label>
           </li>
           <li>
-            <InputElement type="checkbox" id="" className="check02" />
-            <label>신성한 존재와의 관계</label>
+            <InputElement type="checkbox" id="existence" className="check02" />
+            <label htmlFor="existence">신성한 존재와의 관계</label>
           </li>
           <li>
-            <InputElement type="checkbox" id="" className="check02" />
-            <label>의식 또는 식사의 필요성 </label>
+            <InputElement type="checkbox" id="necessity" className="check02" />
+            <label htmlFor="necessity">의식 또는 식사의 필요성 </label>
           </li>
         </ul>
         <div className="textareaBox">

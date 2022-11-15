@@ -33,40 +33,40 @@ const PhysicalStressComponent = () => {
           <span>신체 문제(9)</span>
           <ul>
             <li>
-              <InputElement type="checkbox" id="" className="check02" />
-              <label>통증</label>
+              <InputElement type="checkbox" id="pain" className="check02" />
+              <label htmlFor="pain">통증</label>
             </li>
             <li>
-              <InputElement type="checkbox" id="" className="check02" />
-              <label>수면</label>
+              <InputElement type="checkbox" id="sleep" className="check02" />
+              <label htmlFor="sleep">수면</label>
             </li>
             <li>
-              <InputElement type="checkbox" id="" className="check02" />
-              <label>피로</label>
+              <InputElement type="checkbox" id="tired" className="check02" />
+              <label htmlFor="tired">피로</label>
             </li>
             <li>
-              <InputElement type="checkbox" id="" className="check02" />
-              <label>흡연</label>
+              <InputElement type="checkbox" id="smoking" className="check02" />
+              <label htmlFor="smoking">흡연</label>
             </li>
             <li>
-              <InputElement type="checkbox" id="" className="check02" />
-              <label>약물사용</label>
+              <InputElement type="checkbox" id="drug" className="check02" />
+              <label htmlFor="drug">약물사용</label>
             </li>
             <li>
-              <InputElement type="checkbox" id="" className="check02" />
-              <label>기억력 또는 집중력</label>
+              <InputElement type="checkbox" id="memory" className="check02" />
+              <label htmlFor="memory">기억력 또는 집중력</label>
             </li>
             <li>
-              <InputElement type="checkbox" id="" className="check02" />
-              <label>성 건강</label>
+              <InputElement type="checkbox" id="sexual" className="check02" />
+              <label htmlFor="sexual">성 건강</label>
             </li>
             <li>
-              <InputElement type="checkbox" id="" className="check02" />
-              <label>읍식섭취 변화</label>
+              <InputElement type="checkbox" id="food" className="check02" />
+              <label htmlFor="food">음식섭취 변화</label>
             </li>
             <li>
-              <InputElement type="checkbox" id="" className="check02" />
-              <label>신체기능변화/상실</label>
+              <InputElement type="checkbox" id="physical" className="check02" />
+              <label htmlFor="physical">신체기능변화/상실</label>
             </li>
           </ul>
         </div>

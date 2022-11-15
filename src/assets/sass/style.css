@@ -2218,7 +2218,7 @@ select option {
 .checkList ul {
   margin-top: 30px;
   margin-bottom: 40px;
-  padding-right: 2rem;
+  padding-left: 20px;
 }
 .checkList ul li {
   display: flex;
@@ -2243,7 +2243,7 @@ select option {
 .checkList ul li label {
   font-weight: 400;
   font-size: 16px;
-  margin-left: 40px;
+  margin-left: 30px;
 }
 
 .textareaBox {
@@ -3393,9 +3393,27 @@ table tr td:nth-of-type(2) {
   color: #fff;
 }
 
+.btn-02.fixed {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 30px;
+  width: calc(100% - 40px);
+}
+
 .active {
   background-color: #41b946 !important;
   color: #fff !important;
+}
+
+.borderButton {
+  line-height: 45px;
+  border: 0.5px solid #8f8f8f;
+  font-size: 16px;
+  color: #8f8f8f;
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 80px;
 }
 
 .loginBtn {

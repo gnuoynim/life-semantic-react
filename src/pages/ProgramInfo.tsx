@@ -102,8 +102,10 @@ const ProgramInfo = () => {
                         우천시, 프로그램 참여 인원 5명 이하 시 프로그램이 취소될 수
                         있음(사전 연락) 프로그램 전, 후 설문조사 참여(10~15분 소요)
                     </p>
+                    <button type="button" className="borderButton">목록으로 돌아가기</button>
                 </div>
             </div>
+            <button type="button" className="btn-02 active fixed">예약하기</button>
         </React.Fragment>
     );
 };
