@@ -195,7 +195,7 @@ ol {
   display: none;
 }
 .header .m-menu .drawer .nav ul li .two-dep ul li {
-  padding: 0;
+  padding: 10px 0;
   border: none;
 }
 .header .m-menu .drawer .nav ul li .two-dep ul li a {
@@ -881,8 +881,14 @@ select option {
 .surveyToday {
   margin-top: 40px;
 }
+.surveyToday p {
+  padding: 20px 0;
+}
 .surveyToday .date {
   margin-bottom: 40px;
+}
+.surveyToday .rc-slider {
+  width: 90%;
 }
 .surveyToday .rc-slider .rc-slider-handle {
   background: #41b946;
@@ -3498,6 +3504,15 @@ table tr td:nth-of-type(2) {
   font-size: 14px;
   margin-top: 20px;
 }
+.modal-dialog .modal-content .modal-body .modalImage {
+  font-weight: 500;
+}
+.modal-dialog .modal-content .modal-body .modalImage span {
+  font-weight: 600;
+}
+.modal-dialog .modal-content .modal-body .modalImage img {
+  margin-top: 20px;
+}
 .modal-dialog .modal-content .modal-footer .btn:nth-of-type(2) {
   background: #d9d9d9;
   color: #909090;
@@ -3519,6 +3534,10 @@ table tr td:nth-of-type(2) {
   padding: 15px 0 !important;
   margin-bottom: 0;
   text-align: center;
+}
+
+.surveyToday .toastPop {
+  bottom: 160px;
 }
 
 .CodeCheck {

@@ -1,9 +1,14 @@
 import React, {useState} from "react";
 import TitleHeadComponent from "@/components/head/TitleHeadComponent";
 import {Link, useLocation, useNavigate} from "react-router-dom";
+import { modalState } from "@/states/modalState";
+import ModalComponent from "@/components/modal/ModalComponent";
+import { useRecoilState } from "recoil";
+
+
 
 const Survey = () => {
-
+    const [modal, setModal] = useRecoilState(modalState);
     const location = useLocation();
     const navigate = useNavigate();
     const [isShow, setShow] = useState<boolean>(false);
@@ -11,6 +16,22 @@ const Survey = () => {
     const handleToolTip = () => {
         setShow(!isShow);
     }   
+
+    const handleModal = () => {
+        setModal({
+          ...modal,
+          show: true,
+          title: "",
+          cancelShow: false,
+          content: (
+            <div>
+              아직 설문이<br />
+              열리지 않았습니다.
+            </div>
+          ),
+          confirmText: "확인",
+        });
+      };
 
     return (
         <React.Fragment>
@@ -38,7 +59,7 @@ const Survey = () => {
                         </div>
                     </div>
                     <ul>
-                        <li>
+                        <li className="active">
                             <Link to="">시작전 설문(0/3)</Link>
                         </li>
                         <li>
@@ -50,6 +71,8 @@ const Survey = () => {
                     </ul>
                 </div>
             </div>
+            <button type="button" onClick={handleModal}></button>
+            <ModalComponent />
         </React.Fragment>
     );
 };

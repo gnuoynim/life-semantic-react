@@ -10,6 +10,7 @@ import { modalState } from "@/states/modalState";
 import ToastPopup from "@/components/modal/ToastPopup";
 import TitleHeadComponent from "@/components/head/TitleHeadComponent";
 
+
 const LostPassword = () => {
   const [modal, setModal] = useRecoilState(modalState);
   const location = useLocation();
@@ -93,7 +94,6 @@ const LostPassword = () => {
               <option value="option4">option4</option>
             </select>
           </div>
-
           <div className="CodeCheck">
             <InputElement type="text" placeholder="휴대폰 번호 입력" />
             <button type="button"onClick={handlePopup}>

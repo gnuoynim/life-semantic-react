@@ -247,7 +247,7 @@ ol {
               display: none;
               ul {
                 li {
-                  padding: 0;
+                  padding:10px 0;
                   border: none;
                   a {
                     display: block;
@@ -916,10 +916,14 @@ select {
 }
 .surveyToday {
   margin-top: 40px;
+  p{
+    padding: 20px 0;
+  }
   .date {
     margin-bottom: 40px;
   }
   .rc-slider {
+    width: 90%;
     .rc-slider-handle {
       background: #41b946;
     }
@@ -3198,6 +3202,15 @@ table {
         font-size: 14px;
         margin-top: 20px;
       }
+      .modalImage{
+        font-weight: 500;
+        span{
+          font-weight: 600;
+        }
+        img{
+          margin-top: 20px;
+        }
+      }
     }
     .modal-footer {
       .btn {
@@ -3225,6 +3238,12 @@ table {
     margin-bottom: 0;
     text-align: center;
   }
+}
+.surveyToday{
+  .toastPop{
+    bottom: 160px;
+  }
+  
 }
 .CodeCheck{
   position: relative;
