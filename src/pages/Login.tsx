@@ -122,7 +122,7 @@ const Login = () => {
               )}
               <div className="BtnBox">
                 <Link to="/join">회원가입</Link>
-                <Link to="/id">아이디 찾기</Link>
+                <Link to="/lostId">아이디 찾기</Link>
                 <Link to="/password">비밀번호 찾기</Link>
               </div>
             </div>
