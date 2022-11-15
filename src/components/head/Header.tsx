@@ -2,10 +2,13 @@ import React from 'react';
 import {useState} from 'react';
 import {useRef} from 'react';
 import {Link} from 'react-router-dom';
+import {userState} from '@states/userState';
+import {useRecoilValue} from 'recoil';
 
 const HeaderComponent = () => {
     const [closeList, setCloseList] = useState<boolean>(false);
     const listRef = useRef<HTMLDivElement>(null);
+    const user = useRecoilValue(userState);
 
     function foldList() {
         if (!listRef || !listRef.current) {
@@ -63,12 +66,22 @@ const HeaderComponent = () => {
                             </button>
                             <div className='log-btn'>
                                 <ul>
+                                    {user.accessToken &&
+                                    <React.Fragment>
+                                        <li>
+                                            <Link to='/'>로그아웃</Link>
+                                        </li>
+
+                                        <li>
+                                            <Link to='/reservation'>예약내역</Link>
+                                        </li>
+                                    </React.Fragment>
+                                    }
+                                    {!user.accessToken &&
                                     <li>
-                                        <Link to='/'>로그아웃</Link>
+                                        <Link to='/login'>로그인</Link>
                                     </li>
-                                    <li>
-                                        <Link to='/reservation'>예약내역</Link>
-                                    </li>
+                                    }
                                 </ul>
                             </div>
                         </div>
@@ -96,30 +109,34 @@ const HeaderComponent = () => {
                                             </ul>
                                         </div>
                                     </li>
-                                    <li>
-                                        <Link to='/survey'>설문작성</Link>
-                                    </li>
-                                    <li>
-                                        <Link to='/account' className='arrow' onClick={handleMenuClick}>
-                                            마이페이지
-                                        </Link>
-                                        <div className='two-dep'>
-                                            <ul>
-                                                <li>
-                                                    <Link to='/reservation'>• 예약내역</Link>
-                                                </li>
-                                                <li>
-                                                    <Link to='/schedule'>• 일정관리</Link>
-                                                </li>
-                                                <li>
-                                                    <Link to='/myPage'>• 내 정보</Link>
-                                                </li>
-                                                <li>
-                                                    <Link to='/account'>• 계정관리</Link>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
+                                    {user.accessToken &&
+                                    <React.Fragment>
+                                        <li>
+                                            <Link to='/survey'>설문작성</Link>
+                                        </li>
+                                        <li>
+                                            <Link to='/account' className='arrow' onClick={handleMenuClick}>
+                                                마이페이지
+                                            </Link>
+                                            <div className='two-dep'>
+                                                <ul>
+                                                    <li>
+                                                        <Link to='/reservation'>• 예약내역</Link>
+                                                    </li>
+                                                    <li>
+                                                        <Link to='/schedule'>• 일정관리</Link>
+                                                    </li>
+                                                    <li>
+                                                        <Link to='/myPage'>• 내 정보</Link>
+                                                    </li>
+                                                    <li>
+                                                        <Link to='/account'>• 계정관리</Link>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </React.Fragment>
+                                    }
                                 </ul>
                             </nav>
                         </div>

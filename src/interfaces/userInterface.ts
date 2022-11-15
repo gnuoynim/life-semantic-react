@@ -3,4 +3,5 @@ export interface UserInterface {
   name: string;
   age?: number;
   cellphone?: string;
+  accessToken?: string;
 }

@@ -12,4 +12,11 @@ export interface ProgramInterface {
   pgStatus: string,
   pgIsApply: string,
   pgAppLimit: string,
+  pgOrgan: string,
+  pgContact: string,
+  pgTarget: string,
+  pgTakenTimes: string,
+  pgProcWay: string,
+  pgMainAct: string,
+  pgExpect: string,
 }
