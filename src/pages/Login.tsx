@@ -32,7 +32,7 @@ const Login = () => {
         </div>
         <div className='container loginInput'>
           <InputElement type="text" placeholder='아이디 입력' maxlength='20'/>
-          <InputElement type="text" placeholder='비밀번호 입력' maxlength='30'/>         
+          <InputElement type="text" placeholder='비밀번호 입력' maxlength='30'/>
           <span className='LoginCheck'>
             <InputElement type="checkbox" />
             <label>자동 로그인</label>

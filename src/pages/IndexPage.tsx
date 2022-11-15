@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
-import WebLayout from "@layouts/web/WebLayout";
-import InputElement from "@components/elements/InputElement";
-import { Link, useNavigate } from "react-router-dom";
-import useAxios from "@hooks/useAxios";
-import { LoginInterface } from "@interfaces/loginInterface";
-import $ from "jquery";
-import ModalComponent from "@components/modal/ModalComponent";
-import { useRecoilState } from "recoil";
-import { modalState } from "@states/modalState";
+import React, { useEffect, useState } from 'react';
+import WebLayout from '@layouts/web/WebLayout';
+import InputElement from '@components/elements/InputElement';
+import { Link, useNavigate } from 'react-router-dom';
+import useAxios from '@hooks/useAxios';
+import { LoginInterface } from '@interfaces/loginInterface';
+import $ from 'jquery';
+import ModalComponent from '@components/modal/ModalComponent';
+import { useRecoilState } from 'recoil';
+import { modalState } from '@states/modalState';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -15,15 +15,15 @@ const Login = () => {
   const [buttonShow, setButtonShow] = useState<boolean>(false);
   const [modal, setModal] = useRecoilState(modalState);
   const [user, setUser] = useState<LoginInterface>({
-    userPass: "",
-    userID: "",
+    userPass: '',
+    userID: ''
   });
 
   const handleLogin = () => {
     api
-      .post("/users/login", user)
+      .post('/users/login', user)
       .then((res) => {
-        if (res.data.result === "success") navigate("/home");
+        if (res.data.result === 'success') navigate('/home');
       })
       .catch((err) => {
         console.log(err);
@@ -36,8 +36,8 @@ const Login = () => {
   };
 
   const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    if (event.key === "Enter") {
-      $(".loginBtn").trigger("click");
+    if (event.key === 'Enter') {
+      $('.loginBtn').trigger('click');
     }
   };
 
@@ -45,7 +45,7 @@ const Login = () => {
     setModal({
       ...modal,
       show: true,
-      title: "안내",
+      title: '안내',
       cancelShow: false,
       content: (
         <div>
@@ -53,13 +53,13 @@ const Login = () => {
           <br /> 다시 확인해 주세요.
         </div>
       ),
-      confirmText: "확인",
+      confirmText: '확인'
     });
   };
 
   useEffect(() => {
     let submitButtonShow = false;
-    if (user.userID !== "" && user.userPass !== "") submitButtonShow = true;
+    if (user.userID !== '' && user.userPass !== '') submitButtonShow = true;
     setButtonShow(submitButtonShow);
   }, [user]);
 
@@ -78,7 +78,7 @@ const Login = () => {
             <InputElement
               type="text"
               placeholder="아이디 입력"
-              name={"userID"}
+              name={'userID'}
               maxLength="20"
               value={user.userID}
               onChange={handleChange}
@@ -87,7 +87,7 @@ const Login = () => {
             <InputElement
               type="password"
               placeholder="비밀번호 입력"
-              name={"userPass"}
+              name={'userPass'}
               maxLength="30"
               value={user.userPass}
               onChange={handleChange}
@@ -116,7 +116,7 @@ const Login = () => {
               </button>
             )}
             <div className="BtnBox">
-              <Link to="/login">회원가입</Link>
+              <Link to="/join">회원가입</Link>
               <Link to="/id">아이디 찾기</Link>
               <Link to="/password">비밀번호 찾기</Link>
             </div>
