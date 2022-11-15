@@ -66,9 +66,9 @@ const JoinModify = () => {
       <div className="modify">
         <div className="modifyProgress">
           <ul className="Step">
-            <CircleComponent step="1" active={step === 1} />
-            <CircleComponent step="2" active={step === 2} />
-            <CircleComponent step="3" active={step === 3} />
+            <CircleComponent step="1" active={step >= 1} />
+            <CircleComponent step="2" active={step >= 2} />
+            <CircleComponent step="3" active={step >= 3} />
           </ul>
         </div>
 

@@ -2314,6 +2314,11 @@ select option {
 .roundBox {
   margin-bottom: 80px;
 }
+.roundBox .swiper-slide {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
 
 .roundNumber {
   box-sizing: border-box;

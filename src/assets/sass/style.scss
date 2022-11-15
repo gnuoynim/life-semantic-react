@@ -1994,6 +1994,9 @@ select {
 }
 .roundBox {
   margin-bottom: 80px;
+  .swiper-slide{
+    width: fit-content;
+  }
 }
 .roundNumber {
   box-sizing: border-box;
