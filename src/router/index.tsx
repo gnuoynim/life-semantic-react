@@ -1,10 +1,8 @@
 import {useRoutes} from "react-router-dom";
 import IndexPage from "@pages/IndexPage";
-import WebLayout from "@layouts/web/WebLayout";
 import TotalLayout from "@layouts/web/TotalLayout";
-import HeaderComponent from "@/components/head/Header";
+
 import Schedule from "@/pages/Schedule";
-import AnotherPage from "@pages/AnotherPage";
 import LostPassword from "@/pages/LostPassword";
 import SurveyDeStress from "@/pages/SurveyDestress";
 import SurveyBefore from "@/pages/SurveyBefore";
@@ -21,7 +19,6 @@ import LostId from "@pages/LostId";
 import ISI from "@/pages/ISI";
 import NCCN from "@/pages/NCCN";
 import Account from "@/pages/Account";
-import Modal from "@/pages/Modal";
 import DeleteAccount from "@/pages/DeleteAccount";
 import ForestList from "@/pages/ForestList";
 import ForestContent from "@/pages/ForestContent";
@@ -43,12 +40,41 @@ function Router() {
             ],
         },
         {
+            path: 'password',
+            children: [
+                {
+                    path: '',
+                    element: <LostPassword/>,
+                },
+            ],
+        },
+        {
             path: 'program',
             element: <TotalLayout/>,
             children: [
                 {
                     path: '',
                     element: <Program/>,
+                },
+            ],
+        },
+        {
+            path: 'programList',
+            element: <TotalLayout/>,
+            children: [
+                {
+                    path: '',
+                    element: <ProgramList/>,
+                },
+            ],
+        },
+        {
+            path: 'programInfo',
+            element: <TotalLayout/>,
+            children: [
+                {
+                    path: '',
+                    element: <ProgramInfo/>,
                 },
             ],
         },
@@ -72,7 +98,187 @@ function Router() {
                 },
             ],
         },
-    ];
+        {
+            path: 'surveyBefore',
+            element: <TotalLayout/>,
+            children: [
+                {
+                    path: '',
+                    element: <SurveyBefore/>,
+                },
+            ],
+        },
+        {
+            path: 'surveyToday',
+            element: <TotalLayout/>,
+            children: [
+                {
+                    path: '',
+                    element: <SurveyToday/>,
+                },
+            ],
+        },
+        {
+            path: 'destress',
+            element: <TotalLayout/>,
+            children: [
+                {
+                    path: '',
+                    element: <SurveyDeStress/>,
+                },
+            ],
+        },
+        {
+            path: 'pain',
+            element: <TotalLayout/>,
+            children: [
+                {
+                    path: '',
+                    element: <Pain/>,
+                },
+            ],
+        },
+        {
+            path: 'schedule',
+            element: <TotalLayout/>,
+            children: [
+                {
+                    path: '',
+                    element: <Schedule/>,
+                },
+            ],
+        },
+        {
+            path: 'bookProgram',
+            element: <TotalLayout/>,
+            children: [
+                {
+                    path: '',
+                    element: <BookProgram/>,
+                },
+            ],
+        },
+        {
+            path: 'reservationList',
+            element: <TotalLayout/>,
+            children: [
+                {
+                    path: '',
+                    element: <ReservationList/>,
+                },
+            ],
+        },
+        {
+            path: 'tired',
+            element: <TotalLayout/>,
+            children: [
+                {
+                    path: '',
+                    element: <Tired/>,
+                },
+            ],
+        },
+        {
+            path: 'join',
+            element: <TotalLayout/>,
+            children: [
+                {
+                    path: '',
+                    element: <Join/>,
+                },
+            ],
+        },
+        {
+            path: 'lostId',
+            element: <TotalLayout/>,
+            children: [
+                {
+                    path: '',
+                    element: <LostId/>,
+                },
+            ],
+        },
+        {
+            path: 'isi',
+            element: <TotalLayout/>,
+            children: [
+                {
+                    path: '',
+                    element: <ISI/>,
+                },
+            ],
+        },
+        {
+            path: 'nccn',
+            element: <TotalLayout/>,
+            children: [
+                {
+                    path: '',
+                    element: <NCCN/>,
+                },
+            ],
+        },
+        {
+            path: 'account',
+            element: <TotalLayout/>,
+            children: [
+                {
+                    path: '',
+                    element: <Account/>,
+                },
+            ],
+        },
+        {
+            path: 'deleteAccount',
+            element: <TotalLayout/>,
+            children: [
+                {
+                    path: '',
+                    element: <DeleteAccount/>,
+                },
+            ],
+        },
+        {
+            path: 'forestList',
+            element: <TotalLayout/>,
+            children: [
+                {
+                    path: '',
+                    element: <ForestList/>,
+                },
+            ],
+        },
+        {
+            path: 'joinModify',
+            element: <TotalLayout/>,
+            children: [
+                {
+                    path: '',
+                    element: <JoinModify/>,
+                },
+            ],
+        },
+        {
+            path: 'modify',
+            element: <TotalLayout/>,
+            children: [
+                {
+                    path: '',
+                    element: <Modify/>,
+                },
+            ],
+        },
+        {
+            path: 'modifyInformation',
+            element: <TotalLayout/>,
+            children: [
+                {
+                    path: '',
+                    element: <ModifyInformation/>,
+                },
+            ],
+        },
+    ]
     return useRoutes(routes);
 }
 
