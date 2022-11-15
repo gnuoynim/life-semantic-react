@@ -63,7 +63,7 @@ const LostPassword = () => {
     setToast(true);
     setTimeout(() => {
       setToast(false);
-    }, 2000);
+    }, 3000);
   };
 
   return (

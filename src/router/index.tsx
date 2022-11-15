@@ -169,7 +169,7 @@ function Router() {
             ],
         },
         {
-            path: 'destress',
+            path: 'deStress',
             element: <TotalLayout/>,
             children: [
                 {
@@ -185,6 +185,16 @@ function Router() {
                 {
                     path: '',
                     element: <Pain/>,
+                },
+            ],
+        },
+        {
+            path: 'tired',
+            element: <TotalLayout/>,
+            children: [
+                {
+                    path: '',
+                    element: <Tired/>,
                 },
             ],
         },
@@ -215,16 +225,6 @@ function Router() {
                 {
                     path: '',
                     element: <ReservationList/>,
-                },
-            ],
-        },
-        {
-            path: 'tired',
-            element: <TotalLayout/>,
-            children: [
-                {
-                    path: '',
-                    element: <Tired/>,
                 },
             ],
         },

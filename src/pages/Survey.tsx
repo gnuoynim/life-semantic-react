@@ -1,23 +1,25 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import TitleHeadComponent from "@/components/head/TitleHeadComponent";
 import {Link, useLocation, useNavigate} from "react-router-dom";
 import { modalState } from "@/states/modalState";
 import ModalComponent from "@/components/modal/ModalComponent";
 import { useRecoilState } from "recoil";
-
-
+import useAxios from "@/hooks/useAxios";
+import {SurveyListInterface} from "@/interfaces/surveyListInterface";
 
 const Survey = () => {
     const [modal, setModal] = useRecoilState(modalState);
     const location = useLocation();
     const navigate = useNavigate();
+    const api = useAxios();
     const [isShow, setShow] = useState<boolean>(false);
+    const [survey, setSurvey] = useState<SurveyListInterface[]>();
 
     const handleToolTip = () => {
         setShow(!isShow);
     }   
 
-    const handleModal = () => {
+    const handleNotOpen = () => {
         setModal({
           ...modal,
           show: true,
@@ -33,6 +35,24 @@ const Survey = () => {
         });
       };
 
+    const getSurvey = async () => {
+        await api
+            .post("/surveys/list", {userNo: '1'})
+            .then((res) => {
+                console.log(res.data.data)
+                if (res.data.result === "success") setSurvey(res.data.data);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    };
+
+    useEffect(() => {
+        (async () => {
+            await getSurvey();
+        })();
+    }, []);
+
     return (
         <React.Fragment>
             <TitleHeadComponent name="설문 작성"/>
@@ -40,7 +60,7 @@ const Survey = () => {
                 <div className="surveyMain">
                     <div className="surveyName">
                         <p>굿바이 피로1기</p>
-                        <div className="noticeIco on" onClick={handleToolTip} >
+                        <div className="noticeIco on" onClick={handleToolTip}>
                             <img src="public/images/question.svg" alt="" className="" />
                             {isShow &&
                             <div className="noticeBox">
@@ -59,19 +79,18 @@ const Survey = () => {
                         </div>
                     </div>
                     <ul>
+                        <li className="">
+                            <Link to="/surveyBefore">시작전 설문(2/3)</Link>
+                        </li>
+                        <li className="">
+                            <Link to="/surveyToday">일일 설문<br/><span>(최근 5일 이내 미작성 2건)</span></Link>
+                        </li>
                         <li className="active">
-                            <Link to="">시작전 설문(0/3)</Link>
-                        </li>
-                        <li>
-                            일일 설문<br/><span><Link to="">(최근 5일 이내 미작성 2건)</Link></span>
-                        </li>
-                        <li>
                             <Link to="">종료후 설문(0/3)</Link>
                         </li>
                     </ul>
                 </div>
             </div>
-            <button type="button" onClick={handleModal}></button>
             <ModalComponent />
         </React.Fragment>
     );

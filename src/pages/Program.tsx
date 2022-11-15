@@ -20,7 +20,7 @@ const Program = () => {
                 <GoodByeComponent/>
                 <GoodSleepComponent/>
             </div>
-            <BannerComponent />
+            <BannerComponent/>
             <BookComponent/>
         </React.Fragment>
     );

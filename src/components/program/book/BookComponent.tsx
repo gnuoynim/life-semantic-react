@@ -128,7 +128,7 @@ const BookComponent = () => {
                                         </button>
                                     )}
                                     {item.pgIsApply === "1" && item.pgStatus === "applying" && (
-                                        <button type="button" className="btn-02 active ">
+                                        <button type="button" className="btn-02 active" onClick={(event) => moveProgramPage(item.pgIdx)}>
                                             <span className="cancel">취소하기</span>
                                         </button>
                                     )}
