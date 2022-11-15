@@ -608,6 +608,9 @@ select option {
 .MemberChk {
   padding-bottom: 150px;
 }
+.MemberChk .age {
+  padding-left: 50px;
+}
 .MemberChk label span {
   display: block;
   width: -webkit-fit-content;
@@ -709,6 +712,13 @@ select option {
   width: 20px;
   height: 20px;
   border: none;
+}
+
+.checkContents ul li {
+  padding: 10px 0;
+}
+.checkContents ul li input {
+  padding: 0;
 }
 
 .surveyMain {
@@ -2413,6 +2423,7 @@ select option {
 
 .radioCheck ul {
   margin-left: 0;
+  padding-left: 0;
 }
 .radioCheck ul li {
   margin: 10px 0;

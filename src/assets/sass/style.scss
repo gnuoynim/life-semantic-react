@@ -647,6 +647,9 @@ select {
 }
 .MemberChk {
   padding-bottom: 150px;
+  .age{
+    padding-left: 50px;
+  }
   label {
     span {
       display: block;
@@ -750,7 +753,16 @@ select {
     border: none;
   }
 }
-
+.checkContents{
+  ul{
+    li{
+      padding: 10px 0;
+     input{
+      padding: 0;
+     }
+    }
+  }
+}
 .surveyMain {
   margin: 0 20px;
   .surveyName {
@@ -2089,6 +2101,7 @@ select {
 .radioCheck {
   ul {
     margin-left: 0;
+    padding-left: 0;
     li {
       margin: 10px 0;
       input[type="radio"] {
