@@ -8,7 +8,7 @@ import Router from "./router";
 const App = () => {
   return (
     <BrowserRouter>
-      {/*<Routes>*/}
+      {/* <Routes> */}
       {/*  <Route path="" element={<IndexPage />} />*/}
       {/*  <Route path="joinModify" element={<JoinModify />} />*/}
       {/*  <Route path="modal" element={<Modal/>} />*/}
@@ -37,7 +37,7 @@ const App = () => {
       {/*  <Route path="password" element={<LostPassword />} />*/}
       {/*  <Route path="another" element={<AnotherPage />} />*/}
       {/*  <Route path="board/write" element={<BoardWritePage />} />*/}
-      {/*</Routes>*/}
+      {/* </Routes> */}
       <Router />
     </BrowserRouter>
   );

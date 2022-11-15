@@ -228,6 +228,11 @@ ol {
                 transform: translateY(-50%);
               }
             }
+            .arrow.on {
+              &::after {
+                transform: translateY(-50%) rotate(180deg);
+              }
+            }
             .two-dep {
               display: none;
               ul {
@@ -1114,12 +1119,14 @@ select {
         font-weight: 700;
         font-size: 18px;
         line-height: 22px;
+        margin-bottom: 0;
       }
       .d-day {
         font-weight: 700;
         font-size: 26px;
         color: #f30909;
         text-align: center;
+        padding-bottom: 30px;
         span {
           display: block;
           font-weight: 700;
@@ -1129,11 +1136,17 @@ select {
         }
       }
     }
+    .prg-head.unBook.unLog{
+      padding: 17px 38px;
+      .d-day{
+        padding-bottom: 10px;
+      }
+    }
     .prg-head.unBook {
       padding: 65px 38px 35px;
     }
-    .prg-head.sky{
-      background-color: #E8F7FF;
+    .prg-head.sky {
+      background-color: #e8f7ff;
     }
     .term {
       padding: 20px 15px;
@@ -1169,18 +1182,6 @@ select {
     position: absolute;
     top: 0;
   }
-}
-/* button gray*/
-.btn-02 {
-  width: 100%;
-  background: #f1f1f1;
-  border-radius: 5px;
-  height: 50px;
-  line-height: 50px;
-  font-weight: 700;
-  font-size: 16px;
-  color: #8f8f8f;
-  position: relative;
 }
 
 .painProgress {
@@ -1243,9 +1244,6 @@ select {
   background: #e8f7ff;
 }
 .pain {
-  // margin: 0 20px;
-
-  // overflow-x: hidden;
   h2 {
     margin: 25px 0;
     font-size: 20px;
@@ -2532,27 +2530,25 @@ select {
     }
   }
 }
-.modifyList{
-  margin:60px 40px;
-  ul{
+.modifyList {
+  margin: 60px 40px;
+  ul {
     padding-left: 0;
-    li{
+    li {
       border: $border-gray;
       padding: 20px;
       border-radius: 10px;
       margin-bottom: 40px;
       position: relative;
-      a{
+      a {
         color: #000;
         text-decoration: none;
-        font-size:20px; 
-        
-        
+        font-size: 20px;
       }
-      &::after{
+      &::after {
         content: "";
         display: block;
-        background: url($url-images + "arrow.svg")no-repeat;
+        background: url($url-images + "arrow.svg") no-repeat;
         background-size: contain;
         width: 15px;
         height: 15px;
@@ -2563,7 +2559,6 @@ select {
       }
     }
   }
-  
 }
 .delete {
   p {
@@ -2992,7 +2987,41 @@ table {
     color: $font-color;
   }
 }
-
+/* button gray*/
+.btn-02 {
+  width: 100%;
+  background: #f1f1f1;
+  border-radius: 5px;
+  height: 50px;
+  line-height: 50px;
+  font-weight: 700;
+  font-size: 16px;
+  color: #8f8f8f;
+  position: relative;
+}
+.btn-02 {
+  display: block;
+  position: relative;
+  .cancel {
+    display: block;
+    width: fit-content;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    &::after {
+      content: "";
+      display: block;
+      background: url($url-images + "cancel.svg") no-repeat;
+      width: 20px;
+      height: 20px;
+      background-size: contain;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: -20px;
+    }
+  }
+}
 .buttonBox {
   width: calc(100% - 46px);
   height: 50px;
@@ -3023,6 +3052,7 @@ table {
   background-color: #41b946 !important;
   color: #fff !important;
 }
+
 .loginBtn {
   height: 55px;
   background-color: #d9d9d9;

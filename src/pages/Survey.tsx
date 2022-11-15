@@ -10,7 +10,7 @@ const Survey = () => {
 
     const handleToolTip = () => {
         setShow(!isShow);
-    }
+    }   
 
     return (
         <React.Fragment>
@@ -19,10 +19,10 @@ const Survey = () => {
                 <div className="surveyMain">
                     <div className="surveyName">
                         <p>굿바이 피로1기</p>
-                        <div className="noticeIco on" onClick={handleToolTip}>
-                            <img src="public/images/question.svg" alt="" className=""/>
+                        <div className="noticeIco on" onClick={handleToolTip} >
+                            <img src="public/images/question.svg" alt="" className="" />
                             {isShow &&
-                            <div>
+                            <div className="noticeBox">
                                 <ul>
                                     <li>
                                         <span>매일 입력 설문</span>은 8주 간(56일간)매일 간단한
