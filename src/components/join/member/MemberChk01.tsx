@@ -43,13 +43,13 @@ const MemberChk01 = ({ nextStep }: { nextStep: Function }) => {
   };
   const [modal, setModal] = useRecoilState(modalState);
   const handleModal = () => {
-    setModal({ ...modal,
-              show: true,
-              title: "안내",
-              content :"아이디 또는 비밀번호를 다시 확인해 주세요.",
-             });
+    setModal({
+      ...modal,
+      show: true,
+      title: "안내",
+      content: "아이디 또는 비밀번호를 다시 확인해 주세요.",
+    });
   };
-
 
   return (
     <React.Fragment>
@@ -74,9 +74,9 @@ const MemberChk01 = ({ nextStep }: { nextStep: Function }) => {
           <span>비밀번호 확인</span>
         </label>
         <InputElement
-         type="password"
-         placeholder="비밀번호 확인"
-         id="password_check"
+          type="password"
+          placeholder="비밀번호 확인"
+          id="password_check"
         />
         <label>
           <span>이름</span>
@@ -91,12 +91,22 @@ const MemberChk01 = ({ nextStep }: { nextStep: Function }) => {
         </label>
         <div className="chk_radio">
           <span>
-            <InputElement type="radio" value="동의" name="chk_info" />
-            <span>동의</span>
+            <InputElement
+              type="radio"
+              value="동의"
+              name="chk_info"
+              id="agree"
+            />
+            <label htmlFor="agree">동의</label>
           </span>
           <span>
-            <InputElement type="radio" value="미동의" name="chk_info" />
-            <span>미동의</span>
+            <InputElement
+              type="radio"
+              value="미동의"
+              name="chk_info"
+              id="agree01"
+            />
+            <label htmlFor="agree01">미동의</label>
           </span>
         </div>
         <label>
@@ -117,12 +127,22 @@ const MemberChk01 = ({ nextStep }: { nextStep: Function }) => {
         </label>
         <div className="chk_radio">
           <span>
-            <InputElement type="radio" value="동의" name="chk_gender" />
-            <span>동의</span>
+            <InputElement
+              type="radio"
+              value="동의"
+              name="checkMail"
+              id="agree03"
+            />
+            <label htmlFor="agree03">동의</label>
           </span>
           <span>
-            <InputElement type="radio" value="미동의" name="chk_gender" />
-            <span>미동의</span>
+            <InputElement
+              type="radio"
+              value="미동의"
+              name="checkMail"
+              id="agree04"
+            />
+            <label htmlFor="agree04">미동의</label>
           </span>
         </div>
       </div>

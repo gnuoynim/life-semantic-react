@@ -44,22 +44,7 @@ const  MemberChk02= ({ nextStep }: { nextStep: Function }) => {
     nextStep(3);
   };
   useEffect(() => {  
-
-      $('#chkAll').click(function(){
-        chkAll(); 
-    });
-  
-    function chkAll(){
-      var chk = $('#chkAll').is(':checked');
-      if(chk) { 
-          $('.inputCheck input[type=checkbox]').prop('checked', true); // 체크박스 전체 선택
-      }else{
-          $('.inputCheck input[type=checkbox]').prop('checked', false); // 체크박스 전체 해제
-      }    
-    }
-  
-
-  
+    
     $('.isCheck').on('click', function() {
       const options = $(this).parent().siblings(".input_detail"); 
       options.css("display","block")
@@ -77,16 +62,16 @@ const  MemberChk02= ({ nextStep }: { nextStep: Function }) => {
         </label>
         <div className='chk_radio02'>
           <span>
-            <InputElement type='radio' value='흡연' name='chk_smoking'/>
-            <span>흡연</span>
+            <InputElement type='radio' value='흡연' name='chk_smoking' id="agree"/>
+            <label htmlFor='agree'>흡연</label>
           </span>
           <span>
-            <InputElement type='radio' value='비흡연' name='chk_smoking'/>
-            <span>비흡연</span>
+            <InputElement type='radio' value='비흡연' name='chk_smoking' id="agree01"/>
+            <label htmlFor='agree01'>비흡연</label>
           </span>
           <span>
-            <InputElement type='radio' value='금연' name='chk_smoking'/>
-            <span>금연</span>
+            <InputElement type='radio' value='금연' name='chk_smoking' id="agree02"/>
+            <label htmlFor='agree02'>금연</label>
           </span>
         </div>
         <div className='input_detail'>
@@ -109,16 +94,16 @@ const  MemberChk02= ({ nextStep }: { nextStep: Function }) => {
         </label>
         <div className='chk_radio02'>
           <span>
-            <InputElement type='radio' value='음주' name='chk_smoking' />
-            <span>음주</span>
+            <InputElement type='radio' value='음주' name='chk_drink' id='agree03' />
+            <label htmlFor='agree03'>음주</label>
           </span>
           <span>
-            <InputElement type='radio' value='비흡연' name='chk_smoking' id=''/>
-            <span>비음주</span>
+            <InputElement type='radio' value='비흡연' name='chk_drink' id='agree04'/>
+            <label htmlFor='agree04'>비음주</label>
           </span>
           <span>
-            <InputElement type='radio' value='금연' name='chk_smoking'/>
-            <span>금주</span>
+            <InputElement type='radio' value='금연' name='chk_drink' id='agree05'/>
+            <label htmlFor='agree05'>금주</label>
           </span>
         </div>
         <div className='input_detail'>
@@ -141,12 +126,12 @@ const  MemberChk02= ({ nextStep }: { nextStep: Function }) => {
         </label>
         <div className='chk_radio'>
           <span>
-            <InputElement type='radio' value='섭취' name='chk_caffeine'/>
-            <span>섭취</span>
+            <InputElement type='radio' value='섭취' name='chk_caffeine' id='agree06'/>
+            <label htmlFor='agree06'>섭취</label>
           </span>
           <span>
-            <InputElement type='radio' value='비섭취' name='chk_caffeine'/>
-            <span>비섭취</span>
+            <InputElement type='radio' value='비섭취' name='chk_caffeine' id='agree07'/>
+            <label htmlFor='agree07'>비섭취</label>
           </span>
         </div>
       </div>

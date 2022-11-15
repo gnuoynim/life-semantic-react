@@ -7,7 +7,9 @@ import WebLayout from "@layouts/web/WebLayout";
 import InputElement from "@components/elements/InputElement";
 import ModalComponent from "@components/modal/ModalComponent";
 import { modalState } from "@states/modalState";
+import ToastPopup from "@/components/modal/ToastPopup";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+
 
 const IndexPage = () => {
   const [modal, setModal] = useRecoilState(modalState);
@@ -16,6 +18,7 @@ const IndexPage = () => {
   const [sample, setSample] = useRecoilState(sampleState);
   const [count, setCount] = useRecoilState(countState);
   const [userListError, setUserListError] = useState(true);
+  const [toast, setToast] = useState(false);
   const increase = () => setCount(count + 1);
   const setTitle = () =>
     setSample({
@@ -33,11 +36,33 @@ const IndexPage = () => {
       confirmText: "확인",
     });
   };
-  const handlePopup = () => {
-    
+  
+  const handleModal01 = () => {
+    setModal({
+      ...modal,
+      show: true,
+      title: "안내",
+      cancelShow: false,
+      content:
+      <div>
+        ***님의 아이디는 <br/>
+        ___****입니다.<br/>
+        <Link to="" className="copy">아이디 복사</Link>
+      </div>,
+      confirmText: "확인",
+    });
   };
+
+  const handlePopup = () => {
+    setToast(true);
+    setTimeout(() =>{
+      setToast(false);
+    }, 5000)
+  };
+
   return (
     <WebLayout>
+      <ModalComponent />
       <div className="Login">
         <TitleHeadComponent name="아이디 찾기" />
         <div className="Container">
@@ -54,10 +79,11 @@ const IndexPage = () => {
             </div>
           </div>
         </div>
-        <button className="BtnActive" type="submit">
+        <button className="BtnActive" type="submit" onClick={handleModal01}>
           아이디 찾기
         </button>
       </div>
+      
     </WebLayout>
   );
 };

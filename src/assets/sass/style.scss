@@ -304,6 +304,9 @@ ol {
     }
     input {
       @include input-style(#8f8f8f, 100%);
+      &:first-of-type{
+        margin-bottom: 50px;
+      }
     }
     label {
       display: block;
@@ -624,8 +627,14 @@ select {
     }
   }
 }
-.progressBar.on {
+.progressWrap.fixed{
   position: fixed;
+  width: 100%;
+  padding: 30px 0;
+  background-color: #fff;
+  z-index: 10;
+  top: 50px;
+  box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 3%);
 }
 .member {
   margin: 0 40px;
@@ -668,7 +677,7 @@ select {
   span {
     display: inline-block;
     width: 50%;
-    span {
+    label {
       padding-left: 20px;
     }
   }
@@ -677,7 +686,7 @@ select {
   span {
     display: inline-block;
     width: 33.333333%;
-    span {
+    label {
       padding-left: 20px;
       width: fit-content;
     }
@@ -2069,7 +2078,7 @@ select {
   font-weight: 600;
   font-size: 20px;
   text-align: center;
-  margin-top: 50px;
+  margin-top: 2rem;
 }
 .MemberChk label.labelType span {
   margin: 50px 0 0 0;
@@ -3168,6 +3177,11 @@ table {
     .modal-body {
       padding: 20px;
       font-size: 18px;
+      .copy{
+        color: $font-color;
+        font-size: 14px;
+        margin-top: 20px;
+      }
     }
     .modal-footer {
       .btn {
@@ -3178,4 +3192,28 @@ table {
       }
     }
   }
+}
+.toastPop {
+  background: rgba(92, 92, 92, 0.8);
+  border-radius: 10px;
+  width: calc(100% - 40px);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  p {
+    color: #fff;
+    font-weight: 400;
+    font-size: 22px;
+    padding: 15px 0 !important;
+    margin-bottom: 0;
+    text-align: center;
+  }
+}
+.CodeCheck{
+  position: relative;
+}
+.CodeCheck .toastPop{
+  width: 100%;
+  top: 80px;
 }

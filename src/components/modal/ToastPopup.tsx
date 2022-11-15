@@ -12,14 +12,14 @@ import { useRecoilState } from "recoil";
 import { modalState } from "@/states/modalState";
 
 
-const ToastPopup = ({text}:{text:string}) => {
+const ToastPopup = ({ show = false, text }: { show: boolean, text: string }) => {
   const handleModal = () => {
 
   };
 
   return (
     <React.Fragment>
-      <div className="toastPop">
+      <div className="toastPop" style={{ display: show ? 'block' : 'none' }}>
         <p className="title">{text}</p>
       </div>
     </React.Fragment>
