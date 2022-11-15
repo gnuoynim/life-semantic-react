@@ -53,7 +53,7 @@ const ForestContent = () => {
             </p>
           </div>
         </div>
-        <Link to={"/program"} className="listButton">
+        <Link to={"/forest"} className="listButton">
           목록으로 돌아가기
         </Link>
       </div>

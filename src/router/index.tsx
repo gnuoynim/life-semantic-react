@@ -49,7 +49,37 @@ function Router() {
             ],
         },
         {
-            path: 'program',
+            path: 'joinModify',
+            element: <TotalLayout/>,
+            children: [
+                {
+                    path: '',
+                    element: <JoinModify/>,
+                },
+            ],
+        },
+        {
+            path: 'modify',
+            element: <TotalLayout/>,
+            children: [
+                {
+                    path: '',
+                    element: <Modify/>,
+                },
+            ],
+        },
+        {
+            path: 'myPage',
+            element: <TotalLayout/>,
+            children: [
+                {
+                    path: '',
+                    element: <ModifyInformation/>,
+                },
+            ],
+        },
+        {
+            path: 'home',
             element: <TotalLayout/>,
             children: [
                 {
@@ -59,7 +89,7 @@ function Router() {
             ],
         },
         {
-            path: 'programList',
+            path: 'program',
             element: <TotalLayout/>,
             children: [
                 {
@@ -69,7 +99,7 @@ function Router() {
             ],
         },
         {
-            path: 'programInfo',
+            path: 'programView',
             element: <TotalLayout/>,
             children: [
                 {
@@ -80,6 +110,16 @@ function Router() {
         },
         {
             path: 'forest',
+            element: <TotalLayout/>,
+            children: [
+                {
+                    path: '',
+                    element: <ForestList/>,
+                },
+            ],
+        },
+        {
+            path: 'forestView',
             element: <TotalLayout/>,
             children: [
                 {
@@ -159,7 +199,7 @@ function Router() {
             ],
         },
         {
-            path: 'reservationList',
+            path: 'reservation',
             element: <TotalLayout/>,
             children: [
                 {
@@ -235,46 +275,6 @@ function Router() {
                 {
                     path: '',
                     element: <DeleteAccount/>,
-                },
-            ],
-        },
-        {
-            path: 'forestList',
-            element: <TotalLayout/>,
-            children: [
-                {
-                    path: '',
-                    element: <ForestList/>,
-                },
-            ],
-        },
-        {
-            path: 'joinModify',
-            element: <TotalLayout/>,
-            children: [
-                {
-                    path: '',
-                    element: <JoinModify/>,
-                },
-            ],
-        },
-        {
-            path: 'modify',
-            element: <TotalLayout/>,
-            children: [
-                {
-                    path: '',
-                    element: <Modify/>,
-                },
-            ],
-        },
-        {
-            path: 'modifyInformation',
-            element: <TotalLayout/>,
-            children: [
-                {
-                    path: '',
-                    element: <ModifyInformation/>,
                 },
             ],
         },

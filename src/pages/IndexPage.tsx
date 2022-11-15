@@ -17,7 +17,7 @@ const Login = () => {
 
     const handleLogin = () => {
         api.post("/users/login", user).then((res) => {
-            if (res.data.result === "success") navigate("/program");
+            if (res.data.result === "success") navigate("/home");
         }).catch((err) => {
             console.log(err);
         });
