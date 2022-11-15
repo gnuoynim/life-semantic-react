@@ -86,7 +86,7 @@ const Survey = () => {
                             <Link to="/surveyToday">일일 설문<br/><span>(최근 5일 이내 미작성 2건)</span></Link>
                         </li>
                         <li className="active">
-                            <Link to="">종료후 설문(0/3)</Link>
+                            <Link to="" onClick={handleNotOpen}>종료후 설문(0/3)</Link>
                         </li>
                     </ul>
                 </div>

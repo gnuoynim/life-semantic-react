@@ -7,9 +7,13 @@ import {Link, useLocation, useNavigate} from "react-router-dom";
 import {ViewInterface} from "@/interfaces/viewInterface";
 import useAxios from "@/hooks/useAxios";
 import {ProgramInterface} from "@/interfaces/ProgramInterface";
+import ToastPopup from "../components/modal/ToastPopup";
 
 const ProgramInfo = () => {
     const {state} = useLocation() as ViewInterface;
+    const [toastCancel, setToastCancel] = useState(false);
+    const [toastComplete, setToastComplete] = useState(false);
+    const [isReserve, setReserve] = useState(true);
     const navigate = useNavigate();
     const api = useAxios();
     const [program, setProgram] = useState<ProgramInterface>();
@@ -25,9 +29,26 @@ const ProgramInfo = () => {
             });
     };
 
+    const handleReserveToast = () => {
+        setToastComplete(true);
+        setReserve(!isReserve);
+        setTimeout(() => {
+            setToastComplete(false);
+        }, 3000);
+    };
+
+    const handleCancelToast = () => {
+        setToastCancel(true);
+        setReserve(!isReserve);
+        setTimeout(() => {
+            setToastCancel(false);
+        }, 3000);
+    };
+
     useEffect(() => {
         (async () => {
             await getProgram();
+            if(state.pgIdx == '6') setReserve(false);
         })();
     }, []);
 
@@ -105,7 +126,21 @@ const ProgramInfo = () => {
                     <button type="button" className="borderButton" onClick={() => navigate(-1)}>목록으로 돌아가기</button>
                 </div>
             </div>
-            <button type="button" className="btn-02 active fixed">예약하기</button>
+
+            {isReserve &&
+            <React.Fragment>
+                <button type="button" className="btn-02 active fixed" onClick={handleReserveToast}>예약하기</button>
+            </React.Fragment>
+            }
+            {!isReserve &&
+            <React.Fragment>
+                <button type="button" className="btn-02 active fixed" onClick={handleCancelToast}><span
+                    className="cancel">취소하기</span></button>
+            </React.Fragment>
+            }
+            <ToastPopup text="프로그램 예약이 취소됐습니다." show={toastCancel}/>
+            <ToastPopup text="프로그램 예약이 완료됐습니다." show={toastComplete}/>
+
         </React.Fragment>
     );
 };

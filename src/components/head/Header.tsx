@@ -41,9 +41,9 @@ const HeaderComponent = () => {
     return (
         <React.Fragment>
             <div className='header'>
-        <span className='logo'>
-          <img src='images/logo.png' alt='logo'/>
-        </span>
+                <span className='logo'>
+                    <Link to={'/main'}><img src='/images/logo.png' alt='logo'/></Link>
+                </span>
                 <button
                     type='button'
                     onClick={foldList}
@@ -55,7 +55,7 @@ const HeaderComponent = () => {
                     <div className='drawer on'>
                         <div className='head'>
               <span className='logo'>
-                <img src='images/logo.png' alt='logo'/>
+                <Link to={'/main'}><img src='/images/logo.png' alt='logo'/></Link>
               </span>
                             <button
                                 type='button'
