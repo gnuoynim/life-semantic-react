@@ -5,7 +5,7 @@
 
 $main-color: #41b946;
 $font-color: #8f8f8f;
-$url-images: "public/images/";
+$url-images: "/images/";
 $border-green: 0.5px solid #41b946;
 $border-gray: 0.5px solid #8f8f8f;
 $border-dvision: 12px solid #ebedea;
@@ -389,7 +389,7 @@ select {
     height: 18px;
     padding: 0;
     &:checked {
-      background: url(../../../public/images/check-bx.svg) no-repeat;
+      background: url($url-images + "check-bx.svg") no-repeat;
       width: 18px;
       height: 18px;
       border: none;
@@ -519,7 +519,7 @@ select {
     &::after {
       content: "";
       display: block;
-      background: url(../../../public/images/arrow-right.svg) no-repeat;
+      background: url($url-images + "arrow-right.svg") no-repeat;
       width: 15px;
       height: 15px;
       background-size: contain;
