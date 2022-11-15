@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ProgramNumberDetailComponent from './ProgramNumberDetailComponent';
 import useUserHttp from '@hooks/queries/useUserQuery';
 import { ListInterface } from '@interfaces/listInterface';
@@ -8,6 +8,11 @@ import 'swiper/css';
 
 const RoundComponent = () => {
   const [roundDetails, setRoundDetails] = useState<number[]>([]);
+
+  useEffect(() => {
+    const totalRound = document.querySelector('.roundNumber') as HTMLDivElement;
+    totalRound.click();
+  }, []);
 
   const setDetail = (
     event: React.MouseEvent<HTMLElement>,
