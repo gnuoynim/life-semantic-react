@@ -1,4 +1,9 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap");
+* {
+  font-family: "Inter", sans-serif !important;
+}
+
 a {
   text-decoration: none;
   color: #000000;
@@ -36,18 +41,22 @@ ol {
 
 .Logo {
   display: block;
-  width: 110px;
-  height: 80px;
-  margin: 30px auto 0 auto;
+  margin: 50px auto 0 auto;
 }
 
-.Logo img {
-  width: 100%;
+.Logo {
+  display: block;
   position: relative;
-  top: 50%;
-  transform: translateY(-50%);
 }
-
+.Logo img {
+  display: block;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.Logo img:first-of-type {
+  width: 110px;
+}
 .Login .Header h2 {
   color: #41b946;
   text-align: center;
@@ -179,11 +188,14 @@ ol {
   right: 10%;
   transform: translateY(-50%);
 }
+.header .m-menu .drawer .nav ul li .arrow.on::after {
+  transform: translateY(-50%) rotate(180deg);
+}
 .header .m-menu .drawer .nav ul li .two-dep {
   display: none;
 }
 .header .m-menu .drawer .nav ul li .two-dep ul li {
-  padding: 0;
+  padding: 10px 0;
   border: none;
 }
 .header .m-menu .drawer .nav ul li .two-dep ul li a {
@@ -239,6 +251,9 @@ ol {
   width: 100%;
   height: 50px;
 }
+.Login .Temporary input:first-of-type {
+  margin-bottom: 50px;
+}
 .Login .Temporary label {
   display: block;
   font-weight: 400;
@@ -277,6 +292,9 @@ ol {
   margin-bottom: 20px;
   margin-top: 50px;
   color: #000;
+}
+.Login .selected {
+  margin-bottom: 20px;
 }
 
 .Login input {
@@ -387,7 +405,7 @@ select option {
 }
 
 .Join .Step {
-  margin: 40px 0;
+  margin-top: 80px;
 }
 .Join .Step ul {
   padding-left: 0;
@@ -567,8 +585,14 @@ select option {
   width: 100%;
 }
 
-.progressBar.on {
+.progressWrap.fixed {
   position: fixed;
+  width: 100%;
+  padding: 30px 0;
+  background-color: #fff;
+  z-index: 10;
+  top: 50px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.03);
 }
 
 .member {
@@ -581,6 +605,12 @@ select option {
   margin: 80px 0 40px 0;
 }
 
+.MemberChk {
+  padding-bottom: 150px;
+}
+.MemberChk .age {
+  padding-left: 50px;
+}
 .MemberChk label span {
   display: block;
   width: -webkit-fit-content;
@@ -611,7 +641,7 @@ select option {
   display: inline-block;
   width: 50%;
 }
-.chk_radio span span {
+.chk_radio span label {
   padding-left: 20px;
 }
 
@@ -619,7 +649,7 @@ select option {
   display: inline-block;
   width: 33.333333%;
 }
-.chk_radio02 span span {
+.chk_radio02 span label {
   padding-left: 20px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -684,43 +714,11 @@ select option {
   border: none;
 }
 
-.active {
-  background-color: #41b946 !important;
-  color: #fff !important;
+.checkContents ul li {
+  padding: 10px 0;
 }
-
-.loginBtn {
-  height: 55px;
-  background-color: #d9d9d9;
-  width: 100%;
-  color: gray;
-  border-radius: 5px;
-}
-
-.BtnActive {
-  width: calc(100% - 90px);
-  color: #fff;
-  font-weight: 700;
-  background: rgba(51, 180, 40, 0.96);
-  border-radius: 5px;
-  height: 55px;
-  position: fixed;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.BtnActive02 {
-  width: calc(100% - 90px);
-  color: #fff;
-  font-weight: 700;
-  background: rgba(51, 180, 40, 0.96);
-  border-radius: 5px;
-  height: 55px;
-  position: absolute;
-  bottom: 10%;
-  left: 50%;
-  transform: translateX(-50%);
+.checkContents ul li input {
+  padding: 0;
 }
 
 .surveyMain {
@@ -758,6 +756,12 @@ select option {
 .surveyMain ul li a {
   text-decoration: none;
   color: #fff;
+}
+.surveyMain ul li.active {
+  background: #f3f3f3 !important;
+}
+.surveyMain ul li.active a {
+  color: #8f8f8f !important;
 }
 
 .InnerBtn {
@@ -797,6 +801,37 @@ select option {
   height: 50px;
   background-color: #41b946;
   color: #fff;
+}
+
+.noticeBox {
+  position: absolute;
+}
+.noticeBox .surveyMain ul li {
+  background-color: #fff;
+}
+.noticeIco.on .noticeBox {
+  display: block;
+}
+
+.noticeBox {
+  width: calc(100% - 80px);
+  position: absolute;
+  top: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  display: none;
+}
+.noticeBox ul li {
+  background-color: #fff;
+  color: #000;
+  font-size: 14px;
+  text-align: left;
+  margin-bottom: 0;
+  padding: 10px 0;
+}
+.noticeBox ul li span {
+  font-size: 16px;
 }
 
 .fixBtn.fixed {
@@ -846,12 +881,22 @@ select option {
 .surveyToday {
   margin-top: 40px;
 }
+.surveyToday p {
+  padding: 20px 0;
+}
 .surveyToday .date {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+}
+.surveyToday .rc-slider {
+  width: 90%;
 }
 .surveyToday .rc-slider .rc-slider-handle {
   background: #41b946;
 }
+.surveyToday .Arrow .arrowLeft span {
+  width: 50px;
+}
+
 .rc-slider {
   width: 100%;
   padding: 25px 0;
@@ -1046,6 +1091,8 @@ select option {
 
 .program-wrap {
   margin: 23px;
+  /* 예약중 */
+  /* 참여중 */
 }
 .program-wrap .prg {
   margin-bottom: 30px;
@@ -1069,12 +1116,14 @@ select option {
   font-weight: 700;
   font-size: 18px;
   line-height: 22px;
+  margin-bottom: 0;
 }
 .program-wrap .ready-prg .prg-head .d-day {
   font-weight: 700;
   font-size: 26px;
   color: #f30909;
   text-align: center;
+  padding-bottom: 30px;
 }
 .program-wrap .ready-prg .prg-head .d-day span {
   display: block;
@@ -1083,11 +1132,24 @@ select option {
   line-height: 17px;
   color: #f30909;
 }
+.program-wrap .ready-prg .prg-head.unBook.unLog {
+  padding: 17px 38px;
+}
+.program-wrap .ready-prg .prg-head.unBook.unLog .d-day {
+  padding-bottom: 10px;
+}
 .program-wrap .ready-prg .prg-head.unBook {
   padding: 65px 38px 35px;
 }
+.program-wrap .ready-prg .prg-head.sky {
+  background-color: #e8f7ff;
+}
 .program-wrap .ready-prg .term {
   padding: 20px 15px;
+  margin-bottom: 0;
+}
+.program-wrap .ready-prg .term li {
+  margin-bottom: 10px;
 }
 .program-wrap .ready-prg .term .red {
   color: #f30909;
@@ -1104,17 +1166,17 @@ select option {
   position: absolute;
   top: 0;
 }
-
-.btn-02 {
-  width: 100%;
-  background: #41b946;
-  border-radius: 5px;
-  height: 50px;
-  line-height: 50px;
+.program-wrap .participate {
+  display: block;
+  color: #fff;
   font-weight: 700;
-  font-size: 16px;
-  color: #ffffff;
-  position: relative;
+  font-size: 14px;
+  line-height: 17px;
+  background: #f4970a;
+  border-radius: 5px;
+  padding: 5px 13px;
+  position: absolute;
+  top: 0;
 }
 
 .painProgress ul {
@@ -1211,7 +1273,7 @@ select option {
 }
 
 .painBox {
-  margin: 40px 20px;
+  margin: 40px 30px;
 }
 .painBox .Step {
   height: 50px;
@@ -1313,7 +1375,7 @@ select option {
   transform: translateX(-50%);
   left: 50%;
   width: 100%;
-  height: 193vw;
+  height: 190vw;
   margin-bottom: 100px;
 }
 .frontPain img {
@@ -1762,7 +1824,7 @@ select option {
   transform: translateX(-50%);
   left: 50%;
   width: 100%;
-  height: 193vw;
+  height: 190vw;
   margin-bottom: 100px;
 }
 .backPain .dot.on {
@@ -1973,7 +2035,7 @@ select option {
   border-radius: 50%;
   background-color: #d0cece;
   position: absolute;
-  top: 98%;
+  top: 95%;
   left: 58%;
 }
 .backPain .dot:nth-of-type(11)::after {
@@ -1992,7 +2054,7 @@ select option {
   border-radius: 50%;
   background-color: #d0cece;
   position: absolute;
-  top: 98%;
+  top: 95%;
   left: 35%;
 }
 .backPain .dot:nth-of-type(12)::after {
@@ -2005,6 +2067,10 @@ select option {
   top: -20px;
 }
 
+.surveyList p {
+  font-size: 18px;
+  font-weight: 400;
+}
 .surveyList .radioButton {
   padding: 0;
   -webkit-appearance: none;
@@ -2054,6 +2120,11 @@ select option {
   display: block;
   text-align: center;
 }
+.surveyList .surveyContent ul li:nth-of-type(5) .radioButton::after {
+  content: "5";
+  display: block;
+  text-align: center;
+}
 .surveyList .surveyContent ul li input[type=radio]:checked {
   border: 1px solid #41b946;
 }
@@ -2074,10 +2145,34 @@ select option {
   text-align: center;
 }
 
+.isi p {
+  padding: 25px 0 20px 0;
+  font-size: 18px;
+}
+.isi span {
+  font-weight: 600;
+}
+.isi .subTitle {
+  color: #8f8f8f;
+  text-align: center;
+  padding: 0;
+  font-size: 14px;
+}
+.isi .subTitle span {
+  color: #0037f8;
+}
+.isi .surveyContent p {
+  font-weight: 500;
+}
+.destress .checkList {
+  margin-top: 30px;
+  padding-bottom: 100px;
+}
 .destress .textBox {
   background: #f5f5f5;
   border-radius: 10px;
   color: #8f8f8f;
+  margin: 30px 0;
 }
 .destress .textBox p {
   font-weight: 400;
@@ -2105,7 +2200,7 @@ select option {
   line-height: 24px;
 }
 .physicalStress .Arrow {
-  margin-bottom: 100px;
+  margin-bottom: 180px;
 }
 .physicalStress .Arrow .arrowRight span,
 .physicalStress .Arrow .arrowLeft span {
@@ -2131,6 +2226,8 @@ select option {
 
 .checkList {
   margin-top: 130px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 .checkList p {
   font-weight: 400;
@@ -2144,7 +2241,7 @@ select option {
 .checkList ul {
   margin-top: 30px;
   margin-bottom: 40px;
-  padding-right: 2rem;
+  padding-left: 20px;
 }
 .checkList ul li {
   display: flex;
@@ -2169,16 +2266,23 @@ select option {
 .checkList ul li label {
   font-weight: 400;
   font-size: 16px;
-  margin-left: 50px;
+  margin-left: 30px;
 }
-.checkList ul li textarea {
+
+.textareaBox {
+  display: flex;
+  flex-direction: column;
+}
+.textareaBox textarea {
   resize: none;
+  margin-top: 30px;
   padding: 20px;
   width: 100%;
   height: 285px;
   border: 0.5px solid #777777;
   border-radius: 5px;
 }
+
 .programInfo {
   margin: 23px;
 }
@@ -2248,6 +2352,11 @@ select option {
 
 .roundBox {
   margin-bottom: 80px;
+}
+.roundBox .swiper-slide {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .roundNumber {
@@ -2334,7 +2443,7 @@ select option {
   font-weight: 600;
   font-size: 20px;
   text-align: center;
-  margin-top: 50px;
+  margin-top: 2rem;
 }
 
 .MemberChk label.labelType span {
@@ -2343,6 +2452,7 @@ select option {
 
 .radioCheck ul {
   margin-left: 0;
+  padding-left: 0;
 }
 .radioCheck ul li {
   margin: 10px 0;
@@ -2528,7 +2638,7 @@ select option {
   position: relative;
   margin-bottom: 20px;
 }
-.dropDown .selected a {
+.dropDown .selected span {
   background: #fff no-repeat scroll right center;
   display: block;
   padding: 0 20px;
@@ -2537,19 +2647,14 @@ select option {
   text-decoration: none;
   width: 100%;
   height: 55px;
-  font-size: 14px;
+  font-weight: 400;
+  font-size: 16px;
   box-sizing: border-box;
   line-height: 55px;
   color: #000;
-}
-.dropDown .selected a span {
-  cursor: pointer;
-  display: block;
   position: relative;
-  font-weight: 400;
-  font-size: 16px;
 }
-.dropDown .selected a span::after {
+.dropDown .selected span::after {
   content: "";
   display: block;
   background: url("public/images/arrow.svg") no-repeat;
@@ -2559,16 +2664,16 @@ select option {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  right: 0;
+  right: 20px;
 }
-.dropDown .selected a span {
+.dropDown .selected span span {
   cursor: pointer;
   display: block;
   position: relative;
   font-weight: 400;
   font-size: 16px;
 }
-.dropDown .selected a span .value {
+.dropDown .selected span span .value {
   display: none;
 }
 .dropDown .options ul {
@@ -2579,9 +2684,9 @@ select option {
   left: 0;
   width: 100%;
   padding-top: 25px;
-  padding-left: 0;
+  padding-left: 20px;
 }
-.dropDown .options a {
+.dropDown .options li {
   padding: 5px;
   display: block;
   text-decoration: none;
@@ -2590,7 +2695,7 @@ select option {
   font-weight: 400;
   font-size: 16px;
 }
-.dropDown .options a span {
+.dropDown .options li span {
   display: none;
 }
 
@@ -2633,7 +2738,14 @@ select option {
 }
 
 .tired {
-  margin: 40px 23px;
+  margin: 40px 30px;
+}
+.tired .explainText {
+  padding: 20px 0;
+}
+.tired li p {
+  font-size: 18px;
+  font-weight: 500;
 }
 
 .forest ul {
@@ -2706,7 +2818,8 @@ select option {
 .forestContent .forestImages span img {
   border-radius: 5px;
 }
-.forestContent .listButton {
+
+.listButton {
   display: block;
   text-decoration: none;
   width: 100%;
@@ -2715,4 +2828,829 @@ select option {
   color: #8f8f8f;
   border: 1px solid #8f8f8f;
   border-radius: 5px;
+}
+
+.information {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  margin-bottom: 70px;
+}
+.information .infoTitle {
+  font-weight: 700;
+  font-size: 20px;
+  padding-bottom: 20px;
+  border-bottom: 0.5px solid #000000;
+}
+.information p {
+  margin: 30px 0 20px 0;
+}
+.information span {
+  display: block;
+}
+
+.account {
+  margin: 40px;
+}
+.account h2 {
+  margin-top: 40px;
+  font-weight: 700;
+  font-size: 25px;
+}
+.account a {
+  display: block;
+  font-weight: 400;
+  font-size: 14px;
+  color: #8f8f8f;
+  width: 100%;
+  text-align: right;
+  text-underline-position: under;
+  margin-bottom: 10px;
+}
+.account .accountBox {
+  width: 100%;
+  background: #f6f6f6;
+  border-radius: 10px;
+  padding: 28px;
+}
+.account .accountBox div span {
+  font-weight: 400;
+  font-size: 18px;
+}
+.account .accountBox div span:first-of-type {
+  padding-right: 30px;
+}
+.account .accountBox p {
+  color: #41b946;
+  font-weight: 400;
+  font-size: 16px;
+  padding-top: 20px;
+  margin: 0;
+}
+.account .modifyInfomation {
+  margin-top: 50px;
+}
+.account .modifyInfomation p {
+  text-align: center;
+  font-weight: 400;
+  font-size: 16px;
+}
+.account .modifyInfomation p span {
+  margin-top: 20px;
+  display: block;
+  color: #8f8f8f;
+  font-weight: 400;
+  font-size: 14px;
+}
+.account .modifyInfomation .deletId {
+  margin-top: 50px;
+}
+.account .modifyInfomation .deletId a {
+  color: #8f8f8f;
+  font-weight: 400;
+  font-size: 14px;
+  display: block;
+  padding-top: 15px;
+}
+
+.modifyList {
+  margin: 60px 40px;
+}
+.modifyList ul {
+  padding-left: 0;
+}
+.modifyList ul li {
+  border: 0.5px solid #8f8f8f;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  position: relative;
+}
+.modifyList ul li a {
+  color: #000;
+  text-decoration: none;
+  font-size: 20px;
+}
+.modifyList ul li::after {
+  content: "";
+  display: block;
+  background: url("public/images/arrow.svg") no-repeat;
+  background-size: contain;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%) rotate(270deg);
+}
+
+.delete p {
+  text-align: center;
+  margin-top: 50px;
+}
+.delete p strong {
+  color: #f30909;
+  text-decoration: underline;
+  text-underline-position: under;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px;
+  border-style: hidden;
+  box-shadow: 0 0 0 0.5px #8f8f8f;
+}
+table tr:first-of-type {
+  border-bottom: 0.5px solid #8f8f8f;
+}
+table tr td {
+  padding: 10px;
+}
+table tr td:first-of-type {
+  border-right: 0.5px solid #8f8f8f;
+  width: 40%;
+}
+table tr td:nth-of-type(2) {
+  padding-left: 20px;
+}
+
+.deletId .password {
+  margin-top: 10px;
+}
+.deletId .password label {
+  font-size: 18px;
+}
+.deletId input {
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+  border: 0.5px solid #8f8f8f;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.modify {
+  margin: 40px;
+}
+.modify .modifyProgress ul {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px;
+  position: relative;
+  padding-left: 0;
+}
+.modify .modifyProgress ul::after {
+  content: "";
+  display: block;
+  width: calc(100% - 40px);
+  height: 1px;
+  background-color: #8f8f8f;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.modify .modifyProgress li {
+  display: block;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  color: #fff;
+  background: #ebedea;
+  z-index: 10;
+}
+.modify .modifyProgress li.active {
+  color: #000 !important;
+  background: #def5cc !important;
+  font-weight: 700;
+}
+.modify .modifyProgress.fixed {
+  width: 100%;
+  position: fixed;
+  top: 65px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+.modify .modifyProgress.fixed ul {
+  background-color: #fff;
+  padding: 20px 40px;
+  z-index: 20;
+  width: 100%;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+.modify .modifyProgress.fixed ul::after {
+  width: calc(100% - 80px);
+}
+.modify .MemberChk label span {
+  margin: 0;
+}
+.modify .modifyCheck {
+  padding-bottom: 120px;
+}
+.modify .modifyCheck .title {
+  font-weight: 700;
+  font-size: 20px;
+}
+.modify .modifyCheck input {
+  display: block;
+}
+.modify .modifyCheck ul {
+  padding-left: 0;
+}
+.modify .modifyCheck ul li {
+  padding: 20px 0;
+  margin-bottom: 20px;
+}
+.modify .modifyCheck ul li label {
+  width: 40%;
+  margin-bottom: 30px;
+  white-space: nowrap;
+}
+.modify .modifyCheck ul li input {
+  width: 100%;
+  height: 45px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 0.5px solid #8f8f8f;
+}
+.modify .modifyCheck ul li input[type=password] {
+  -webkit-text-security: disc;
+  font-size: 16px;
+}
+.modify .modifyCheck ul li input[type=radio] {
+  width: 10px;
+  height: 10px;
+}
+.modify .modifyCheck ul li .chk_radio02 {
+  display: flex;
+}
+.modify .modifyCheck ul li .chk_radio02 span {
+  display: flex;
+  width: 33.333333%;
+  align-items: center;
+}
+.modify .modifyCheck ul li .chk_radio02 span span {
+  padding-left: 20px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.modify .modifyCheck ul li .input_detail {
+  display: none;
+}
+.modify .modifyCheck ul li .input_detail input[type=number] {
+  width: 60px;
+}
+.modify .modifyCheck ul li .input_detail .detail {
+  display: flex;
+  align-items: center;
+}
+.modify .modifyCheck ul li .input_detail .detail label {
+  margin-bottom: 0;
+}
+.modify .modifyCheck ul li .input_detail .term {
+  display: block;
+  margin-top: 40px;
+}
+.modify .modifyCheck ul li .input_detail .term input[type=number] {
+  width: 100px;
+  text-align: center;
+}
+.modify .modifyCheck ul li .input_detail .term label {
+  padding-left: 10px;
+}
+.modify .modifyCheck ul li .input_detail .term b {
+  font-weight: 400;
+  font-size: 30px;
+  padding: 0 10px;
+}
+.modify .modifyCheck ul li .input_detail .term .termDate {
+  display: flex;
+  align-items: center;
+}
+.modify .modifyCheck ul li .input_detail .term .termDate label {
+  margin-bottom: 0;
+}
+.modify .modifyCheck ul li .chk_list ul {
+  padding-left: 0;
+  margin: 15px 0;
+}
+.modify .modifyCheck ul li .chk_list li {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+}
+.modify .modifyCheck ul li .chk_list input[type=checkbox] {
+  width: 20px;
+  height: 20px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  box-sizing: border-box;
+  margin-right: 30px;
+  border-radius: 0;
+}
+.modify .modifyCheck ul li .chk_list input:checked {
+  background: url("public/images/check-bx.svg") no-repeat;
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+  border: none;
+}
+.modify .modifyCheck ul li .radioCheck {
+  display: flex;
+  align-items: center;
+}
+.modify .modifyCheck ul li .radioCheck li {
+  display: flex;
+  align-items: center;
+}
+.modify .modifyCheck ul li .radioCheck li label {
+  width: 100%;
+  margin-bottom: 0;
+}
+.modify .modifyCheck ul li .radioCheck span {
+  display: flex;
+  align-items: center;
+  width: 50%;
+}
+.modify .modifyCheck ul li .radioCheck span label {
+  margin-left: 20px;
+  margin-bottom: 0;
+}
+.modify .modifyCheck ul li .flexInput {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.modify .modifyCheck ul li .flexInput input,
+.modify .modifyCheck ul li .flexInput select {
+  width: 45%;
+}
+.modify .modifyCheck ul .chk_list label {
+  margin-bottom: 0;
+}
+
+#modify ul li .chk_radio02 label {
+  margin-bottom: 0;
+}
+
+.flexInput {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.flexInput input,
+.flexInput select {
+  width: 45%;
+}
+
+.MemberChk .input_detail {
+  display: none;
+}
+
+.reservationList {
+  margin: 40px;
+}
+.reservationList h2 {
+  margin-bottom: 50px;
+}
+.reservationList .cancelButton {
+  border: 1px solid;
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+.reservationList .tabelDropdown {
+  display: flex;
+  justify-content: flex-end;
+}
+.reservationList .tabelDropdown .dropDown {
+  width: 130px;
+  position: relative;
+  top: 10px;
+}
+.reservationList .tabelDropdown .dropDown .selected span {
+  background: #fff;
+  display: block;
+  padding: 0 15px 0 15px;
+  border: none;
+  border-radius: 0;
+  text-decoration: none;
+  width: 100%;
+  height: 35px;
+  font-weight: 400;
+  font-size: 12px;
+  text-align: center;
+  box-sizing: border-box;
+  line-height: 35px;
+  color: #000;
+  position: relative;
+}
+.reservationList .tabelDropdown .dropDown .selected span::after {
+  background: url("public/images/dropArrow.svg") no-repeat;
+  right: 15px;
+}
+.reservationList .tabelDropdown .dropDown .options {
+  position: absolute;
+  top: 44px;
+  right: 0;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.reservationList .tabelDropdown .dropDown .options ul {
+  padding-left: 0;
+  margin: 0;
+  padding-top: 0;
+}
+.reservationList .tabelDropdown .dropDown .options ul li {
+  font-weight: 400;
+  font-size: 16px;
+  padding: 8px 15px;
+  border-bottom: 0.5px solid #8f8f8f;
+}
+.reservationList .tabelDropdown .dropDown .options ul li:hover {
+  background: #f3f3f3;
+  border: none;
+}
+.reservationList .tabelDropdown .dropDown .options ul li:last-of-type {
+  border-bottom: none;
+}
+.reservationList .reservationTable .order {
+  display: block;
+  text-align: right;
+}
+.reservationList .reservationTable table {
+  border-radius: 0;
+}
+.reservationList .reservationTable table tr {
+  border-bottom: 0.5px solid #8f8f8f;
+}
+.reservationList .reservationTable table tr td {
+  text-align: center;
+}
+.reservationList .reservationTable table tr td:nth-of-type(1) {
+  width: 20%;
+}
+.reservationList .reservationTable table tr td:nth-of-type(1) input[type=checkbox] {
+  margin: 0 auto;
+  display: block;
+  border: 0.5px solid #8f8f8f;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+}
+.reservationList .reservationTable table tr td:nth-of-type(1) input[type=checkbox]:checked {
+  background: url("public/images/check-bx.svg") no-repeat;
+  width: 18px;
+  height: 18px;
+  border: none;
+  background-size: contain;
+}
+.reservationList .reservationTable table tr td:nth-of-type(2) {
+  border-right: 0.5px solid #8f8f8f;
+}
+.reservationList .reservationTable table tr:nth-child(n+2) td {
+  padding: 20px;
+}
+.reservationList .reservationTable table tr.on {
+  background-color: rgba(216, 250, 205, 0.45);
+}
+.reservationList .reservationTable .reserved {
+  color: #f30909;
+}
+.reservationList .reservationTable .attend {
+  color: #41b946;
+}
+
+#ISI .surveyList ul {
+  padding-bottom: 0;
+}
+#ISI .surveyList:last-of-type {
+  padding-bottom: 50px;
+}
+#ISI .Arrow {
+  top: 30px;
+  margin-bottom: 150px;
+}
+#ISI .Arrow span {
+  white-space: nowrap;
+}
+#ISI .rc-slider .rc-slider-handle {
+  background-color: #0037f8;
+}
+
+#NCCN .Step.fixed {
+  background-color: #fff;
+  width: 100%;
+  top: 65px;
+  margin-top: 0;
+}
+#NCCN .Step.fixed div {
+  background-color: #fff;
+  width: 100%;
+  padding: 15px 23px;
+}
+#NCCN .Step.fixed div ul {
+  padding: 0;
+  z-index: 20;
+  width: 50%;
+  box-shadow: none;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+#NCCN .Step.fixed div ul::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #41b946;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+}
+#NCCN .Step {
+  background-color: #fff;
+  width: 100%;
+  margin-top: 30px;
+}
+#NCCN .Step div {
+  background-color: #fff;
+  width: 100%;
+  padding: 0;
+}
+#NCCN .Step div ul {
+  padding: 0;
+  z-index: 20;
+  width: 50%;
+  box-shadow: none;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+/*button*/
+.grayButton {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 70px;
+}
+.grayButton button {
+  border: 0.5px solid #8f8f8f;
+  border-radius: 10px;
+  line-height: 50px;
+  width: 48%;
+  color: #8f8f8f;
+}
+
+/* button gray*/
+.btn-02 {
+  width: 100%;
+  background: #f1f1f1;
+  border-radius: 5px;
+  height: 50px;
+  line-height: 50px;
+  font-weight: 700;
+  font-size: 16px;
+  color: #8f8f8f;
+  position: relative;
+}
+
+.btn-02 {
+  display: block;
+  position: relative;
+}
+.btn-02 .cancel {
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.btn-02 .cancel::after {
+  content: "";
+  display: block;
+  background: url("public/images/cancel.svg") no-repeat;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -20px;
+}
+
+.buttonBox {
+  width: calc(100% - 46px);
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 30px;
+}
+.buttonBox button {
+  width: 48%;
+  height: 50px;
+}
+.buttonBox .prevButton {
+  border: 0.5px solid #8f8f8f;
+  border-radius: 5px;
+}
+.buttonBox .nextButton {
+  background: rgba(51, 180, 40, 0.96);
+  border-radius: 5px;
+  color: #fff;
+}
+
+.btn-02.fixed {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 30px;
+  width: calc(100% - 40px);
+}
+
+.active {
+  background-color: #41b946 !important;
+  color: #fff !important;
+}
+
+.borderButton {
+  line-height: 45px;
+  border: 0.5px solid #8f8f8f;
+  font-size: 16px;
+  color: #8f8f8f;
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 80px;
+}
+
+.loginBtn {
+  height: 55px;
+  background-color: #d9d9d9;
+  width: 100%;
+  color: gray;
+  border-radius: 5px;
+}
+
+.loginBtn.active {
+  background-color: #41b946 !important;
+  color: #fff !important;
+}
+
+.BtnActive {
+  width: calc(100% - 90px);
+  color: #fff;
+  font-weight: 700;
+  background: rgba(51, 180, 40, 0.96);
+  border-radius: 5px;
+  height: 55px;
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.BtnActive02 {
+  width: calc(100% - 90px);
+  color: #fff;
+  font-weight: 700;
+  background: rgba(51, 180, 40, 0.96);
+  border-radius: 5px;
+  height: 55px;
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/*modal*/
+#modal {
+  --bs-modal-footer-gap: 0;
+}
+
+.modalButton button {
+  display: block;
+}
+
+.modal-dialog {
+  width: 80% !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate3d(-50%, -50%, 0) !important;
+}
+.modal-dialog .modal-header {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-bottom: none;
+}
+.modal-dialog .modal-header .h4 {
+  font-size: 16px !important;
+  color: #8f8f8f;
+}
+.modal-dialog .modal-header .btn-close {
+  display: none;
+}
+.modal-dialog .modal-body {
+  border: none !important;
+  text-align: center;
+  border-bottom: none;
+  padding: 20px;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 22px;
+}
+.modal-dialog .modal-footer {
+  border-top: none;
+  display: block;
+  text-align: center;
+  width: 100%;
+  padding: 20px;
+}
+.modal-dialog .modal-footer .btn {
+  width: 100%;
+  background-color: #41b946;
+  color: #fff;
+  line-height: 40px;
+  font-size: 18px;
+  font-weight: 600;
+}
+.modal-dialog .modal-footer .btn:nth-of-type(2) {
+  background: #d9d9d9;
+  color: #909090;
+}
+
+.modal-dialog .modal-content .modal-body {
+  padding: 20px;
+  font-size: 18px;
+}
+.modal-dialog .modal-content .modal-body .copy {
+  color: #8f8f8f;
+  font-size: 14px;
+  margin-top: 20px;
+}
+.modal-dialog .modal-content .modal-body .modalImage {
+  font-weight: 500;
+}
+.modal-dialog .modal-content .modal-body .modalImage span {
+  font-weight: 600;
+}
+.modal-dialog .modal-content .modal-body .modalImage img {
+  margin-top: 20px;
+}
+.modal-dialog .modal-content .modal-footer .btn:nth-of-type(2) {
+  background: #d9d9d9;
+  margin-top: 10px;
+  color: #909090;
+}
+
+#NCCN .btn:nth-of-type(1) {
+  margin-bottom: 10px;
+}
+
+.toastPop {
+  background: rgba(92, 92, 92, 0.8);
+  border-radius: 10px;
+  width: calc(100% - 40px);
+  position: absolute;
+  left: 50%;
+  bottom: 70px;
+  transform: translateX(-50%);
+  display: block;
+}
+.toastPop p {
+  color: #fff;
+  font-weight: 400;
+  font-size: 22px;
+  padding: 15px 0 !important;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.surveyToday .toastPop {
+  bottom: 160px;
+}
+
+.CodeCheck {
+  position: relative;
+}
+
+.CodeCheck .toastPop {
+  width: 100%;
+  top: 80px;
 }/*# sourceMappingURL=style.css.map */

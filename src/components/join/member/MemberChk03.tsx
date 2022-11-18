@@ -6,7 +6,7 @@ import { UserInterface } from "@interfaces/userInterface";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const MemberChk03 = ({ nextStep }: { nextStep: Function }) => {
-  const handleFocusBtn = (event: React.MouseEvent<HTMLButtonElement>) => {    
+  const handleFocusBtn = (event: React.MouseEvent<HTMLButtonElement>) => {
     const target = event.target;
     const cancer = document.getElementById("cancer") as HTMLInputElement;
     const cancer_start = document.getElementById(
@@ -15,8 +15,9 @@ const MemberChk03 = ({ nextStep }: { nextStep: Function }) => {
     const cancer_end = document.getElementById(
       "cancer_end"
     ) as HTMLInputElement;
-    const treatmentType = document.querySelectorAll<HTMLInputElement>('.treatment-type input:checked');
-
+    const treatmentType = document.querySelectorAll<HTMLInputElement>(
+      ".treatment-type input:checked"
+    );
 
     if (!cancer.value) {
       cancer.focus();
@@ -34,23 +35,31 @@ const MemberChk03 = ({ nextStep }: { nextStep: Function }) => {
       // surgery.focus();
       return false;
     }
-    
-    console.log(444);
+
     nextStep(4);
   };
 
   return (
     <React.Fragment>
-      
       <p className="title">암 건강정보 입력</p>
       <div className="MemberChk MemberChk02">
-        <label>
-          <span>나이</span>
-        </label>
+        <div className="">
+          <label>
+            <span>나이</span>
+          </label>
+          <span className="age">나이</span>
+        </div>
+
         <label>
           <span>암 종(진단명)</span>
         </label>
-        <InputElement type="text" placeholder="암 종 선택" id="cancer" />
+        <div>
+          <select>
+            <option>암 종 선택</option>
+            <option></option>
+            <option></option>
+          </select>
+        </div>
         <label>
           <span>진단시기</span>
         </label>
@@ -70,11 +79,11 @@ const MemberChk03 = ({ nextStep }: { nextStep: Function }) => {
         <label>
           <span>치료유형(중복선택 가능)</span>
         </label>
-        <div className="chk_list treatment-type">
+        <div className="chk_list treatment-type checkContents">
           <ul>
             <li>
               <InputElement type="checkbox" id="surgery" className="check02" />
-              <label>수술</label>
+              <label htmlFor="surgery">수술</label>
             </li>
             <li>
               <InputElement
@@ -82,7 +91,7 @@ const MemberChk03 = ({ nextStep }: { nextStep: Function }) => {
                 id="cancer_treatment"
                 className="check02"
               />
-              <label>항암치료</label>
+              <label htmlFor="cancer_treatment">항암치료</label>
             </li>
             <li>
               <InputElement
@@ -90,7 +99,7 @@ const MemberChk03 = ({ nextStep }: { nextStep: Function }) => {
                 id="radiation_treatment"
                 className="check02"
               />
-              <label>방사선치료</label>
+              <label htmlFor="radiation_treatment" >방사선치료</label>
             </li>
             <li>
               <InputElement
@@ -98,7 +107,7 @@ const MemberChk03 = ({ nextStep }: { nextStep: Function }) => {
                 id="hormone_treatment"
                 className="check02"
               />
-              <label>호르몬치료</label>
+              <label htmlFor="hormone_treatment">호르몬치료</label>
             </li>
             <li>
               <InputElement
@@ -106,7 +115,7 @@ const MemberChk03 = ({ nextStep }: { nextStep: Function }) => {
                 id="etc_treatment"
                 className="check02"
               />
-              <label>기타</label>
+              <label htmlFor="etc_treatment">기타</label>
             </li>
           </ul>
           <InputElement
@@ -118,35 +127,38 @@ const MemberChk03 = ({ nextStep }: { nextStep: Function }) => {
         <label>
           <span>현재 건강상태</span>
         </label>
-        <div className="radioCheck">
+        <div className="radioCheck checkContents">
           <ul>
             <li>
               <InputElement
                 type="radio"
                 value="매우 건강하지 않다."
                 name="chk_info"
+                id="radio01"
               />
-              <label>매우 건강하지 않다.</label>
+              <label htmlFor="radio01">매우 건강하지 않다.</label>
             </li>
             <li>
               <InputElement
                 type="radio"
                 value="건강하지 않다."
                 name="chk_info"
+                id="radio02"
               />
-              <label>건강하지 않다.</label>
+              <label htmlFor="radio02">건강하지 않다.</label>
             </li>
             <li>
-              <InputElement type="radio" value="건강하다." name="chk_info" />
-              <label>건강하다.</label>
+              <InputElement type="radio" value="건강하다." name="chk_info" id="radio03"/>
+              <label htmlFor="radio03">건강하다.</label>
             </li>
             <li>
               <InputElement
                 type="radio"
                 value="매우 건강하다."
                 name="chk_info"
+                id="radio04"
               />
-              <label>매우 건강하다.</label>
+              <label htmlFor="radio04">매우 건강하다.</label>
             </li>
           </ul>
         </div>
@@ -158,7 +170,7 @@ const MemberChk03 = ({ nextStep }: { nextStep: Function }) => {
           placeholder="구체적으로 입력"
           id="cancer_type"
         />
-        <label>
+        <label htmlFor="cancer_type">
           <span>진단시기</span>
         </label>
         <InputElement
@@ -166,7 +178,7 @@ const MemberChk03 = ({ nextStep }: { nextStep: Function }) => {
           placeholder="예) 2015년 01월"
           id="cancer_type_start"
         />
-        <label>
+        <label htmlFor="cancer_type_start">
           <span>치료종료 시기</span>
         </label>
         <InputElement
@@ -174,47 +186,47 @@ const MemberChk03 = ({ nextStep }: { nextStep: Function }) => {
           placeholder="예) 2015년 01월"
           id="cancer_type_end"
         />
-        <label className="labelType">
+        <label className="labelType" htmlFor="cancer_type_end">
           <span> 암 이외의 진단받고 치료 중인 질환</span>
           (해당질환 모두 선택)
         </label>
-        <div className="chk_list disease">
+        <div className="chk_list disease checkContents">
           <ul>
             <li>
-              <InputElement type="checkbox" value="" className="" />
-              <label>없음</label>
+              <InputElement type="checkbox" value="" className="" id="empty"/>
+              <label htmlFor="empty">없음</label>
             </li>
             <li>
-              <InputElement type="checkbox" value="고혈압" />
-              <label>고혈압</label>
+              <InputElement type="checkbox" value="고혈압" id="hypertension"/>
+              <label htmlFor="hypertension">고혈압</label>
             </li>
             <li>
-              <InputElement type="checkbox" value="당뇨병" />
-              <label>당뇨병</label>
+              <InputElement type="checkbox" value="당뇨병" id="diabetic"/>
+              <label  htmlFor="diabetic">당뇨병</label>
             </li>
             <li>
-              <InputElement type="checkbox" value="뇌혈관질환" />
-              <label>뇌혈관질환</label>
+              <InputElement type="checkbox" value="뇌혈관질환" id="cerebrovascular"/>
+              <label htmlFor="cerebrovascular">뇌혈관질환</label>
             </li>
             <li>
-              <InputElement type="checkbox" value="호흡기질환" />
-              <label>호흡기질환</label>
+              <InputElement type="checkbox" value="호흡기질환" id="respiratory"/>
+              <label htmlFor="respiratory">호흡기질환</label>
             </li>
             <li>
-              <InputElement type="checkbox" value="심장질환" />
-              <label>심장질환</label>
+              <InputElement type="checkbox" value="심장질환" id="cardiac"/>
+              <label htmlFor="cardiac">심장질환</label>
             </li>
             <li>
-              <InputElement type="checkbox" value="우울증" />
-              <label>우울증</label>
+              <InputElement type="checkbox" value="우울증" id="blues"/>
+              <label htmlFor="blues">우울증</label>
             </li>
             <li>
-              <InputElement type="checkbox" value="관련 질환" />
-              <label>관련 질환</label>
+              <InputElement type="checkbox" value="관련 질환" id="related"/>
+              <label htmlFor="related">관련 질환</label>
             </li>
             <li>
-              <InputElement type="checkbox" value="기타" />
-              <label>기타</label>
+              <InputElement type="checkbox" value="기타" id="etc"/>
+              <label htmlFor="etc">기타</label>
             </li>
           </ul>
           <InputElement type="text" placeholder="직접 작성" />

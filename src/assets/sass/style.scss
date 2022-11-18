@@ -5,7 +5,7 @@
 
 $main-color: #41b946;
 $font-color: #8f8f8f;
-$url-images: "public/images/";
+$url-images: "/images/";
 $border-green: 0.5px solid #41b946;
 $border-gray: 0.5px solid #8f8f8f;
 $border-dvision: 12px solid #ebedea;
@@ -93,15 +93,25 @@ ol {
 }
 .Logo {
   display: block;
-  width: 110px;
-  height: 80px;
-  margin: 30px auto 0 auto;
+  // width: 110px;
+  // height: 80px;
+  margin: 50px auto 0 auto;
 }
-.Logo img {
-  width: 100%;
+.Logo {
+  display: block;
   position: relative;
-  top: 50%;
-  transform: translateY(-50%);
+
+  img {
+    display: block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    &:first-of-type {
+      width: 110px;
+    }
+    &:last-of-type {
+    }
+  }
 }
 .Login .Header h2 {
   color: $main-color;
@@ -228,11 +238,16 @@ ol {
                 transform: translateY(-50%);
               }
             }
+            .arrow.on {
+              &::after {
+                transform: translateY(-50%) rotate(180deg);
+              }
+            }
             .two-dep {
               display: none;
               ul {
                 li {
-                  padding: 0;
+                  padding:10px 0;
                   border: none;
                   a {
                     display: block;
@@ -289,6 +304,9 @@ ol {
     }
     input {
       @include input-style(#8f8f8f, 100%);
+      &:first-of-type{
+        margin-bottom: 50px;
+      }
     }
     label {
       display: block;
@@ -371,7 +389,7 @@ select {
     height: 18px;
     padding: 0;
     &:checked {
-      background: url(../../../public/images/check-bx.svg) no-repeat;
+      background: url($url-images + "check-bx.svg") no-repeat;
       width: 18px;
       height: 18px;
       border: none;
@@ -501,7 +519,7 @@ select {
     &::after {
       content: "";
       display: block;
-      background: url(../../../public/images/arrow-right.svg) no-repeat;
+      background: url($url-images + "arrow-right.svg") no-repeat;
       width: 15px;
       height: 15px;
       background-size: contain;
@@ -609,8 +627,14 @@ select {
     }
   }
 }
-.progressBar.on {
+.progressWrap.fixed{
   position: fixed;
+  width: 100%;
+  padding: 30px 0;
+  background-color: #fff;
+  z-index: 10;
+  top: 50px;
+  box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 3%);
 }
 .member {
   margin: 0 40px;
@@ -623,6 +647,9 @@ select {
 }
 .MemberChk {
   padding-bottom: 150px;
+  .age{
+    padding-left: 50px;
+  }
   label {
     span {
       display: block;
@@ -653,7 +680,7 @@ select {
   span {
     display: inline-block;
     width: 50%;
-    span {
+    label {
       padding-left: 20px;
     }
   }
@@ -662,7 +689,7 @@ select {
   span {
     display: inline-block;
     width: 33.333333%;
-    span {
+    label {
       padding-left: 20px;
       width: fit-content;
     }
@@ -684,6 +711,7 @@ select {
   .term {
     display: block;
     margin-top: 40px;
+
     input {
       width: 100px;
       text-align: center;
@@ -725,7 +753,16 @@ select {
     border: none;
   }
 }
-
+.checkContents{
+  ul{
+    li{
+      padding: 10px 0;
+     input{
+      padding: 0;
+     }
+    }
+  }
+}
 .surveyMain {
   margin: 0 20px;
   .surveyName {
@@ -879,10 +916,14 @@ select {
 }
 .surveyToday {
   margin-top: 40px;
+  p{
+    padding: 20px 0;
+  }
   .date {
     margin-bottom: 40px;
   }
   .rc-slider {
+    width: 90%;
     .rc-slider-handle {
       background: #41b946;
     }
@@ -1114,12 +1155,14 @@ select {
         font-weight: 700;
         font-size: 18px;
         line-height: 22px;
+        margin-bottom: 0;
       }
       .d-day {
         font-weight: 700;
         font-size: 26px;
         color: #f30909;
         text-align: center;
+        padding-bottom: 30px;
         span {
           display: block;
           font-weight: 700;
@@ -1127,6 +1170,12 @@ select {
           line-height: 17px;
           color: #f30909;
         }
+      }
+    }
+    .prg-head.unBook.unLog {
+      padding: 17px 38px;
+      .d-day {
+        padding-bottom: 10px;
       }
     }
     .prg-head.unBook {
@@ -1137,7 +1186,10 @@ select {
     }
     .term {
       padding: 20px 15px;
-
+      margin-bottom: 0;
+      li {
+        margin-bottom: 10px;
+      }
       .red {
         color: #f30909;
       }
@@ -1169,18 +1221,6 @@ select {
     position: absolute;
     top: 0;
   }
-}
-/* button gray*/
-.btn-02 {
-  width: 100%;
-  background: #f1f1f1;
-  border-radius: 5px;
-  height: 50px;
-  line-height: 50px;
-  font-weight: 700;
-  font-size: 16px;
-  color: #8f8f8f;
-  position: relative;
 }
 
 .painProgress {
@@ -1243,9 +1283,6 @@ select {
   background: #e8f7ff;
 }
 .pain {
-  // margin: 0 20px;
-
-  // overflow-x: hidden;
   h2 {
     margin: 25px 0;
     font-size: 20px;
@@ -1687,6 +1724,10 @@ select {
 }
 
 .surveyList {
+  p{
+    font-size: 18px;
+    font-weight: 400;
+  }
   .radioButton {
     padding: 0;
     appearance: none;
@@ -1780,6 +1821,32 @@ select {
     }
   }
 }
+.isi{
+  p{
+    padding:25px 0 20px 0;
+    font-size: 18px;
+  }
+  span{
+    font-weight: 600;
+  }
+  .subTitle{
+    color: $font-color;
+    text-align: center;
+    padding: 0;
+    font-size: 14px;
+    span{
+      color: #0037f8;
+    }
+  }
+  .surveyContent{
+    p{
+      font-weight: 500;
+    }
+    li{
+      
+    }
+  }
+}
 .destress {
   .checkList {
     margin-top: 30px;
@@ -1860,7 +1927,8 @@ select {
   ul {
     margin-top: 30px;
     margin-bottom: 40px;
-    padding-right: 2rem;
+    padding-left: 20px;
+    // padding-right: 2rem;
     li {
       display: flex;
       align-items: center;
@@ -1881,7 +1949,7 @@ select {
       label {
         font-weight: 400;
         font-size: 16px;
-        margin-left: 40px;
+        margin-left: 30px;
       }
     }
   }
@@ -1973,6 +2041,9 @@ select {
 }
 .roundBox {
   margin-bottom: 80px;
+  .swiper-slide{
+    width: fit-content;
+  }
 }
 .roundNumber {
   box-sizing: border-box;
@@ -2057,7 +2128,7 @@ select {
   font-weight: 600;
   font-size: 20px;
   text-align: center;
-  margin-top: 50px;
+  margin-top: 2rem;
 }
 .MemberChk label.labelType span {
   margin: 50px 0 0 0;
@@ -2065,6 +2136,7 @@ select {
 .radioCheck {
   ul {
     margin-left: 0;
+    padding-left: 0;
     li {
       margin: 10px 0;
       input[type="radio"] {
@@ -2355,10 +2427,13 @@ select {
 }
 .tired {
   margin: 40px 30px;
+  .explainText{
+    padding: 20px 0;
+  }
   li {
     p {
       font-size: 18px;
-      font-weight: 600;
+      font-weight: 500;
     }
   }
 }
@@ -2470,7 +2545,7 @@ select {
 .account {
   margin: 40px;
   h2 {
-    margin-top: 70px;
+    margin-top: 40px;
     font-weight: 700;
     font-size: 25px;
   }
@@ -2792,14 +2867,16 @@ table {
             label {
               width: 100%;
               margin-bottom: 0;
+              
             }
           }
           span {
             display: flex;
             align-items: center;
             width: 50%;
-            span {
+            label {
               margin-left: 20px;
+              margin-bottom: 0;
             }
           }
         }
@@ -2818,6 +2895,18 @@ table {
           margin-bottom: 0;
         }
       }
+    }
+  }
+}
+#modify{
+  ul{
+    li{
+      .chk_radio02{
+        label{
+          margin-bottom: 0;
+        }
+      }
+      
     }
   }
 }
@@ -2964,7 +3053,7 @@ table {
     }
   }
   .Arrow {
-    top: 0;
+    top: 30px;
     margin-bottom: 150px;
     span {
       white-space: nowrap;
@@ -2974,7 +3063,60 @@ table {
     background-color: #0037f8;
   }
 }
-
+#NCCN{
+  .Step.fixed {
+    background-color: #fff;
+    width: 100%;
+    top: 65px;
+    margin-top: 0;
+    div{
+      background-color: #fff;
+      width: 100%;
+      padding: 15px 23px;
+      ul{
+        padding: 0;
+        z-index: 20;
+        width: 50%;
+        box-shadow: none;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+      &::after{
+        content: "";
+        display: block;
+        width: 100%;
+        height: 1px;
+        background-color: #41b946;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+      }
+      }
+    }
+  }
+  .Step{
+    background-color: #fff;
+    width: 100%;
+    margin-top: 30px;
+    div{
+      background-color: #fff;
+      width: 100%;
+      padding:0;
+      ul{
+        padding: 0;
+        z-index: 20;
+        width: 50%;
+        box-shadow: none;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+      }
+    }
+    
+   
+  }
+}
 /*button*/
 .grayButton {
   width: 100%;
@@ -2989,7 +3131,41 @@ table {
     color: $font-color;
   }
 }
-
+/* button gray*/
+.btn-02 {
+  width: 100%;
+  background: #f1f1f1;
+  border-radius: 5px;
+  height: 50px;
+  line-height: 50px;
+  font-weight: 700;
+  font-size: 16px;
+  color: #8f8f8f;
+  position: relative;
+}
+.btn-02 {
+  display: block;
+  position: relative;
+  .cancel {
+    display: block;
+    width: fit-content;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    &::after {
+      content: "";
+      display: block;
+      background: url($url-images + "cancel.svg") no-repeat;
+      width: 20px;
+      height: 20px;
+      background-size: contain;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: -20px;
+    }
+  }
+}
 .buttonBox {
   width: calc(100% - 46px);
   height: 50px;
@@ -3015,10 +3191,25 @@ table {
     color: #fff;
   }
 }
-
+.btn-02.fixed{
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 30px;
+  width: calc(100% - 40px);
+}
 .active {
   background-color: #41b946 !important;
   color: #fff !important;
+}
+.borderButton{
+  line-height: 45px;
+  border: $border-gray;
+  font-size: 16px;
+  color: $font-color;
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 80px;
 }
 .loginBtn {
   height: 55px;
@@ -3026,6 +3217,7 @@ table {
   width: 100%;
   color: gray;
   border-radius: 5px;
+
 }
 .loginBtn.active {
   background-color: #41b946 !important;
@@ -3057,15 +3249,20 @@ table {
 }
 
 /*modal*/
-
+#modal {
+  --bs-modal-footer-gap: 0;
+}
 .modalButton {
   button {
     display: block;
   }
 }
+
 .modal-dialog {
+  width: 80% !important;
+  left: 50% !important;
   top: 50% !important;
-  transform: translateY(-50%) !important;
+  transform: translate3d(-50%, -50%, 0) !important;
 
   .modal-header {
     display: flex;
@@ -3088,14 +3285,15 @@ table {
     border-bottom: none;
     padding: 20px;
     font-size: 26px;
-    font-weight: 500;
-    line-height: 28px;
+    font-weight: 600;
+    line-height: 22px;
   }
   .modal-footer {
     border-top: none;
     display: block;
     text-align: center;
     width: 100%;
+    padding: 20px;
     .btn {
       width: 100%;
       background-color: $main-color;
@@ -3115,26 +3313,73 @@ table {
     .modal-body {
       padding: 20px;
       font-size: 18px;
+      .copy{
+        color: $font-color;
+        font-size: 14px;
+        margin-top: 20px;
+      }
+      .modalImage{
+        font-weight: 500;
+        span{
+          font-weight: 600;
+        }
+        img{
+          margin-top: 20px;
+        }
+      }
     }
     .modal-footer {
       .btn {
+        &:nth-of-type(1){
+          
+        }
         &:nth-of-type(2) {
           background: #d9d9d9;
+          margin-top: 10px;
           color: #909090;
         }
       }
     }
   }
 }
-.toastsPop {
-  position: absolute;
-  top: 30%;
+
+
+#NCCN{
+  .btn{
+    &:nth-of-type(1){
+      margin-bottom: 10px;
+    }
+  }
+}
+.toastPop {
   background: rgba(92, 92, 92, 0.8);
   border-radius: 10px;
   width: calc(100% - 40px);
+  position: absolute;
   left: 50%;
+  bottom: 70px;
   transform: translateX(-50%);
-  p{
+  display: block;
+  p {
     color: #fff;
+    font-weight: 400;
+    font-size: 22px;
+    padding: 15px 0 !important;
+    margin-bottom: 0;
+    text-align: center;
   }
 }
+.surveyToday{
+  .toastPop{
+    bottom: 160px;
+  }
+  
+}
+.CodeCheck{
+  position: relative;
+}
+.CodeCheck .toastPop{
+  width: 100%;
+  top: 80px;
+}
+

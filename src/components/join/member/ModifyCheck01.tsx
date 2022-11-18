@@ -63,12 +63,12 @@ const ModifyCheck01 = () => {
               </label>
               <div className="radioCheck">
                 <span>
-                  <InputElement type="radio" value="동의" name="chk_info" />
-                  <span>동의</span>
+                  <InputElement type="radio" value="동의" name="chk_info" id="agree"/>
+                  <label htmlFor="agree">동의</label>
                 </span>
                 <span>
-                  <InputElement type="radio" value="미동의" name="chk_info" />
-                  <span>미동의</span>
+                  <InputElement type="radio" value="미동의" name="chk_info" id="agree01"/>
+                  <label htmlFor="agree01">미동의</label>
                 </span>
               </div>
             </li>
@@ -94,14 +94,14 @@ const ModifyCheck01 = () => {
               <label>
                 <span>이메일 수신동의</span>
               </label>
-              <div className="radioCheck">
+              <div className="radioCheck" id="">
                 <span>
-                  <InputElement type="radio" value="동의" name="chk_info" />
-                  <span>동의</span>
+                  <InputElement type="radio" value="동의" name="chk_info" id="agree02"/>
+                  <label htmlFor="agree02">동의</label>
                 </span>
                 <span>
-                  <InputElement type="radio" value="미동의" name="chk_info" />
-                  <span>미동의</span>
+                  <InputElement type="radio" value="미동의" name="chk_info"  id="agree03"/>
+                  <label htmlFor="agree03">미동의</label>
                 </span>
               </div>
             </li>

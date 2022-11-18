@@ -1,9 +1,5 @@
 import React, { useEffect, useState } from "react";
-import useUserHttp from "@hooks/queries/useUserQuery";
 import InputElement from "@/components/elements/InputElement";
-import { ListInterface } from "@interfaces/listInterface";
-import { UserInterface } from "@interfaces/userInterface";
-import { Link, useLocation, useNavigate } from "react-router-dom";
 import $ from "jquery";
 
 const DropBoxComponent = (/*{ programHandler }: { programHandler: Function }*/) => {

@@ -10,9 +10,9 @@ const ISISurveyComponent01 = () => {
     <React.Fragment>
       <h2>시작전 설문 - 수면(ISI)</h2>
 
-      <div className="surveyList">
+      <div className="surveyList isi">
         <p>
-          1. 최근 2주동안에 당신의 불면증의 <span>심한 정도</span>를 아래에
+          1. 최근 2주동안에 당신의 불면증의<br/> <span>심한 정도</span>를 아래에
           표시하십시오?
         </p>
         <ul>
@@ -169,7 +169,11 @@ const ISISurveyComponent01 = () => {
         </ul>
         <p>
           2. 당신의 현재 수면 패턴에 얼마나 만족하십니까? 
+          <p className="subTitle">
+          (좌우로 <span>동그라미</span>를 움직여주세요.)
         </p>
+        </p>
+
         <RangeComponent/>
         <RangeArrowComponent left="매우만족" right="매우 불만족"/>
 

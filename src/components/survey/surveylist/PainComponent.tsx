@@ -1,12 +1,6 @@
 import React, { useEffect, useState } from "react";
 import FrontPainComponent from "./pain/FrontPainComponent";
 import BackPainComponent from "./pain/BackPainComponent";
-
-import ImageMapper, { MapAreas } from "@mohamadtsn/react-img-mapper";
-import InputElement from "@/components/elements/InputElement";
-import useUserHttp from "@hooks/queries/useUserQuery";
-import { ListInterface } from "@interfaces/listInterface";
-import { UserInterface } from "@interfaces/userInterface";
 import $ from "jquery";
 
 const PainComponent = ({ step }: { step: number }) => {
