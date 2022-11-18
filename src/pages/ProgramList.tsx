@@ -8,6 +8,7 @@ import BookComponent from "@/components/program/book/BookComponent";
 import UnBookComponent from "@/components/program/unBook/UnBookComponent";
 import HeaderComponent from "@/components/head/Header";
 import DropBoxComponent from "@/components/program/DropBoxComponent";
+import ToastPopup from "@/components/modal/ToastPopup";
 import InputElement from "@/components/elements/InputElement";
 import ProgramDetailComponent from "@/components/program/programDetail/ProgramDetailComponent";
 import ProgramNumberComponent from "@/components/program/ProgramNumberComponent";
@@ -31,6 +32,7 @@ const ProgramList = () => {
       </div>
       <BookComponent />
       <UnBookComponent />
+      <ToastPopup text="프로그램 예약이 완료 됐습니다."/>
     </React.Fragment>
   );
 };

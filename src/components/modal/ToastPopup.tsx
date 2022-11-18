@@ -12,7 +12,7 @@ import { useRecoilState } from "recoil";
 import { modalState } from "@/states/modalState";
 
 
-const ToastPopup = ({name}:{name:string}) => {
+const ToastPopup = ({text}:{text:string}) => {
   const handleModal = () => {
 
   };
@@ -20,7 +20,7 @@ const ToastPopup = ({name}:{name:string}) => {
   return (
     <React.Fragment>
       <div className="toastsPop">
-        <p className="title">{name}</p>
+        <p className="text">{text}</p>
       </div>
     </React.Fragment>
   );
