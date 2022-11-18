@@ -136,8 +136,8 @@ const SurveyToday = () => {
                 <div>
                     <RangeArrowComponent left="피로도 낮음" right="피로도 높음"/>
                 </div>
-                <ToastPopup text="수정되었습니다." show={toast}/>
-                <ToastPopup text="저장되었습니다." show={toast}/>
+                {/* <ToastPopup text="수정되었습니다." show={toast}/>
+                <ToastPopup text="저장되었습니다." show={toast}/> */}
             </div>
 
             <button type="button" className="BtnActive02" onClick={handlePopup}>

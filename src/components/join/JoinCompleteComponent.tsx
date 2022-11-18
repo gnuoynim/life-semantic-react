@@ -14,7 +14,7 @@ const JoinCompleteComponent = () => {
         <img src="images/big-check.svg" />
       </div>
       <div className="fix">
-        <button type="button" className="BtnActive" >
+        <button type="button" className="" >
           홈 화면으로 돌아가기
         </button>
         <button type="button" className="BtnActive" >

@@ -134,8 +134,6 @@ const NCCN = () => {
         <button type="button" className="next" onClick={handleModal01}>
           다음
         </button>
-        <div className="buttonSpace"></div>
-        
       </div>
      
     </div>

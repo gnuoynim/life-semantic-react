@@ -14,7 +14,7 @@ const ProgramNumberDetailComponent = ({roundDetail}:{roundDetail: number}) => {
               장소 : <span>서울 안산도시자연공원</span>
             </li>
             <li>
-              세부활동 :{" "}
+              세부활동 :
               <span>
                 숲 만나기, 내 몸 지도 그리기, 자연이름 만들기, 숲길 걷기, 나무
                 스트레칭, 숲 나누기

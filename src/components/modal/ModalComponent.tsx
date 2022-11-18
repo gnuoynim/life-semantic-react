@@ -4,8 +4,7 @@ import Modal from "react-bootstrap/Modal";
 import { useRecoilState } from "recoil";
 import { modalState } from "@/states/modalState";
 
-
-const ModalComponent = () => {
+const ModalComponent = ({ id = "" }: { id?: string }) => {
   const [modal, setModal] = useRecoilState(modalState);
   const {
     show = false,
@@ -15,8 +14,8 @@ const ModalComponent = () => {
     closeShow = false,
     confirmShow = false,
     cancelShow = false,
-    confirmText="확인",
-    cancelText="취소"
+    confirmText = "확인",
+    cancelText = "취소",
   } = modal;
 
   const handleClose = () => {
@@ -26,15 +25,15 @@ const ModalComponent = () => {
 
   return (
     <React.Fragment>
-      <Modal show={show} onHide={handleClose} id="modal">
+      <Modal show={show} onHide={handleClose} className="modal" id={id}>
         <Modal.Header closeButton>
           <Modal.Title>{title}</Modal.Title>
         </Modal.Header>
         <Modal.Body>{content}</Modal.Body>
-        <Modal.Footer>
+        <Modal.Footer className="flex">
           {cancelShow && (
             <Button variant="" onClick={handleClose}>
-           {cancelText}
+              {cancelText}
             </Button>
           )}
           <Button variant="" onClick={handleClose}>

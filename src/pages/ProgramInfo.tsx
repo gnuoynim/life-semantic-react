@@ -138,8 +138,8 @@ const ProgramInfo = () => {
                     className="cancel">취소하기</span></button>
             </React.Fragment>
             }
-            <ToastPopup text="프로그램 예약이 취소됐습니다." show={toastCancel}/>
-            <ToastPopup text="프로그램 예약이 완료됐습니다." show={toastComplete}/>
+            {/* <ToastPopup text="프로그램 예약이 취소됐습니다." show={toastCancel}/>
+            <ToastPopup text="프로그램 예약이 완료됐습니다." show={toastComplete}/> */}
 
         </React.Fragment>
     );

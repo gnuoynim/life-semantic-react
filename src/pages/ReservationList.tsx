@@ -2,16 +2,14 @@ import React, { useEffect, useState } from "react";
 import HeaderComponent from "@/components/head/Header";
 import InputElement from "@/components/elements/InputElement";
 import { modalState } from "@/states/modalState";
-import TitleHeadComponent from "@/components/head/TitleHeadComponent";
-import RoundComponent from "@/components/program/RoundComponent";
+import ModalComponent from "@/components/modal/ModalComponent";
+import ToastPopup from "@/components/modal/ToastPopup";
+import { useRecoilState } from "recoil";
 import $, { each } from "jquery";
 
-
 const ReservationList = () => {
-
+  const [modal, setModal] = useRecoilState(modalState);
   useEffect(() => {
-
-    
     $(".dropDown .selected span").click(function () {
       const options = $(this).parent().siblings(".options");
       options.find("ul").show();
@@ -32,16 +30,14 @@ const ReservationList = () => {
       });
     });
 
+    $(".check").click(function () {
+      var checked = $(".check").is(":checked");
 
-    $('.check').click(function(){
-      var checked = $('.check').is(':checked');
-      
-      if(checked){
+      if (checked) {
         $(this).parent().parent().addClass("on");
-      }else{
+      } else {
         $(this).parent().parent().removeClass("on");
       }
-        
     });
 
     $(".checkBox .check").click(function () {
@@ -58,13 +54,35 @@ const ReservationList = () => {
       }
     }
   }, []);
+  const [toast, setToast] = useState(false);
+  const handleChange = () => {
+    setModal({
+      ...modal,
+      show: true,
+      title: "",
+      cancelShow: true,
+      content: (
+        <div>
+          선택하신 프로그램을 <br />
+          취소하시겠습니까?
+        </div>
+      ),
+      confirmText: "확인",
+    });
+  };
+  const handlePopup = () => {
+    setToast(true);
+    setTimeout(() => {
+      setToast(false);
+    }, 3000);
+  };
 
   return (
     <React.Fragment>
       <HeaderComponent />
-      <div className="reservationList">
+      <div className="reservationList" id="">
         <h2>예약내역</h2>
-        <button type="button" className="cancelButton">
+        <button type="button" className="cancelButton " onClick={handleChange}>
           선택취소
         </button>
         <div className="reservationTable">
@@ -97,7 +115,7 @@ const ReservationList = () => {
               </tr>
               <tr>
                 <td>
-                  <InputElement type="checkbox" className="check"/>
+                  <InputElement type="checkbox" className="check" />
                 </td>
                 <td>굿바이 피로</td>
                 <td>
@@ -106,7 +124,7 @@ const ReservationList = () => {
               </tr>
               <tr>
                 <td>
-                  <InputElement type="checkbox" className="check"/>
+                  <InputElement type="checkbox" className="check" />
                 </td>
                 <td>굿바이 피로</td>
                 <td>
@@ -115,7 +133,7 @@ const ReservationList = () => {
               </tr>
               <tr>
                 <td>
-                  <InputElement type="checkbox" className="check"/>
+                  <InputElement type="checkbox" className="check" />
                 </td>
                 <td>굿바이 피로</td>
                 <td>
@@ -124,17 +142,22 @@ const ReservationList = () => {
               </tr>
               <tr>
                 <td>
-                  <InputElement type="checkbox" className="check"/>
+                  <InputElement type="checkbox" className="check" />
                 </td>
                 <td>굿바이 피로</td>
                 <td>
                   <span className="reserved">예약 중</span>
                 </td>
               </tr>
+            
             </tbody>
           </table>
+          <ToastPopup content={"선택하신 프로그램을 취소했습니다."} show={false} />
+          <ToastPopup content=<span>프로그램을 취소하시려면, <br/> 해당 프로그램을 선택해주세요.</span> show={true} />
         </div>
       </div>
+      
+      <ModalComponent id="reservationModal" />
     </React.Fragment>
   );
 };

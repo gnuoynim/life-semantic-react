@@ -2025,6 +2025,16 @@ select {
       }
     }
   }
+  .swiper-wrapper{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-row-gap: 14px;
+    .swiper-slide{
+      width: fit-content;
+      margin-right: 0;
+    }
+  }
+  
 }
 .round {
   .roundItem {
@@ -2486,20 +2496,32 @@ select {
         font-weight: 400;
         font-size: 14px;
         display: block;
-        &:first-of-type {
+        &:nth-of-type(1) {
           width: 20%;
           color: #8f8f8f;
         }
-        &:last-of-type {
+        &:nth-of-type(2) {
           width: 74%;
         }
       }
-      .explainBox {
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
+      .explainBox{
+        width: 74%;
+        position: relative;
+        .explainText{
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+        .moreText{
+          position: absolute;
+          color:  $font-color;
+          bottom: 14px;
+          right: -40px;
+          display: block;
+        }
       }
+      
     }
   }
   .forestImages {
@@ -2659,13 +2681,13 @@ table {
       border-bottom: 0.5px solid $font-color;
     }
     td {
-      padding: 10px;
+      padding: 1vw;
       &:first-of-type {
         border-right: 0.5px solid $font-color;
         width: 40%;
       }
       &:nth-of-type(2) {
-        padding-left: 20px;
+        padding-left: 3vw;
       }
     }
   }
@@ -2927,7 +2949,7 @@ table {
 .reservationList {
   margin: 40px;
   h2 {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
   }
   .cancelButton {
     border: 1px solid;
@@ -2937,10 +2959,12 @@ table {
   .tabelDropdown {
     display: flex;
     justify-content: flex-end;
+    height: 10px;
     .dropDown {
       width: 130px;
       position: relative;
-      top: 10px;
+      top: -30px;
+      right: -17px;
       .selected {
         span {
           background: #fff;
@@ -3027,7 +3051,7 @@ table {
         }
         &:nth-child(n + 2) {
           td {
-            padding: 20px;
+            padding: 3vw;
           }
         }
       }
@@ -3249,7 +3273,7 @@ table {
 }
 
 /*modal*/
-#modal {
+.modal {
   --bs-modal-footer-gap: 0;
 }
 .modalButton {
@@ -3257,6 +3281,22 @@ table {
     display: block;
   }
 }
+
+#reservationModal{
+  .flex{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    .btn{
+      width: 46%;
+      margin-top: 0;
+    }
+
+  }
+}
+
+
 
 .modal-dialog {
   width: 80% !important;
@@ -3351,24 +3391,10 @@ table {
     }
   }
 }
-.toastPop {
-  background: rgba(92, 92, 92, 0.8);
-  border-radius: 10px;
-  width: calc(100% - 40px);
-  position: absolute;
-  left: 50%;
-  bottom: 70px;
-  transform: translateX(-50%);
-  display: block;
-  p {
-    color: #fff;
-    font-weight: 400;
-    font-size: 22px;
-    padding: 15px 0 !important;
-    margin-bottom: 0;
-    text-align: center;
-  }
-}
+
+
+
+/*toast popup 위치*/
 .surveyToday{
   .toastPop{
     bottom: 160px;
@@ -3380,6 +3406,37 @@ table {
 }
 .CodeCheck .toastPop{
   width: 100%;
-  top: 80px;
+  
 }
 
+.toastPopup {
+  background: rgba(92, 92, 92, 0.8);
+  border-radius: 10px;
+  width: calc(100% - 40px);
+  position: absolute;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+  display: block;
+  line-height: 25px;
+  p {
+    color: #fff;
+    font-weight: 400;
+    font-size: 22px;
+    padding: 15px 0 !important;
+    margin-bottom: 0;
+    text-align: center;
+  }
+}
+
+.reservationList {
+  position: relative;
+  .toastPopup{
+    display: block;
+    width: 110%;
+    bottom: -100px;
+    span{
+      display: block;
+    }
+  }
+}

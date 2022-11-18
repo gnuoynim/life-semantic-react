@@ -73,7 +73,7 @@ const LostPassword = () => {
         <div className="Temporary">
           <p>임시 비밀번호 발급</p>
           <label>이름</label>
-          <InputElement type="text" placeholder="이름 입력" maxlength="10" />
+          <InputElement type="text" placeholder="이름 입력" maxLength="10" />
           <label>휴대폰 번호</label>
           <InputElement type="number" placeholder="숫자만 입력" />
           <button className="InnerBtn" onClick={handleModal01}>
@@ -96,11 +96,15 @@ const LostPassword = () => {
           </div>
           <div className="CodeCheck">
             <InputElement type="text" placeholder="휴대폰 번호 입력" />
-            <button type="button"onClick={handlePopup}>
+            <button type="button" onClick={handlePopup}>
               인증번호 <br />
               받기
             </button>
-            <ToastPopup text="인증번호를 발송했습니다." show={toast} />
+            <ToastPopup
+            content={"인증번호를 발송했습니다."}
+              
+              show={true} 
+            />
           </div>
           <InputElement type="number" placeholder="인증번호 입력(10분 안에)" />
           <label>새 비밀번호 설정</label>
