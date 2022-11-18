@@ -24,10 +24,11 @@ const MemberChk02 = ({ nextStep }: { nextStep: Function }) => {
 
     if (!checkSmoking) return false;
     if (checkSmoking && checkSmoking.value === "흡연")
-      return checkSmokingValues();
+      if (!checkSmokingValues()) return false;
 
     if (!checkDrink) return false;
-    if (checkDrink && checkDrink.value === "음주") return checkDrinkingValues();
+    if (checkDrink && checkDrink.value === "음주")
+      if (!checkDrinkingValues()) return false;
 
     if (!checkCaffeine) return false;
 

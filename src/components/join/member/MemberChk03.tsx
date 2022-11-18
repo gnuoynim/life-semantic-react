@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import InputElement from "../../elements/InputElement";
 import useUserHttp from "@hooks/queries/useUserQuery";
 import { ListInterface } from "@interfaces/listInterface";
@@ -6,6 +6,8 @@ import { UserInterface } from "@interfaces/userInterface";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const MemberChk03 = ({ nextStep }: { nextStep: Function }) => {
+  const [isCustomCancerName, setIsCustomCanerName] = useState(false);
+
   const handleFocusBtn = (event: React.MouseEvent<HTMLButtonElement>) => {
     const target = event.target;
     const cancer = document.getElementById("cancer") as HTMLInputElement;
@@ -19,9 +21,16 @@ const MemberChk03 = ({ nextStep }: { nextStep: Function }) => {
       ".treatment-type input:checked"
     );
 
-    if (!cancer.value) {
-      cancer.focus();
-      return false;
+    const custom_cancer_name = document.getElementById(
+      "custom_cancer_name"
+    ) as HTMLInputElement;
+
+    if (isCustomCancerName) {
+      if(!custom_cancer_name.value){
+        custom_cancer_name.focus();
+        return false;
+      }
+      
     }
     if (!cancer_start.value) {
       cancer_start.focus();
@@ -32,11 +41,22 @@ const MemberChk03 = ({ nextStep }: { nextStep: Function }) => {
       return false;
     }
     if (!treatmentType.length) {
-      // surgery.focus();
       return false;
     }
 
     nextStep(4);
+  };
+
+  const handleCancerNameChange = (
+    event: React.ChangeEvent<HTMLSelectElement>
+  ) => {
+    const target = event.target;
+    const selectedOption = target.selectedOptions[0];
+    if (selectedOption.textContent === "직접입력") {
+      setIsCustomCanerName(true);
+    } else {
+      setIsCustomCanerName(false);
+    }
   };
 
   return (
@@ -54,12 +74,19 @@ const MemberChk03 = ({ nextStep }: { nextStep: Function }) => {
           <span>암 종(진단명)</span>
         </label>
         <div>
-          <select>
+          <select onChange={handleCancerNameChange}>
             <option>암 종 선택</option>
-            <option></option>
-            <option></option>
+            <option>구체적으로 입력</option>
+            <option>직접입력</option>
           </select>
+          {isCustomCancerName && (
+            <div>
+              <label>직접입력</label>
+              <InputElement type="text" placeholder="직접입력" id="custom_cancer_name"/>
+            </div>
+          )}
         </div>
+
         <label>
           <span>진단시기</span>
         </label>
@@ -99,7 +126,7 @@ const MemberChk03 = ({ nextStep }: { nextStep: Function }) => {
                 id="radiation_treatment"
                 className="check02"
               />
-              <label htmlFor="radiation_treatment" >방사선치료</label>
+              <label htmlFor="radiation_treatment">방사선치료</label>
             </li>
             <li>
               <InputElement
@@ -148,7 +175,12 @@ const MemberChk03 = ({ nextStep }: { nextStep: Function }) => {
               <label htmlFor="radio02">건강하지 않다.</label>
             </li>
             <li>
-              <InputElement type="radio" value="건강하다." name="chk_info" id="radio03"/>
+              <InputElement
+                type="radio"
+                value="건강하다."
+                name="chk_info"
+                id="radio03"
+              />
               <label htmlFor="radio03">건강하다.</label>
             </li>
             <li>
@@ -193,39 +225,47 @@ const MemberChk03 = ({ nextStep }: { nextStep: Function }) => {
         <div className="chk_list disease checkContents">
           <ul>
             <li>
-              <InputElement type="checkbox" value="" className="" id="empty"/>
+              <InputElement type="checkbox" value="" className="" id="empty" />
               <label htmlFor="empty">없음</label>
             </li>
             <li>
-              <InputElement type="checkbox" value="고혈압" id="hypertension"/>
+              <InputElement type="checkbox" value="고혈압" id="hypertension" />
               <label htmlFor="hypertension">고혈압</label>
             </li>
             <li>
-              <InputElement type="checkbox" value="당뇨병" id="diabetic"/>
-              <label  htmlFor="diabetic">당뇨병</label>
+              <InputElement type="checkbox" value="당뇨병" id="diabetic" />
+              <label htmlFor="diabetic">당뇨병</label>
             </li>
             <li>
-              <InputElement type="checkbox" value="뇌혈관질환" id="cerebrovascular"/>
+              <InputElement
+                type="checkbox"
+                value="뇌혈관질환"
+                id="cerebrovascular"
+              />
               <label htmlFor="cerebrovascular">뇌혈관질환</label>
             </li>
             <li>
-              <InputElement type="checkbox" value="호흡기질환" id="respiratory"/>
+              <InputElement
+                type="checkbox"
+                value="호흡기질환"
+                id="respiratory"
+              />
               <label htmlFor="respiratory">호흡기질환</label>
             </li>
             <li>
-              <InputElement type="checkbox" value="심장질환" id="cardiac"/>
+              <InputElement type="checkbox" value="심장질환" id="cardiac" />
               <label htmlFor="cardiac">심장질환</label>
             </li>
             <li>
-              <InputElement type="checkbox" value="우울증" id="blues"/>
+              <InputElement type="checkbox" value="우울증" id="blues" />
               <label htmlFor="blues">우울증</label>
             </li>
             <li>
-              <InputElement type="checkbox" value="관련 질환" id="related"/>
+              <InputElement type="checkbox" value="관련 질환" id="related" />
               <label htmlFor="related">관련 질환</label>
             </li>
             <li>
-              <InputElement type="checkbox" value="기타" id="etc"/>
+              <InputElement type="checkbox" value="기타" id="etc" />
               <label htmlFor="etc">기타</label>
             </li>
           </ul>

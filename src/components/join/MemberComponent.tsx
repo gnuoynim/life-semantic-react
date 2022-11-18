@@ -28,8 +28,9 @@ const MemberComponent = ({ joinLevelStep }: { joinLevelStep: Function }) => {
   }, []);
 
   const handleStep = (nextStep: number) => {
-    if (nextStep) setStep(nextStep);
     console.log(nextStep);
+
+    if (nextStep) setStep(nextStep);
     if (nextStep === 4) joinLevelStep();
   };
 

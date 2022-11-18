@@ -13,7 +13,6 @@ import InputElement from "@components/elements/InputElement";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { surveyState } from "@/states/surveyState";
 
-
 const IndexPage = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -47,20 +46,24 @@ const IndexPage = () => {
       <TitleHeadComponent name="회원가입" />
       <div className="Join">
         <div className="Step">
-          <ul>
-            <CircleComponent step="약관동의" active={step === 1} />
-            <CircleComponent step="본인인증" active={step === 2} />
-            <CircleComponent step="회원정보" active={step === 3} />
-            <CircleComponent step="가입완료" active={step === 4} />
-          </ul>
+          {step !== 4 && (
+            <ul>
+              <CircleComponent step="약관동의" active={step === 1} />
+              <CircleComponent step="본인인증" active={step === 2} />
+              <CircleComponent step="회원정보" active={step === 3} />
+              <CircleComponent step="가입완료" active={step === 4} />
+            </ul>
+          )}
         </div>
         {step === 1 && <TermsComponent />}
         {step === 2 && <LostIdComponent />}
         {step === 3 && <MemberComponent joinLevelStep={handleNextStep} />}
         {step === 4 && <JoinCompleteComponent />}
-        <button type="button" className="BtnActive" onClick={handleNextStep}>
-          다음
-        </button>
+        {step !== 4 && (
+          <button type="button" className="BtnActive" onClick={handleNextStep}>
+            다음
+          </button>
+        )}
       </div>
     </WebLayout>
   );
