@@ -288,6 +288,16 @@ function Router() {
                 },
             ],
         },
+        {
+            path: 'policy',
+            element: <TotalLayout/>,
+            children: [
+                {
+                    path: '',
+                    element: <Policy/>,
+                },
+            ],
+        },
     ]
     return useRoutes(routes);
 }
