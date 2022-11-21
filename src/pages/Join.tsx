@@ -60,7 +60,7 @@ const IndexPage = () => {
         {step === 3 && <MemberComponent joinLevelStep={handleNextStep} />}
         {step === 4 && <JoinCompleteComponent />}
         {step !== 4 && (
-          <button type="button" className="BtnActive" onClick={handleNextStep}>
+          <button type="button" className="btn-02 fixed active" onClick={handleNextStep}>
             다음
           </button>
         )}

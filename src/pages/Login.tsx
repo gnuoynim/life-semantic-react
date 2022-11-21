@@ -99,8 +99,8 @@ const Login = () => {
                   onKeyPress={handleKeyPress}
               />
               <span className="LoginCheck">
-              <InputElement type="checkbox" />
-              <label>자동 로그인</label>
+              <InputElement type="checkbox" id="login"/>
+              <label htmlFor='login'>자동 로그인</label>
             </span>
               {buttonShow && (
                   <button

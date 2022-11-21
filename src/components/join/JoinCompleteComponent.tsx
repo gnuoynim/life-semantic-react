@@ -13,11 +13,11 @@ const JoinCompleteComponent = () => {
         <h2>가입을 환영합니다!</h2>
         <img src="images/big-check.svg" />
       </div>
-      <div className="fix">
-        <button type="button" className="" >
+      <div className="buttonFix">
+        <button type="button" className="button active" >
           홈 화면으로 돌아가기
         </button>
-        <button type="button" className="BtnActive" >
+        <button type="button" className="button" >
           이전 화면으로 돌아가기
         </button>
       </div>

@@ -80,13 +80,13 @@ const MemberChk03 = ({ nextStep }: { nextStep: Function }) => {
             <option>직접입력</option>
           </select>
           {isCustomCancerName && (
-            <div>
+            <div className="manualInput">
               <label>직접입력</label>
               <InputElement type="text" placeholder="직접입력" id="custom_cancer_name"/>
             </div>
           )}
         </div>
-
+        
         <label>
           <span>진단시기</span>
         </label>

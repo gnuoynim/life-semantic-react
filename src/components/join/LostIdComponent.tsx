@@ -8,16 +8,8 @@ const LostIdComponent = () => {
   return (
     <React.Fragment>
       <div className="Container">
-        <div className="">
-          <h3>본인 인증을 진행해 주세요.</h3>
-          <p>휴대폰 번호</p>
-          <select name="" id="">
-            <option value="">통신사 선택</option>
-            <option value="option1">option1</option>
-            <option value="option2">option2</option>
-            <option value="option3">option3</option>
-            <option value="option4">option4</option>
-          </select>
+        <div>
+          <h3 className="">본인 인증을 진행해 주세요.</h3>
           <span className="CodeCheck">
             <InputElement type="text" placeholder="휴대폰 번호 입력" />
             <button type="button" disabled>

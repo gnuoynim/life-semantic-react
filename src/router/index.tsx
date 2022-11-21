@@ -1,7 +1,6 @@
 import {useRoutes} from "react-router-dom";
 import IndexPage from "@pages/IndexPage";
 import TotalLayout from "@layouts/web/TotalLayout";
-
 import Schedule from "@/pages/Schedule";
 import LostPassword from "@/pages/LostPassword";
 import SurveyDeStress from "@/pages/SurveyDestress";
@@ -26,6 +25,7 @@ import JoinModify from "@/pages/JoinModify";
 import Modify from "@/pages/Modify";
 import ModifyInformation from "@/pages/ModifyInformation";
 import SurveyToday from "@/pages/SurveyToday";
+import Policy from "@/pages/Policy";
 import React from "react";
 import Login from "../pages/Login";
 
