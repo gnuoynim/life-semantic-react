@@ -1,15 +1,51 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import WebLayout from "@layouts/web/WebLayout";
+import { useRecoilState } from "recoil";
 import HeaderComponent from "@/components/head/Header";
+import { modalState } from "@/states/modalState";
 import { Link } from "react-router-dom";
 import InputElement from "@/components/elements/InputElement";
+import ModalComponent from "@/components/modal/ModalComponent";
+
 
 
 const DeleteAccount = () => {
-
-  
+  const [modal, setModal] = useRecoilState(modalState);
+  const handleModal = () => {
+    setModal({
+      ...modal,
+      show: true,
+      title: "",
+      cancelShow: true,
+      content: (
+        <div>
+          회원 탈퇴를<br/>
+          중단하시겠습니까?
+        </div>
+      ),
+      confirmText: "아니요",
+      cancelText: "네",
+    });
+  };
+  const handleModal01 = () => {
+    setModal({
+      ...modal,
+      show: true,
+      title: "",
+      cancelShow: true,
+      content: (
+        <div>
+          정말 탈퇴하시겠습니까?<br/>
+          탈퇴 후에는 복구가 불가합니다.
+        </div>
+      ),
+      confirmText: "아니요",
+      cancelText: "네",
+    });
+  };
   return (
     <WebLayout>
+
       <HeaderComponent />
       <div className="account">
         <h2>회원 탈퇴</h2>
@@ -51,6 +87,7 @@ const DeleteAccount = () => {
           </button>
         </div>
       </div>
+      <ModalComponent id="flexModal"/>
     </WebLayout>
   );
 };

@@ -54,37 +54,37 @@ const RoundTextComponent = () => {
           className="roundNumber"
           onClick={(event) => setDetail(event, 1, '#41b946', '#fff')}
         >
-          서울
+          1회기
         </SwiperSlide>
         <SwiperSlide
           className="roundNumber"
           onClick={(event) => setDetail(event, 2, '#41b946', '#fff')}
         >
-          인천
+          2회기
         </SwiperSlide>
         <SwiperSlide
           className="roundNumber"
           onClick={(event) => setDetail(event, 3, '#41b946', '#fff')}
         >
-          가평
+          3회기
         </SwiperSlide>
         <SwiperSlide
           className="roundNumber"
           onClick={(event) => setDetail(event, 4, '#41b946', '#fff')}
         >
-          장흥
+          4회기
         </SwiperSlide>
         <SwiperSlide
           className="roundNumber"
           onClick={(event) => setDetail(event, 5, '#41b946', '#fff')}
         >
-          장성
+          5회기
         </SwiperSlide>
         <SwiperSlide
           className="roundNumber"
           onClick={(event) => setDetail(event, 6, '#41b946', '#fff')}
         >
-          청태산
+          6회기
         </SwiperSlide>
       </Swiper>
     </React.Fragment>

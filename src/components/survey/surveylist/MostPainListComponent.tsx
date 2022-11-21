@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import RangeArrowComponent from "../todaySurvey/RangeArrowComponent ";
 import RangeComponent from "../todaySurvey/RangeComponent";
 import $ from "jquery";
 
@@ -27,7 +26,6 @@ const MostPainListComponent = () => {
       </p>
       <span>(좌우로 동그라미를 움직여주세요.)</span>
       <RangeComponent />
-      <RangeArrowComponent left="통증없음" right="극도의 통증" />
     </React.Fragment>
   );
 };

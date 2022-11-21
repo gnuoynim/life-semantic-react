@@ -39,7 +39,7 @@ const TermsComponent = () => {
             <li>
               <InputElement type="checkbox" />
               <label>[필수] 서비스 이용 약관</label>
-              <Link to="/Policy"></Link>
+              <Link to="/policy"></Link>
             </li>
             <li>
               <InputElement type="checkbox" />

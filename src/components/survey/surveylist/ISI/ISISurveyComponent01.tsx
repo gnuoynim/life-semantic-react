@@ -175,7 +175,6 @@ const ISISurveyComponent01 = () => {
         </p>
 
         <RangeComponent/>
-        <RangeArrowComponent left="매우만족" right="매우 불만족"/>
 
       </div>
     </React.Fragment>

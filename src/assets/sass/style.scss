@@ -513,7 +513,14 @@ select {
     @include input-style($font-color, 100%);
   }
 }
-
+.policy{
+  padding: 30px;
+  text-align: justify;
+  h2{
+    margin-bottom: 20px;
+  }
+  
+}
 .inputCheck {
   padding-left: 0;
   li {
@@ -983,14 +990,14 @@ select {
     top: 50%;
     transform: translate3d(-50%, -50%, 0) !important;
     display: block;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     background: #41b946;
     border-radius: 50%;
     color: #fff;
     font-weight: 700;
     font-size: 20px;
-    line-height: 30px;
+    line-height: 40px;
     text-align: center;
     border: none;
     opacity: 1;
@@ -1327,8 +1334,12 @@ select {
   }
 }
 .rc-slider-mark {
-  top: 40px;
+  top: 30px !important;
+  .rc-slider-mark-text{
+    color: $font-color !important;
+  }
   span {
+    font-size: 18px;
     display: none;
     &:nth-of-type(1) {
       display: block;
@@ -1342,6 +1353,7 @@ select {
   margin: 40px 30px;
   .Step {
     height: 50px;
+    margin-top: 20px;
     margin-bottom: 20px;
     z-index: 100;
     ul {
@@ -1393,7 +1405,7 @@ select {
   .Step.fixed {
     width: 100%;
     position: fixed;
-    top: 65px;
+    top: 45px;
     left: 50%;
     transform: translateX(-50%);
 
@@ -1643,6 +1655,9 @@ select {
   .dot.on {
     background-color: $main-color !important;
     color: $main-color;
+    &::after{
+      font-weight: 600;
+    }
   }
   .dot.on.red {
     background-color: $red !important;
@@ -1753,6 +1768,7 @@ select {
     appearance: none;
     width: 30px;
     height: 30px;
+    line-height: 30px;
     border: 1px solid #8f8f8f;
     border-radius: 50%;
   }
@@ -1820,8 +1836,10 @@ select {
         }
         input[type="radio"]:checked {
           border: 1px solid $main-color;
+          font-weight: 700;
           &::after {
             color: $main-color;
+            
           }
         }
         input[type="radio"]:checked + label {
@@ -1869,9 +1887,24 @@ select {
 }
 .destress {
   .checkList {
-    margin-top: 30px;
+    margin-top: 90px;
     padding-bottom: 100px;
   }
+
+  .checkList.checkList02{
+    margin-top: 50px;
+    .toastPopup{
+      top: 50%;
+      bottom: inherit;
+    }
+  }
+  .checkList.checkList03{
+    margin-top: 40px;
+    .toastPopup{
+      bottom: 80px;
+    }
+  }
+
   .textBox {
     background: #f5f5f5;
     border-radius: 10px;
@@ -2047,7 +2080,7 @@ select {
   }
   .swiper-wrapper{
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-row-gap: 14px;
     .swiper-slide{
       width: fit-content;
@@ -2055,6 +2088,18 @@ select {
     }
   }
   
+}
+#programContent{
+  padding-bottom: 30px;
+  h3{
+    border-bottom:0.5px solid #8f8f8f;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+  .swiper-wrapper{
+    display: flex;
+
+    }  
 }
 .round {
   .roundItem {
@@ -2467,6 +2512,10 @@ select {
       font-weight: 500;
     }
   }
+  .toastPopup{
+    bottom: 100px;
+  }
+
 }
 
 .forest {
@@ -2506,6 +2555,7 @@ select {
     font-weight: 700;
     font-size: 20px;
     border-bottom: 0.5px solid #000000;
+    padding-bottom: 10px;
   }
   ul {
     padding: 0;
@@ -2706,6 +2756,7 @@ table {
       &:first-of-type {
         border-right: 0.5px solid $font-color;
         width: 40%;
+        padding-left: 10px;
       }
       &:nth-of-type(2) {
         padding-left: 3vw;
@@ -3104,8 +3155,12 @@ table {
       white-space: nowrap;
     }
   }
-  .rc-slider .rc-slider-handle {
-    background-color: #0037f8;
+  .rc-slider {
+    margin-bottom: 100px;
+    margin-top: 20px;
+    .rc-slider-handle {
+      background-color: #0037f8;
+    }
   }
 }
 #NCCN{
@@ -3338,7 +3393,7 @@ button[type="button"]{
   }
 }
 
-#reservationModal{
+#flexModal{
   .flex{
     display: flex;
     flex-direction: row;
@@ -3398,7 +3453,8 @@ button[type="button"]{
       font-size: 18px;
       font-weight: 600;
       &:nth-of-type(2) {
-        background: #d9d9d9;
+        background: #F6F6F6 !important;
+        border: 1px solid $font-color;
         color: #909090;
       }
     }
@@ -3452,10 +3508,13 @@ button[type="button"]{
 
 /*toast popup 위치*/
 .surveyToday{
-  .toastPop{
-    bottom: 160px;
+  .toastPopup{
+    bottom: 60px;
+    z-index: 10;
   }
-  
+  .BtnActive02{
+    bottom: 20%;
+  }
 }
 .CodeCheck{
   position: relative;
@@ -3469,9 +3528,9 @@ button[type="button"]{
   background: rgba(92, 92, 92, 0.8);
   border-radius: 10px;
   width: calc(100% - 40px);
-  position: absolute;
+  position: fixed;
   left: 50%;
-  bottom: 30px;
+  bottom: 110px;
   transform: translateX(-50%);
   display: block;
   line-height: 25px;
@@ -3489,8 +3548,8 @@ button[type="button"]{
   position: relative;
   .toastPopup{
     display: block;
-    width: 110%;
-    bottom: -100px;
+    // width: 110%;
+    // bottom: -100px;
     span{
       display: block;
     }

@@ -9,6 +9,7 @@ import $, { each } from "jquery";
 
 const ReservationList = () => {
   const [modal, setModal] = useRecoilState(modalState);
+  const [toast, setToast] = useState(false);
   useEffect(() => {
     $(".dropDown .selected span").click(function () {
       const options = $(this).parent().siblings(".options");
@@ -54,7 +55,6 @@ const ReservationList = () => {
       }
     }
   }, []);
-  const [toast, setToast] = useState(false);
   const handleChange = () => {
     setModal({
       ...modal,
@@ -67,7 +67,8 @@ const ReservationList = () => {
           취소하시겠습니까?
         </div>
       ),
-      confirmText: "확인",
+      confirmText: "아니요",
+      cancelText: "네",
     });
   };
   const handlePopup = () => {
@@ -152,12 +153,12 @@ const ReservationList = () => {
             
             </tbody>
           </table>
-          <ToastPopup content={"선택하신 프로그램을 취소했습니다."} show={false} />
-          <ToastPopup content=<span>프로그램을 취소하시려면, <br/> 해당 프로그램을 선택해주세요.</span> show={true} />
+          <ToastPopup content={"선택하신 프로그램을 취소했습니다."} show={toast} />
+          <ToastPopup content={<span>프로그램을 취소하시려면, <br/> 해당 프로그램을 선택해주세요.</span>} show={toast} />
         </div>
       </div>
       
-      <ModalComponent id="reservationModal" />
+      <ModalComponent id="flexModal" />
     </React.Fragment>
   );
 };

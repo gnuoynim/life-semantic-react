@@ -6,8 +6,6 @@ import ModalComponent from "@/components/modal/ModalComponent";
 import ProgressComponent from "@/components/ProgressComponent";
 import PainComponent from "@/components/survey/surveylist/PainComponent";
 import MostPainListComponent from "@/components/survey/surveylist/MostPainListComponent";
-import FrontPainComponent from "@/components/survey/surveylist/pain/FrontPainComponent";
-import BackPainComponent from "@/components/survey/surveylist/pain/BackPainComponent";
 import {Link, useLocation, useNavigate} from "react-router-dom";
 import {modalState} from "@/states/modalState";
 import ToastPopup from "@/components/modal/ToastPopup";
@@ -73,10 +71,9 @@ const Pain = () => {
             cancelShow: false,
             content: (
                 <div>
-                    선택이 불가합니다.
-                    <br/>
-                    아픈 부위 중에서만
-                    <br/> 제일 아픈 부위 선택이 <br/>
+                    선택이 불가합니다.<br/>
+                    아픈 부위 중에서만<br/> 
+                    제일 아픈 부위 선택이 <br/>
                     가능합니다.
                 </div>
             ),
@@ -91,8 +88,7 @@ const Pain = () => {
             cancelShow: false,
             content: (
                 <div>
-                    통증 설문을
-                    <br/>
+                    통증 설문을<br/>
                     완료하셨습니다.
                 </div>
             ),
@@ -104,14 +100,13 @@ const Pain = () => {
     return (
         <React.Fragment>
             <TitleHeadComponent name="통증"/>
-            {/* <button type='button' onClick={() => setModal({...modal, show:true, title:'기본2'})}>버튼</button> */}
             <div className="painBox">
                 <h2>시작전 설문 - 통증</h2>
                 <div className="Step">
                     <ul>
-                        <ProgressComponent active={step === 1}/>
-                        <ProgressComponent active={step === 2}/>
-                        <ProgressComponent active={step === 3}/>
+                        <ProgressComponent active={step >= 1}/>
+                        <ProgressComponent active={step >= 2}/>
+                        <ProgressComponent active={step >= 3}/>
                     </ul>
                 </div>
                 {step === 3 ? <MostPainListComponent/> : <PainComponent step={step}/>}
@@ -125,10 +120,20 @@ const Pain = () => {
                 <button type="button" className="next" onClick={handlePainSurveyComplete}>작성완료</button>
                 }
             </div>
-            {/*<ToastPopup text="이번페이지는 설문을 완료하여주세요." show={toast}/>*/}
-            {/*<ToastPopup text="최종 선택된 한 곳으로만 저장됩니다." show={toast}/>*/}
             <ToastPopup
-                text="완료하시면 수정이 불가합니다. 내용을 확인해주세요."
+                content={
+                <span>
+                이번 페이지까지는 <br/>
+                <b>설문</b>을 <b>완료</b>하여주세요.
+                </span>}
+                show={toast}
+            />
+            <ToastPopup
+                content={
+                <span>
+                최종 선택된 한 곳으로만<br/>
+                저장됩니다.
+                </span>}
                 show={toast}
             />
             <ModalComponent/>

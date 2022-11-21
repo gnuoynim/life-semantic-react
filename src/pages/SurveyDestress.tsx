@@ -133,8 +133,6 @@ const SurveyDeStress = () => {
                 </div>
             </div>
             <ModalComponent/>
-            {/* <ToastPopup text="이번페이지는 설문을 완료하여주세요." show={toast}/>
-            <ToastPopup text="완료하시면 수정이 불가합니다. 내용을 확인해주세요." show={toast}/> */}
         </React.Fragment>
     );
 };

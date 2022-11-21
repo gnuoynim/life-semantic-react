@@ -71,7 +71,6 @@ const ISI = () => {
     <div>
       <ModalComponent/>
       <TitleHeadComponent name="수면(ISI)" />
-      {/* <button type='button' onClick={() => setModal({...modal, show:true, title:'기본2'})}>버튼</button> */}
       <div className="tired painBox " id="ISI">
         <ISISurveyComponent01 />
         <ISISurveyComponent02 />
@@ -84,6 +83,24 @@ const ISI = () => {
           다음
         </button>
       </div>
+      <ToastPopup
+        content={
+          <span>
+            이번 페이지까지는 <br />
+            <b>설문</b>을 <b>완료</b>하여주세요.
+          </span>
+        }
+        show={toast}
+      />
+      <ToastPopup
+        content={
+          <span>
+            완료하시면 <b>수정</b>이 <b>불가</b>합니다.<br />
+            내용을 확인해주세요.
+          </span>
+        }
+        show={toast}
+      />
     </div>
   );
 };

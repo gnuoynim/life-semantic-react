@@ -22,7 +22,21 @@ const Account = () => {
     const handleLogOut = () => {
         navigate('/');
     };
-
+    const handleModal = () => {
+        setModal({
+          ...modal,
+          show: true,
+          title: "",
+          cancelShow: true,
+          content: (
+            <div>
+              로그아웃 하시겠습니까?
+            </div>
+          ),
+          confirmText: "아니요",
+          cancelText: "네",
+        });
+      };
     // const handleLogOut = () => {
     //     setModal({
     //         ...modal,
@@ -59,10 +73,10 @@ const Account = () => {
                 </div>
                 <div className="grayButton">
                     <button type="button" onClick={handleDeleteAccount}>회원탈퇴</button>
-                    <button type="button" onClick={handleLogOut}>로그아웃</button>
+                    <button type="button" onClick={handleModal}>로그아웃</button>
                 </div>
             </div>
-            <ModalComponent/>
+            <ModalComponent id="flexModal"/>
         </React.Fragment>
     );
 };

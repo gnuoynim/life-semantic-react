@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { ErrorBoundary } from "react-error-boundary";
 import { useRecoilState } from "recoil";
 import ModalComponent from "@/components/modal/ModalComponent";
 import { countState, sampleState } from "@states/sampleState";
@@ -9,7 +8,6 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { modalState } from "@/states/modalState";
 import ToastPopup from "@/components/modal/ToastPopup";
 import TitleHeadComponent from "@/components/head/TitleHeadComponent";
-
 
 const LostPassword = () => {
   const [modal, setModal] = useRecoilState(modalState);
@@ -85,26 +83,13 @@ const LostPassword = () => {
           <label>아이디</label>
           <InputElement type="text" placeholder="아이디 입력" />
           <label>휴대폰 번호</label>
-          <div className="selected">
-            <select name="" id="">
-              <option value="">통신사 선택</option>
-              <option value="option1">option1</option>
-              <option value="option2">option2</option>
-              <option value="option3">option3</option>
-              <option value="option4">option4</option>
-            </select>
-          </div>
           <div className="CodeCheck">
             <InputElement type="text" placeholder="휴대폰 번호 입력" />
             <button type="button" onClick={handlePopup}>
               인증번호 <br />
               받기
             </button>
-            <ToastPopup
-            content={"인증번호를 발송했습니다."}
-              
-              show={true} 
-            />
+            <ToastPopup content={"인증번호를 발송했습니다."} show={toast} />
           </div>
           <InputElement type="number" placeholder="인증번호 입력(10분 안에)" />
           <label>새 비밀번호 설정</label>
@@ -115,7 +100,7 @@ const LostPassword = () => {
         </div>
 
         <button type="button" onClick={handleModal}></button>
-       
+
         <ModalComponent />
       </div>
     </WebLayout>
