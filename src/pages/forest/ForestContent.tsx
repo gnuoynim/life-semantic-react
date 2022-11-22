@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import BannerComponent02 from "@/components/program/banner/BannerComponent02";
 import HeaderComponent from "@components/head/Header";
 
 const ForestContent = () => {
