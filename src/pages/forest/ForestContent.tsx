@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import HeaderComponent from "../components/head/Header";
+import HeaderComponent from "@components/head/Header";
 
 const ForestContent = () => {
   const handleChange = () => {

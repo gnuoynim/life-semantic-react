@@ -9,7 +9,7 @@ const App = () => {
   return (
     <BrowserRouter>
       {/* <Routes> */}
-      {/*  <Route path="" element={<IndexPage />} />*/}
+      {/*  <Route path="" element={<Index />} />*/}
       {/*  <Route path="joinModify" element={<JoinModify />} />*/}
       {/*  <Route path="modal" element={<Modal/>} />*/}
       {/*  <Route path="reservation" element={<ReservationList/>} />*/}

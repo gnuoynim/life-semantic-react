@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
-import HeaderComponent from "@/components/head/Header";
-import ProgramDetailComponent from "@/components/program/programDetail/ProgramDetailComponent";
-import ProgramNumberComponent from "@/components/program/ProgramNumberComponent";
-import DownLoadComponent from "@/components/program/programDetail/DownLoadComponent";
+import HeaderComponent from "@components/head/Header";
+import ProgramDetailComponent from "@components/program/programDetail/ProgramDetailComponent";
+import ProgramNumberComponent from "@components/program/ProgramNumberComponent";
+import DownLoadComponent from "@components/program/programDetail/DownLoadComponent";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { ViewInterface } from "@/interfaces/viewInterface";
-import useAxios from "@/hooks/useAxios";
-import { ProgramInterface } from "@/interfaces/ProgramInterface";
-import ToastPopup from "../components/modal/ToastPopup";
+import { ViewInterface } from "@interfaces/viewInterface";
+import useAxios from "@hooks/useAxios";
+import { ProgramInterface } from "@interfaces/programInterface";
+import ToastPopup from "@components/modal/ToastPopup";
 
 const ProgramInfo = () => {
   const { state } = useLocation() as ViewInterface;

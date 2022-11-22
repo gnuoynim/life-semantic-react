@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import WebLayout from "@layouts/web/WebLayout";
 import { useRecoilState } from "recoil";
-import ModalComponent from "@/components/modal/ModalComponent";
-import ModalComponent02 from "@/components/modal/ToastPopup";
-import { ModalInterface } from "@/interfaces/modalInterface";
-import { modalState } from "@/states/modalState";
+import ModalComponent from "@components/modal/ModalComponent";
+import ModalComponent02 from "@components/modal/ToastPopup";
+import { ModalInterface } from "@interfaces/modalInterface";
+import { modalState } from "@states/modalState";
 import $ from "jquery";
 
 const Modal = () => {

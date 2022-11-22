@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import WebLayout from "@layouts/web/WebLayout";
 import { useRecoilState } from "recoil";
-import HeaderComponent from "@/components/head/Header";
-import { modalState } from "@/states/modalState";
+import HeaderComponent from "@components/head/Header";
+import { modalState } from "@states/modalState";
 import { Link } from "react-router-dom";
-import InputElement from "@/components/elements/InputElement";
-import ModalComponent from "@/components/modal/ModalComponent";
+import InputElement from "@components/elements/InputElement";
+import ModalComponent from "@components/modal/ModalComponent";
 
 
 

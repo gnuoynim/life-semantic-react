@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 import { countState, sampleState } from "@states/sampleState";
-import ProgressComponent from "@/components/ProgressComponent";
+import ProgressComponent from "@components/ProgressComponent";
 import { useLocation, useNavigate } from "react-router-dom";
-import { modalState } from "@/states/modalState";
-import TitleHeadComponent from "@/components/head/TitleHeadComponent";
+import { modalState } from "@states/modalState";
+import TitleHeadComponent from "@components/head/TitleHeadComponent";
 import $ from "jquery";
-import ToastPopup from "@/components/modal/ToastPopup";
-import TiredSurveyComponent01 from "@/components/survey/surveylist/tired/TiredSurveyComponent01";
-import TiredSurveyComponent02 from "@/components/survey/surveylist/tired/TiredSurveyComponent02";
-import TiredSurveyComponent03 from "@/components/survey/surveylist/tired/TiredSurveyComponent03";
-import ModalComponent from "../components/modal/ModalComponent";
+import ToastPopup from "@components/modal/ToastPopup";
+import TiredSurveyComponent01 from "@components/survey/surveylist/tired/TiredSurveyComponent01";
+import TiredSurveyComponent02 from "@components/survey/surveylist/tired/TiredSurveyComponent02";
+import TiredSurveyComponent03 from "@components/survey/surveylist/tired/TiredSurveyComponent03";
+import ModalComponent from "@components/modal/ModalComponent";
 
 const Tired = () => {
   const location = useLocation();

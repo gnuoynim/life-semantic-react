@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from "react";
-import TitleHeadComponent from "@/components/head/TitleHeadComponent";
+import TitleHeadComponent from "@components/head/TitleHeadComponent";
 import {Link, useLocation, useNavigate} from "react-router-dom";
-import { modalState } from "@/states/modalState";
-import ModalComponent from "@/components/modal/ModalComponent";
+import { modalState } from "@states/modalState";
+import ModalComponent from "@components/modal/ModalComponent";
 import { useRecoilState } from "recoil";
-import useAxios from "@/hooks/useAxios";
-import {SurveyListInterface} from "@/interfaces/surveyListInterface";
+import useAxios from "@hooks/useAxios";
+import {SurveyListInterface} from "@interfaces/surveyListInterface";
 
 const Survey = () => {
     const [modal, setModal] = useRecoilState(modalState);
@@ -61,7 +61,7 @@ const Survey = () => {
                     <div className="surveyName">
                         <p>굿바이 피로1기</p>
                         <div className="noticeIco on" onClick={handleToolTip}>
-                            <img src="public/images/question.svg" alt="" className="" />
+                            <img src="@public/images/question.svg" alt="" className="" />
                             {isShow &&
                             <div className="noticeBox">
                                 <ul>

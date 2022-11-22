@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { useRecoilState } from "recoil";
-import TitleHeadComponent from "@/components/head/TitleHeadComponent";
-import CircleComponent from "@/components/CircleComponent";
-import TermsComponent from "@/components/join/TermsComponent";
-import LostIdComponent from "@/components/join/LostIdComponent";
-import MemberComponent from "@/components/join/MemberComponent";
-import JoinCompleteComponent from "@/components/join/JoinCompleteComponent";
+import TitleHeadComponent from "@components/head/TitleHeadComponent";
+import CircleComponent from "@components/CircleComponent";
+import TermsComponent from "@components/join/TermsComponent";
+import LostIdComponent from "@components/join/LostIdComponent";
+import MemberComponent from "@components/join/MemberComponent";
+import JoinCompleteComponent from "@components/join/JoinCompleteComponent";
 import { countState, sampleState } from "@states/sampleState";
 import WebLayout from "@layouts/web/WebLayout";
 import InputElement from "@components/elements/InputElement";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { surveyState } from "@/states/surveyState";
+import { surveyState } from "@states/surveyState";
 
 const IndexPage = () => {
   const location = useLocation();

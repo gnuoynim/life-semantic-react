@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 import { userState } from '@states/userState';
 
-const IndexPage = () => {
+const Index = () => {
   const navigate = useNavigate();
   const [user, setUser] = useRecoilState(userState);
 
@@ -21,4 +21,4 @@ const IndexPage = () => {
   );
 };
 
-export default IndexPage;
+export default Index;

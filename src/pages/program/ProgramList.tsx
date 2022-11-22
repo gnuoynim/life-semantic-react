@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
-import BookComponent from "@/components/program/book/BookComponent";
-import HeaderComponent from "@/components/head/Header";
-import DropBoxComponent from "@/components/program/DropBoxComponent";
-import ToastPopup from "@/components/modal/ToastPopup";
-import InputElement from "@/components/elements/InputElement";
+import BookComponent from "@components/program/book/BookComponent";
+import HeaderComponent from "@components/head/Header";
+import DropBoxComponent from "@components/program/DropBoxComponent";
+import ToastPopup from "@components/modal/ToastPopup";
+import InputElement from "@components/elements/InputElement";
 import $ from "jquery";
 import { Link } from "react-router-dom";
 
