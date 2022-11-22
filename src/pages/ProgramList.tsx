@@ -3,6 +3,7 @@ import BookComponent from "@/components/program/book/BookComponent";
 import HeaderComponent from "@/components/head/Header";
 import DropBoxComponent from "@/components/program/DropBoxComponent";
 import ToastPopup from "@/components/modal/ToastPopup";
+import BannerComponent02 from "@/components/program/banner/BannerComponent02";
 import InputElement from "@/components/elements/InputElement";
 import $ from "jquery";
 import { Link } from "react-router-dom";
@@ -126,11 +127,10 @@ const ProgramList = () => {
         </div>
       </div>
       <BookComponent />
-      <div className="banner">
-        <Link to={"/program"}>
-          한국산림복지진흥원 <br />
-          산림치유 프로그램 보러가기
-        </Link>
+      <div className="banner03">
+        <a href="https://www.fowi.or.kr/user/program/programList.do?progrmSeCd=PS01">
+          <img src="images/banner03.svg" />
+        </a>
       </div>
       {/*<div className="standbyNot">*/}
       {/*<span>*/}
