@@ -21,7 +21,7 @@ const ForestContent = () => {
     <React.Fragment>
       <HeaderComponent />
       <div className="programInfo">
-        <h2>치유의 숲 찾기</h2>
+        <h2>치유의 숲</h2>
         <div className="forestContent">
           <p className="forestTitle">산음 치유의 숲</p>
           <ul>
@@ -77,6 +77,7 @@ const ForestContent = () => {
           목록으로 돌아가기
         </Link>
       </div>
+      <BannerComponent02/>
     </React.Fragment>
   );
 };

@@ -10,24 +10,33 @@ import TitleHeadComponent from "@components/head/TitleHeadComponent";
 import RoundTextComponent from "@components/program/RoundTextComponent";
 import ForestCardComponent from "@components/program/ForestCardComponent";
 import $ from "jquery";
-
+import BannerComponent02 from "@/components/program/banner/BannerComponent02";
 
 const ForestList = () => {
   return (
     <React.Fragment>
       <HeaderComponent />
-      <div className="programInfo">
+      <div className="programInfo" id="forest">
         <h2>치유의 숲 찾기</h2>
         <RoundTextComponent />
+      </div>
+      <div className="banner03">
+        <a href="https://www.fowi.or.kr/user/program/programList.do?progrmSeCd=PS01">
+          <img src="images/banner03.svg" />
+        </a>
+      </div>
+      <div className="programInfo">
         <ForestCardComponent />
-        {/* <div className="forestCard">
+      </div>
+
+      {/* <div className="forestCard">
           <Link to={"/forestView"}>
             <p className="forestName">산음 치유의 숲</p>
             <span>경기도 양평군 단월면 윗고북길<br/> 33-39</span>
             <span>031-774-8133</span>
           </Link>
         </div> */}
-      </div>
+      <BannerComponent02/>
     </React.Fragment>
   );
 };

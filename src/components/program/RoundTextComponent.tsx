@@ -18,7 +18,8 @@ const RoundTextComponent = () => {
     event: React.MouseEvent<HTMLElement>,
     roundNumber: number,
     backgroundColor: string,
-    color: string
+    color: string,
+
   ) => {
     event.preventDefault();
 
@@ -27,11 +28,12 @@ const RoundTextComponent = () => {
       ?.querySelectorAll<HTMLDivElement>('.swiper-slide')
       .forEach((item) => {
         item.style.backgroundColor = '#f3f3f3';
-        item.style.color = '#8f8f8f';
+        item.style.color = '#000';
       });
 
     target.style.backgroundColor = backgroundColor;
     target.style.color = color;
+ 
 
     setRoundDetails(roundNumber === 0 ? [1, 2, 3, 4, 5, 6] : [roundNumber]);
   };
@@ -54,37 +56,49 @@ const RoundTextComponent = () => {
           className="roundNumber"
           onClick={(event) => setDetail(event, 1, '#41b946', '#fff')}
         >
-          1회기
+         서울
         </SwiperSlide>
         <SwiperSlide
           className="roundNumber"
           onClick={(event) => setDetail(event, 2, '#41b946', '#fff')}
         >
-          2회기
+          인천
         </SwiperSlide>
         <SwiperSlide
           className="roundNumber"
           onClick={(event) => setDetail(event, 3, '#41b946', '#fff')}
         >
-          3회기
+          가평
         </SwiperSlide>
         <SwiperSlide
           className="roundNumber"
           onClick={(event) => setDetail(event, 4, '#41b946', '#fff')}
         >
-          4회기
+          장흥
         </SwiperSlide>
         <SwiperSlide
           className="roundNumber"
           onClick={(event) => setDetail(event, 5, '#41b946', '#fff')}
         >
-          5회기
+          산음
         </SwiperSlide>
         <SwiperSlide
           className="roundNumber"
           onClick={(event) => setDetail(event, 6, '#41b946', '#fff')}
         >
-          6회기
+          장성
+        </SwiperSlide>
+        <SwiperSlide
+          className="roundNumber"
+          onClick={(event) => setDetail(event, 6, '#41b946', '#fff')}
+        >
+          청태산
+        </SwiperSlide>
+        <SwiperSlide
+          className="roundNumber"
+          onClick={(event) => setDetail(event, 6, '#41b946', '#fff')}
+        >
+          대관령
         </SwiperSlide>
       </Swiper>
     </React.Fragment>
