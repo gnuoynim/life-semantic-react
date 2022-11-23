@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import WebLayout from "@layouts/web/WebLayout";
-import TitleHeadComponent from "@/components/head/TitleHeadComponent";
+import TitleHeadComponent from "@components/head/TitleHeadComponent";
 import { Link } from "react-router-dom";
-import InputElement from "@/components/elements/InputElement";
+import InputElement from "@components/elements/InputElement";
 
 
 const Policy = () => {

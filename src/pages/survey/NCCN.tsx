@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 import { countState, sampleState } from "@states/sampleState";
-import ModalComponent from "@/components/modal/ModalComponent";
-import ProgressComponent from "@/components/ProgressComponent";
+import ModalComponent from "@components/modal/ModalComponent";
+import ProgressComponent from "@components/ProgressComponent";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { modalState } from "@/states/modalState";
-import TitleHeadComponent from "@/components/head/TitleHeadComponent";
+import { modalState } from "@states/modalState";
+import TitleHeadComponent from "@components/head/TitleHeadComponent";
 import $ from "jquery";
-import ToastPopup from "@/components/modal/ToastPopup";
-import NCCNComponent01 from "@/components/survey/surveylist/nccn/NCCNComponent01";
-import NCCNComponent02 from "@/components/survey/surveylist/nccn/NCCNComponent02";
+import ToastPopup from "@components/modal/ToastPopup";
+import NCCNComponent01 from "@components/survey/surveylist/nccn/NCCNComponent01";
+import NCCNComponent02 from "@components/survey/surveylist/nccn/NCCNComponent02";
 
 
 const NCCN = () => {

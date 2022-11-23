@@ -1,14 +1,14 @@
 import React from "react";
-import BookComponent from "@/components/program/book/BookComponent";
-import GoodByeComponent from "@/components/program/GoodByeProgramComponent";
-import GoodSleepComponent from "@/components/program/GoodSleepProgramComponent";
-import BannerComponent from "@/components/program/banner/BannerComponent";
+import BookComponent from "@components/program/book/BookComponent";
+import GoodByeComponent from "@components/program/GoodByeProgramComponent";
+import GoodSleepComponent from "@components/program/GoodSleepProgramComponent";
+import BannerComponent from "@components/program/banner/BannerComponent";
 import BookProgram from "./BookProgram";
+import HeaderComponent from "@components/head/Header";
+import {userState} from '@states/userState';
+import {useRecoilValue} from "recoil";
 import BannerComponent02 from "@/components/program/banner/BannerComponent02";
-import HeaderComponent from "../components/head/Header";
 import { Link } from "react-router-dom";
-import { userState } from "@states/userState";
-import { useRecoilValue } from "recoil";
 
 const Program = () => {
   const user = useRecoilValue(userState);
@@ -26,7 +26,7 @@ const Program = () => {
             프로그램 더보기
         </button>
         <BannerComponent02 />
-        
+
         <div className="customerBox">
             <p>
                 고객센터 : <span>02 - 123 - 4567</span> <br />

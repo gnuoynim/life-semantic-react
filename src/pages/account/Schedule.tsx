@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import WebLayout from "@layouts/web/WebLayout";
-import HeaderComponent from "@/components/head/Header";
-import ModalComponent from "@/components/modal/ModalComponent";
-import { ModalInterface } from "@/interfaces/modalInterface";
+import HeaderComponent from "@components/head/Header";
+import ModalComponent from "@components/modal/ModalComponent";
+import { ModalInterface } from "@interfaces/modalInterface";
 import { useRecoilState } from "recoil";
-import { modalState } from "@/states/modalState";
+import { modalState } from "@states/modalState";
 
 const Schedule = () => {
   const [modal, setModal] = useRecoilState(modalState);

@@ -1,13 +1,13 @@
 import React, {useState} from "react";
 import {ErrorBoundary} from "react-error-boundary";
 import WebLayout from "@layouts/web/WebLayout";
-import HeaderComponent from "@/components/head/Header";
+import HeaderComponent from "@components/head/Header";
 import {Link, useLocation, useNavigate} from "react-router-dom";
 import {useRecoilState} from "recoil";
 import {countState, sampleState} from "@states/sampleState";
-import {surveyState} from "@/states/surveyState";
-import {modalState} from "@/states/modalState";
-import ModalComponent from "../components/modal/ModalComponent";
+import {surveyState} from "@states/surveyState";
+import {modalState} from "@states/modalState";
+import ModalComponent from "@components/modal/ModalComponent";
 
 
 const Account = () => {

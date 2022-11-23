@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import TitleHeadComponent from "@/components/head/TitleHeadComponent";
+import TitleHeadComponent from "@components/head/TitleHeadComponent";
 import {Link, useLocation, useNavigate} from "react-router-dom";
 
 
@@ -20,7 +20,7 @@ const SurveyBefore = () => {
                     <div className="surveyName">
                         <p>굿바이 피로1기</p>
                         <div className="noticeIco on" onClick={handleToolTip}>
-                            <img src="public/images/question.svg" alt="" className=""/>
+                            <img src="@public/images/question.svg" alt="" className=""/>
                           {isShow &&
                           <div className="noticeBox">
                             <ul>

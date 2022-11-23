@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import HeaderComponent from "@/components/head/Header";
-import InputElement from "@/components/elements/InputElement";
-import { modalState } from "@/states/modalState";
-import ModalComponent from "@/components/modal/ModalComponent";
-import ToastPopup from "@/components/modal/ToastPopup";
+import HeaderComponent from "@components/head/Header";
+import InputElement from "@components/elements/InputElement";
+import { modalState } from "@states/modalState";
+import ModalComponent from "@components/modal/ModalComponent";
+import ToastPopup from "@components/modal/ToastPopup";
 import { useRecoilState } from "recoil";
 import $, { each } from "jquery";
 

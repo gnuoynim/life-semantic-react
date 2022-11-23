@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
-import TitleHeadComponent from "@/components/head/TitleHeadComponent";
-import CircleComponent from "@/components/CircleComponent";
-import ModifyCheck01 from "@/components/join/member/ModifyCheck01";
-import ModifyCheck02 from "@/components/join/member/ModifyCheck02";
-import ModifyCheck03 from "@/components/join/member/ModifyCheck03";
+import TitleHeadComponent from "@components/head/TitleHeadComponent";
+import CircleComponent from "@components/CircleComponent";
+import ModifyCheck01 from "@components/join/member/ModifyCheck01";
+import ModifyCheck02 from "@components/join/member/ModifyCheck02";
+import ModifyCheck03 from "@components/join/member/ModifyCheck03";
 import { countState, sampleState } from "@states/sampleState";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { surveyState } from "@/states/surveyState";
-import { modalState } from "@/states/modalState";
-import ToastPopup from "@/components/modal/ToastPopup";
-import ModalComponent from "@/components/modal/ModalComponent";
+import { surveyState } from "@states/surveyState";
+import { modalState } from "@states/modalState";
+import ToastPopup from "@components/modal/ToastPopup";
+import ModalComponent from "@components/modal/ModalComponent";
 import $ from "jquery";
 
 

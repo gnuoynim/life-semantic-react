@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import useAxios from "@hooks/useAxios";
-import {ProgramInterface} from "@interfaces/ProgramInterface";
+import {ProgramInterface} from "@interfaces/programInterface";
 import {useNavigate} from "react-router-dom";
 import {userState} from '@states/userState';
 import {useRecoilValue} from "recoil";

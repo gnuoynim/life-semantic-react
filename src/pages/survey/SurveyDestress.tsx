@@ -1,16 +1,16 @@
 import React, {useEffect, useState} from "react";
 import {useRecoilState} from "recoil";
 import {countState, sampleState} from "@states/sampleState";
-import TitleHeadComponent from "@/components/head/TitleHeadComponent";
-import ProgressComponent from "@/components/ProgressComponent";
-import PhysicalStressComponent from "@/components/survey/surveylist/destress/PhysicalStressComponent";
-import SocialStressComponent from "@/components/survey/surveylist/destress/SocialStressComponent";
-import ReligionStressComponent from "@/components/survey/surveylist/destress/ReligionStressComponent";
-import ToastPopup from "@/components/modal/ToastPopup";
-import ModalComponent from "@/components/modal/ModalComponent";
+import TitleHeadComponent from "@components/head/TitleHeadComponent";
+import ProgressComponent from "@components/ProgressComponent";
+import PhysicalStressComponent from "@components/survey/surveylist/destress/PhysicalStressComponent";
+import SocialStressComponent from "@components/survey/surveylist/destress/SocialStressComponent";
+import ReligionStressComponent from "@components/survey/surveylist/destress/ReligionStressComponent";
+import ToastPopup from "@components/modal/ToastPopup";
+import ModalComponent from "@components/modal/ModalComponent";
 import {Link, useLocation, useNavigate} from "react-router-dom";
 import $ from "jquery";
-import {modalState} from "@/states/modalState";
+import {modalState} from "@states/modalState";
 
 
 const SurveyDeStress = () => {

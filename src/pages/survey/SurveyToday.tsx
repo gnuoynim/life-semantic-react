@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { useRecoilState } from "recoil";
-import TitleHeadComponent from "@/components/head/TitleHeadComponent";
+import TitleHeadComponent from "@components/head/TitleHeadComponent";
 import { countState, sampleState } from "@states/sampleState";
-import DateComponent from "@/components/survey/todaySurvey/DateComponent";
+import DateComponent from "@components/survey/todaySurvey/DateComponent";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import RangeComponent from "@/components/survey/todaySurvey/RangeComponent";
+import RangeComponent from "@components/survey/todaySurvey/RangeComponent";
 import RangeArrowComponent from "@/components/survey/todaySurvey/RangeArrowComponent ";
-import { modalState } from "@/states/modalState";
-import ModalComponent from "@/components/modal/ModalComponent";
-import ToastPopup from "@/components/modal/ToastPopup";
+import { modalState } from "@states/modalState";
+import ModalComponent from "@components/modal/ModalComponent";
+import ToastPopup from "@components/modal/ToastPopup";
 import $ from "jquery";
 
 const SurveyToday = () => {

@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
-import ModalComponent from "@/components/modal/ModalComponent";
+import ModalComponent from "@components/modal/ModalComponent";
 import { countState, sampleState } from "@states/sampleState";
 import WebLayout from "@layouts/web/WebLayout";
 import InputElement from "@components/elements/InputElement";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { modalState } from "@/states/modalState";
-import ToastPopup from "@/components/modal/ToastPopup";
-import TitleHeadComponent from "@/components/head/TitleHeadComponent";
+import { modalState } from "@states/modalState";
+import ToastPopup from "@components/modal/ToastPopup";
+import TitleHeadComponent from "@components/head/TitleHeadComponent";
 
 const LostPassword = () => {
   const [modal, setModal] = useRecoilState(modalState);

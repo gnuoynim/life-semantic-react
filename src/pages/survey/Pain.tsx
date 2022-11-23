@@ -2,14 +2,14 @@ import React, {useEffect, useState} from "react";
 import {ErrorBoundary} from "react-error-boundary";
 import {useRecoilState} from "recoil";
 import {countState, sampleState} from "@states/sampleState";
-import ModalComponent from "@/components/modal/ModalComponent";
-import ProgressComponent from "@/components/ProgressComponent";
-import PainComponent from "@/components/survey/surveylist/PainComponent";
-import MostPainListComponent from "@/components/survey/surveylist/MostPainListComponent";
+import ModalComponent from "@components/modal/ModalComponent";
+import ProgressComponent from "@components/ProgressComponent";
+import PainComponent from "@components/survey/surveylist/PainComponent";
+import MostPainListComponent from "@components/survey/surveylist/MostPainListComponent";
 import {Link, useLocation, useNavigate} from "react-router-dom";
-import {modalState} from "@/states/modalState";
-import ToastPopup from "@/components/modal/ToastPopup";
-import TitleHeadComponent from "@/components/head/TitleHeadComponent";
+import {modalState} from "@states/modalState";
+import ToastPopup from "@components/modal/ToastPopup";
+import TitleHeadComponent from "@components/head/TitleHeadComponent";
 import $ from "jquery";
 
 const Pain = () => {
