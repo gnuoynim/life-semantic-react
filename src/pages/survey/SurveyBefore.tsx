@@ -47,15 +47,18 @@ const SurveyBefore = () => {
                         </div>
                     </div>
                     <ul>
-                        <li>
-                            <Link to="/deStress">디스트레스</Link>
-                        </li>
-                        <li>
-                            <Link to="/pain">통증</Link>
-                        </li>
-                        <li>
-                            <Link to="/tired">피로</Link>
-                        </li>
+                      <li>
+                        <button type="button">디스트레스</button>
+                        {/* <Link to="/deStress">디스트레스</Link> */}
+                      </li>
+                      <li>
+                        <button type="button">통증</button>
+                        {/* <Link to="/pain">통증</Link> */}
+                      </li>
+                      <li>
+                        <button type="button">피로</button>
+                        {/* <Link to="/tired">피로</Link> */}
+                      </li>
                     </ul>
                 </div>
             </div>
