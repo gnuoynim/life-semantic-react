@@ -83,7 +83,7 @@ const Survey = () => {
                     </div>
                     <ul>
                         <li className="" onClick={event =>handleNavigate('/surveyBefore')}>시작전 설문(2/3)</li>
-                        <li className="" onClick={event =>handleNavigate('/surveyBefore')}>일일 설문<br/><span/>(최근 5일 이내 미작성 2건)</li>
+                        <li className="" onClick={event =>handleNavigate('/surveyToday')}>일일 설문<br/><span/>(최근 5일 이내 미작성 2건)</li>
                         <li className="active" onClick={handleNotOpen}><Link to="" >종료후 설문(0/3)</Link></li>
                     </ul>
                 </div>
