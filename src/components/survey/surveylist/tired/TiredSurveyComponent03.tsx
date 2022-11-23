@@ -134,7 +134,7 @@ const TiredSurveyComponent03 = () => {
                 </ul>
             </div>
             <ToastPopup
-                text="완료하시면 수정이 불가합니다. 내용을 확인해주세요."
+                content="완료하시면 수정이 불가합니다. 내용을 확인해주세요."
                 show={toast}
             />
             <ModalComponent/>
