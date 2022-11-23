@@ -8,7 +8,7 @@ const ISISurveyComponent02 = () => {
     <React.Fragment>
       <div className="surveyList">
         <p>
-          3. 당신의 수면 문제가 당신의 삶의 질에 영향을 미치고 있다는 것을 남들이 얼마나 <span>알아챌 수 있다고 생각하십니까?</span>
+          3. 당신의 수면 문제가 당신의 삶의 질에 영향을 미치고 있다는 것을 남들이 얼마나 <b>알아챌 수 있다고 생각하십니까?</b>
         </p>
         <ul>
           <li className="surveyContent">
@@ -122,7 +122,7 @@ const ISISurveyComponent02 = () => {
       </div>
       <div className="surveyList">
         <p>
-          5. 당신의 수면 문제가 일상 생활에 어느 정도 <span>방해</span>가 되십니까?
+          5. 당신의 수면 문제가 일상 생활에 어느 정도 <b>방해</b>가 되십니까?
           (예: 낮 동안 피관함, 직장 또는 일상 생활 수행 능력, 집중력, 기억력, 기분 등)
         </p>
         <ul>

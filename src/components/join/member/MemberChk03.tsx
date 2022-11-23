@@ -74,11 +74,14 @@ const MemberChk03 = ({ nextStep }: { nextStep: Function }) => {
           <span>암 종(진단명)</span>
         </label>
         <div>
-          <select onChange={handleCancerNameChange}>
-            <option>암 종 선택</option>
-            <option>구체적으로 입력</option>
-            <option>직접입력</option>
-          </select>
+          <div className="selectBox">
+            <select onChange={handleCancerNameChange}>
+              <option>암 종 선택</option>
+              <option>구체적으로 입력</option>
+              <option>직접입력</option>
+            </select>
+          </div>
+
           {isCustomCancerName && (
             <div className="manualInput">
               <label>직접입력</label>

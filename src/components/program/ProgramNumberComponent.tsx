@@ -1,6 +1,6 @@
 import React from 'react';
 import ProgramNumberDetailComponent from './ProgramNumberDetailComponent';
-import RoundComponent from './RoundTextComponent';
+import RoundComponent from './RoundComponent';
 import useUserHttp from '@hooks/queries/useUserQuery';
 import { ListInterface } from '@interfaces/listInterface';
 import { UserInterface } from '@interfaces/userInterface';

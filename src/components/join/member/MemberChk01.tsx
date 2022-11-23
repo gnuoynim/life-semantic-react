@@ -85,7 +85,7 @@ const MemberChk01 = ({ nextStep }: { nextStep: Function }) => {
         <label>
           <span>생년월일</span>
         </label>
-        <InputElement type="text" placeholder="생년월일" id="birth" />
+        <InputElement type="number" placeholder="생년월일" id="birth" />
         <label>
           <span>문자 수신동의</span>
         </label>
@@ -113,7 +113,7 @@ const MemberChk01 = ({ nextStep }: { nextStep: Function }) => {
           <span>이메일</span>
         </label>
         <div>
-          <span className="flexInput">
+          <span className="flexInput selectBox">
             <InputElement type="email" placeholder="이메일 확인" id="" />@
             <select>
               <option></option>

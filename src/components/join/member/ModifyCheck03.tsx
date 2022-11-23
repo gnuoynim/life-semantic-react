@@ -20,11 +20,13 @@ const ModifyCheck03 = () => {
               <label>
                 <span>암 종(진단명)</span>
               </label>
-              <select name="cancer">
+              <div className="selectBox">
+                <select name="cancer">
                   <option>암 종(진단명)</option>
                   <option></option>
                   <option></option>
                 </select>
+              </div>
             </li>
             <li>
               <label>

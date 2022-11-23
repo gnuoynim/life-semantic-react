@@ -155,7 +155,7 @@ const ProgramInfo = () => {
           <div className="fixBtn">
             <button
               type="button"
-              className="btn-02 active fixed"
+              className="btn-02 active"
               onClick={handleCancelToast}
             >
               <span className="cancel">취소하기</span>

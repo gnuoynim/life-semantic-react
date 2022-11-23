@@ -13,7 +13,6 @@ import ToastPopup from "@components/modal/ToastPopup";
 import ModalComponent from "@components/modal/ModalComponent";
 import $ from "jquery";
 
-
 const JoinModify = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -21,6 +20,7 @@ const JoinModify = () => {
   const [sample, setSample] = useRecoilState(sampleState);
   const [count, setCount] = useRecoilState(countState);
   const [step, setStep] = useState(1);
+  const [stepTitle, setStepTitle] = useState("회원정보 수정");
   const [toast, setToast] = useState(false);
   const increase = () => setCount(count + 1);
   const setTitle = () =>
@@ -33,11 +33,33 @@ const JoinModify = () => {
     if (step !== 3) {
       setStep(step + 1);
     }
+    switch (step+1) {
+      case 1:
+        setStepTitle("회원정보 수정");
+        break;
+      case 2:
+        setStepTitle("개인정보 수정");
+        break;
+      case 3:
+        setStepTitle("암 건강정보 수정");
+        break;
+    }
   };
 
   const handlePrevStep = () => {
     if (step !== 4) {
       setStep(step - 1);
+    }
+    switch (step -1) {
+      case 1:
+        setStepTitle("회원정보 수정");
+        break;
+      case 2:
+        setStepTitle("개인정보 수정");
+        break;
+      case 3:
+        setStepTitle("암 건강정보 수정");
+        break;
     }
   };
 
@@ -64,7 +86,8 @@ const JoinModify = () => {
       content: (
         <div>
           작성을 중단하시겠습니까? <br />
-          중단하신 내용은<br/>
+          중단하신 내용은
+          <br />
           저장되지 않습니다.
         </div>
       ),
@@ -97,7 +120,7 @@ const JoinModify = () => {
 
   return (
     <React.Fragment>
-      <TitleHeadComponent name="회원정보 수정" />
+      <TitleHeadComponent name={stepTitle} />
       <div className="modify">
         <div className="modifyProgress">
           <ul className="Step">
