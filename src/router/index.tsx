@@ -1,3 +1,4 @@
+import React from "react";
 import {useRoutes} from "react-router-dom";
 import Index from "@/pages/Index";
 import TotalLayout from "@layouts/web/TotalLayout";
@@ -26,7 +27,6 @@ import Modify from "@pages/account/Modify";
 import ModifyInformation from "@pages/account/ModifyInformation";
 import SurveyToday from "@pages/survey/SurveyToday";
 import Policy from "@pages/join/Policy";
-import React from "react";
 import Login from "@pages/login/Login";
 
 function Router() {
