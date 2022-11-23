@@ -9,5 +9,7 @@ export interface ModalInterface {
   confirmShow?: boolean;
   confirmText?: string;
   cancelShow?: boolean;
+  callBackShow?: boolean;
   cancelText?: React.ReactElement | string;
+  onConfirmCallback?: Function;
 }

@@ -1,17 +1,17 @@
 import React, {useState} from "react";
 import TitleHeadComponent from "@components/head/TitleHeadComponent";
-import {Link, useLocation, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 
 const SurveyBefore = () => {
-    const location = useLocation();
     const navigate = useNavigate();
     const [isShow, setShow] = useState<boolean>(false);
-
     const handleToolTip = () => {
         setShow(!isShow);
     }
-
+    const handleNavigate = (url: string) => {
+        navigate(url);
+    }
     return (
         <React.Fragment>
             <TitleHeadComponent name="시작 전 설문"/>
@@ -20,7 +20,7 @@ const SurveyBefore = () => {
                     <div className="surveyName">
                         <p>굿바이 피로1기</p>
                         <div className="noticeIco on" onClick={handleToolTip}>
-                            <img src="@public/images/question.svg" alt="" className=""/>
+                            <img src="public/images/question.svg" alt="" className=""/>
                           {isShow &&
                           <div className="noticeBox">
                             <ul>
@@ -47,18 +47,9 @@ const SurveyBefore = () => {
                         </div>
                     </div>
                     <ul>
-                      <li>
-                        <button type="button">디스트레스</button>
-                        {/* <Link to="/deStress">디스트레스</Link> */}
-                      </li>
-                      <li>
-                        <button type="button">통증</button>
-                        {/* <Link to="/pain">통증</Link> */}
-                      </li>
-                      <li>
-                        <button type="button">피로</button>
-                        {/* <Link to="/tired">피로</Link> */}
-                      </li>
+                      <li onClick={event => handleNavigate("/deStress")}>디스트레스</li>
+                      <li onClick={event => handleNavigate("/pain")}>통증</li>
+                      <li onClick={event => handleNavigate("/tired")}>피로</li>
                     </ul>
                 </div>
             </div>

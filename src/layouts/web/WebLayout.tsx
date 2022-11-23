@@ -15,8 +15,6 @@ const WebLayout = ({ children }: { children: React.ReactNode }) => {
     <BaseLayout>
       {children}
     </BaseLayout>
-      // 페이지1, 2
-      //TODO:
   );
 };
 

@@ -5,9 +5,7 @@ import CircleComponent from "@components/CircleComponent";
 import ModifyCheck01 from "@components/join/member/ModifyCheck01";
 import ModifyCheck02 from "@components/join/member/ModifyCheck02";
 import ModifyCheck03 from "@components/join/member/ModifyCheck03";
-import { countState, sampleState } from "@states/sampleState";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import { surveyState } from "@states/surveyState";
+import { useLocation, useNavigate } from "react-router-dom";
 import { modalState } from "@states/modalState";
 import ToastPopup from "@components/modal/ToastPopup";
 import ModalComponent from "@components/modal/ModalComponent";
@@ -17,20 +15,14 @@ const JoinModify = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [modal, setModal] = useRecoilState(modalState);
-  const [sample, setSample] = useRecoilState(sampleState);
-  const [count, setCount] = useRecoilState(countState);
-  const [step, setStep] = useState(1);
   const [stepTitle, setStepTitle] = useState("회원정보 수정");
   const [toast, setToast] = useState(false);
-  const increase = () => setCount(count + 1);
-  const setTitle = () =>
-    setSample({
-      ...sample,
-      title: String(document.querySelector("input")?.value),
-    });
+  const state = location.state as { step: number };
+  const stepTemp = state?.step ?? 1;
+  const [step, setStep] = useState(stepTemp);
 
   const handleNextStep = () => {
-    if (step !== 3) {
+    if (step < 3) {
       setStep(step + 1);
     }
     switch (step+1) {
@@ -47,7 +39,7 @@ const JoinModify = () => {
   };
 
   const handlePrevStep = () => {
-    if (step !== 4) {
+    if (step < 4 && step > 1) {
       setStep(step - 1);
     }
     switch (step -1) {

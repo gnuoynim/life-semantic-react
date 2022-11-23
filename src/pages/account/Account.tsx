@@ -1,11 +1,7 @@
-import React, {useState} from "react";
-import {ErrorBoundary} from "react-error-boundary";
-import WebLayout from "@layouts/web/WebLayout";
+import React from "react";
 import HeaderComponent from "@components/head/Header";
 import {Link, useLocation, useNavigate} from "react-router-dom";
 import {useRecoilState} from "recoil";
-import {countState, sampleState} from "@states/sampleState";
-import {surveyState} from "@states/surveyState";
 import {modalState} from "@states/modalState";
 import ModalComponent from "@components/modal/ModalComponent";
 
@@ -20,39 +16,26 @@ const Account = () => {
     };
 
     const handleLogOut = () => {
+        setModal({...modal, show: false});
         navigate('/');
     };
-    const handleModal = () => {
+    const handleConfirmLogout = () => {
         setModal({
-          ...modal,
-          show: true,
-          title: "",
-          cancelShow: true,
-          content: (
-            <div>
-              로그아웃 하시겠습니까?
-            </div>
-          ),
-          confirmText: "아니요",
-          cancelText: "네",
+            ...modal,
+            show: true,
+            title: "",
+            cancelShow: true,
+            callBackShow: true,
+            content: (
+                <div>
+                    로그아웃 하시겠습니까?
+                </div>
+            ),
+            confirmText: "네",
+            cancelText: "아니요",
+            onConfirmCallback: handleLogOut,
         });
-      };
-    // const handleLogOut = () => {
-    //     setModal({
-    //         ...modal,
-    //         show: true,
-    //         title: "",
-    //         cancelShow: true,
-    //
-    //         content: (
-    //             <div>
-    //                 로그아웃 하시겠습니까?
-    //             </div>
-    //         ),
-    //         cancelText: <div className="close">아니요</div>,
-    //         confirmText: "네",
-    //     });
-    // };
+    };
 
     return (
         <React.Fragment>
@@ -73,7 +56,7 @@ const Account = () => {
                 </div>
                 <div className="grayButton">
                     <button type="button" onClick={handleDeleteAccount}>회원탈퇴</button>
-                    <button type="button" onClick={handleModal}>로그아웃</button>
+                    <button type="button" onClick={handleConfirmLogout}>로그아웃</button>
                 </div>
             </div>
             <ModalComponent id="flexModal"/>

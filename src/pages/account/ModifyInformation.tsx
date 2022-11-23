@@ -1,32 +1,25 @@
-import React, { useState } from "react";
+import React from "react";
 import WebLayout from "@layouts/web/WebLayout";
 import TitleHeadComponent from "@components/head/TitleHeadComponent";
-import BookComponent from "@components/program/book/BookComponent";
-import GoodByeComponent from "@components/program/GoodByeProgramComponent";
-import GoodSleepComponent from "@components/program/GoodSleepProgramComponent";
-import BannerComponent from "@components/program/banner/BannerComponent";
-import { Link } from "react-router-dom";
-import InputElement from "@components/elements/InputElement";
+import {Link, useNavigate} from "react-router-dom";
 
 const ModifyInformation = () => {
-  return (
-    <WebLayout>
-      <TitleHeadComponent name="내 정보 수정" />
-      <div className="modifyList">
-        <ul>
-          <li>
-            <Link to="">회원정보 수정</Link>
-          </li>
-          <li>
-            <Link to="">개인정보 수정</Link>
-          </li>
-          <li>
-            <Link to="">암 건강정보 수정</Link>
-          </li>
-        </ul>
-      </div>
-    </WebLayout>
-  );
+    const navigate = useNavigate();
+    const handleNavigate = (url: string, step: number) => {
+        navigate(url, {state: {step: step}});
+    }
+    return (
+        <WebLayout>
+            <TitleHeadComponent name="내 정보 수정"/>
+            <div className="modifyList">
+                <ul>
+                    <li onClick={event => handleNavigate("/joinModify", 1)}>회원정보 수정</li>
+                    <li onClick={event => handleNavigate("/joinModify", 2)}>개인정보 수정</li>
+                    <li onClick={event => handleNavigate("/joinModify", 3)}>암 건강정보 수정</li>
+                </ul>
+            </div>
+        </WebLayout>
+    );
 };
 
 export default ModifyInformation;
