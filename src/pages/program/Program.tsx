@@ -21,6 +21,10 @@ const Program = () => {
         <GoodSleepComponent />
         </div>
         <BannerComponent />
+        <div className="cancerProgram">
+          암생존자를 위한<br/>
+          산림치유 프로그램
+        </div>
         <BookComponent />
         <button type="button" className="borderButton02">
             프로그램 더보기

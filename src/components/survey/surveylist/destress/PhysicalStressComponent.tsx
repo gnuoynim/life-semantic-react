@@ -20,7 +20,7 @@ const PhysicalStressComponent = () => {
           디스트레스 정도를 가장 잘 나타내는 숫자(1~10)에 표시를 해주세요.
         </p>
         <div className="subTitle">
-          <p>가장 잘 나타내는 숫자(1~10)에 표시를 해주세요. </p>
+          {/* <p>가장 잘 나타내는 숫자(1~10)에 표시를 해주세요. </p> */}
           <span>(좌우로 동그라미를 움직여주세요.)</span>
         </div>
         <RangeComponent />

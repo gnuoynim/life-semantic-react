@@ -2242,7 +2242,11 @@ select {
 .programName {
   margin: 23px;
 }
-
+.cancerProgram{
+  font-weight: 700;
+  font-size: 16px;
+  padding: 10px 23px 0 23px;
+}
 .mainBanner {
   width: calc(100% - 23px);
   display: flex;

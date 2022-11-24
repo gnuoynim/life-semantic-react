@@ -29,10 +29,7 @@ const IndexPage = () => {
       title: String(document.querySelector("input")?.value),
     });
 
-  const handleAAAAClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault();
-    navigate("/login");
-  };
+
 
   const handleNextStep = () => {
     if (step !== 4) {
@@ -42,7 +39,6 @@ const IndexPage = () => {
 
   return (
     <WebLayout>
-      {/* {menu === true ? <dd/> : null} */}
       <TitleHeadComponent name="회원가입" />
       <div className="Join">
         <div className="Step">

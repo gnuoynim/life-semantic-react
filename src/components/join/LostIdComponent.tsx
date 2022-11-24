@@ -11,13 +11,13 @@ const LostIdComponent = () => {
         <div>
           <h3 className="">본인 인증을 진행해 주세요.</h3>
           <span className="CodeCheck">
-            <InputElement type="text" placeholder="휴대폰 번호 입력" />
+            <InputElement type="number" placeholder="휴대폰 번호 입력" />
             <button type="button" disabled>
               인증번호 <br />
               받기
             </button>
           </span>
-          <InputElement type="text" placeholder="인증번호 입력(10분 안에)" />
+          <InputElement type="number" placeholder="인증번호 입력(10분 안에)" />
         </div>
         <p className="alarm">
           아직 인증이

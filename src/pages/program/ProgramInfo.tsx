@@ -8,12 +8,16 @@ import { ViewInterface } from "@interfaces/viewInterface";
 import useAxios from "@hooks/useAxios";
 import { ProgramInterface } from "@interfaces/programInterface";
 import ToastPopup from "@components/modal/ToastPopup";
+import { modalState } from "@states/modalState";
+import { useRecoilState } from "recoil";
+import ModalComponent from "@components/modal/ModalComponent";
 
 const ProgramInfo = () => {
   const { state } = useLocation() as ViewInterface;
   const [toastCancel, setToastCancel] = useState(false);
   const [toastComplete, setToastComplete] = useState(false);
   const [isReserve, setReserve] = useState(true);
+  const [modal, setModal] = useRecoilState(modalState);
   const navigate = useNavigate();
   const api = useAxios();
   const [program, setProgram] = useState<ProgramInterface>();
@@ -27,6 +31,25 @@ const ProgramInfo = () => {
       .catch((err) => {
         console.log(err);
       });
+  };
+
+  const handleConfirmLogout = () => {
+    setModal({
+      ...modal,
+      show: true,
+      title: "",
+      cancelShow: true,
+      callBackShow: true,
+      content: <div>예약이 완료되었습니다.</div>,
+      confirmText: "취소",
+      cancelText: "확인",
+      onConfirmCallback: handleLogOut,
+    });
+  };
+
+  const handleLogOut = () => {
+    setModal({ ...modal, show: false });
+    navigate("/");
   };
 
   const handleReserveToast = () => {
@@ -143,7 +166,7 @@ const ProgramInfo = () => {
             <button
               type="button"
               className="btn-02 active "
-              onClick={handleReserveToast}
+              onClick={handleConfirmLogout}
             >
               예약하기
             </button>
@@ -163,8 +186,15 @@ const ProgramInfo = () => {
           </div>
         </React.Fragment>
       )}
-    <ToastPopup content={"프로그램 예약이 취소됐습니다."} show={toastCancel}/>
-    <ToastPopup content={"프로그램 예약이 완료됐습니다."} show={toastComplete}/>
+      <ToastPopup
+        content={"프로그램 예약이 취소됐습니다."}
+        show={toastCancel}
+      />
+      <ToastPopup
+        content={"프로그램 예약이 완료됐습니다."}
+        show={toastComplete}
+      />
+      <ModalComponent id="flexModal"/>
     </React.Fragment>
   );
 };
